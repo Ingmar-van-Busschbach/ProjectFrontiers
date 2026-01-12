@@ -38,6 +38,7 @@ public class Bullet : MonoBehaviour
                 return;
             }
             System.Array.Sort(hitResults, delegate(RaycastHit a, RaycastHit b) { return a.distance.CompareTo(b.distance); });
+            //Turn the projectile to the closest hit target
             float velocity = rigidBody.linearVelocity.magnitude;
             Vector3 direction = ((weaponData.targetCenterOfMass ? hitResults[0].transform.position : hitResults[0].point) - transform.position).normalized;
             direction *= velocity;
