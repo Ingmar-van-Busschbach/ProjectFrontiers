@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: dad1865d009f4b741b4094135ef1684a
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 310101
+  packageName: Cone Cast Script
+  packageVersion: 1.0
+  assetPath: Assets/ConeCastScript/Source/ConeCast.cs
+  uploadId: 730118
