@@ -25,9 +25,23 @@ public class Bullet : MonoBehaviour
 
     private void Update()
     {
-        if((transform.position - startLocation).magnitude > weaponData.maxRange)
+        transform.forward = rigidBody.linearVelocity.normalized;
+        if ((transform.position - startLocation).magnitude > weaponData.maxRange)
         {
             Destroy(gameObject);
+        }
+        if (weaponData.isHoming)
+        {
+            RaycastHit[] hitResults = ConePhysics.ConeCastAll(transform.position, transform.forward, weaponData.homingConeAngle, 3, 0, weaponData.homingMaxRange, weaponData.homingLayerMask, true, 0.1f, QueryTriggerInteraction.Ignore, true, Color.white);
+            if(hitResults.Length == 0)
+            {
+                return;
+            }
+            System.Array.Sort(hitResults, delegate(RaycastHit a, RaycastHit b) { return a.distance.CompareTo(b.distance); });
+            float velocity = rigidBody.linearVelocity.magnitude;
+            Vector3 direction = (hitResults[0].transform.position - transform.position).normalized;
+            direction *= velocity;
+            rigidBody.linearVelocity = Vector3.Slerp(rigidBody.linearVelocity, direction, weaponData.homingSpeed * Time.deltaTime);
         }
     }
 

@@ -12,9 +12,6 @@ public class WeaponData : ScriptableObject
     public EnumLibrary.EWeaponType weaponType;
 
     [Space]
-    public AudioClip firingAudio;
-
-    [Space]
     [Tooltip("The amount of each damage type this weapon deals upon a successful hit")]
     public StructLibrary.Struct_DamageEntry[] damageData;
     [Range(10, 1000)]
@@ -36,6 +33,10 @@ public class WeaponData : ScriptableObject
     [Header("Magazine")]
     [Tooltip("The amount of bullets in the magazine")]
     public int magazineSize;
+
+
+    [Header("Audio")]
+    public AudioClip firingAudio;
 
 
     [Header("Accuracy")]
@@ -99,10 +100,24 @@ public class WeaponData : ScriptableObject
     public float velocity;
     [Tooltip("Whether the bullet is affected by gravity")]
     public bool bulletDrop;
+
+    [Space]
     [Range(0, 10)]
     [Tooltip("Whether the bullet has an explosion on impact, and how big it is. Disabled at 0")]
     public float explosionMaxRadius;
     [Range(0, 10)]
     [Tooltip("The optimal range at which the full damage of the weapon is dealt, then falling off towards the explosion maximum radius. Should be a smaller number than explosion maximum radius")]
     public float explosionOptimalRadius;
+
+    [Space]
+    [Tooltip("Enables homing behavior. You should configure the homing stats before enabling this. Homing always targets the closest target within the homing cone")]
+    public bool isHoming;
+    [Tooltip("The rate at which the projectile homes in on the target")]
+    public float homingSpeed;
+    [Tooltip("The angle of the homing cone in degrees")]
+    public float homingConeAngle;
+    [Tooltip("The range of the homing cone in meters")]
+    public float homingMaxRange;
+    [Tooltip("The layers that will be homed in to")]
+    public LayerMask homingLayerMask;
 }
