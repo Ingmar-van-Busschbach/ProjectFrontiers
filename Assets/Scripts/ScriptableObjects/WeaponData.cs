@@ -112,6 +112,8 @@ public class WeaponData : ScriptableObject
     [Space]
     [Tooltip("Enables homing behavior. You should configure the homing stats before enabling this. Homing always targets the closest target within the homing cone")]
     public bool isHoming;
+    [Tooltip("If homing is enabled, this allows it to target the center of mass of the homing target rather than the hit point")]
+    public bool targetCenterOfMass;
     [Tooltip("The rate at which the projectile homes in on the target")]
     public float homingSpeed;
     [Tooltip("The angle of the homing cone in degrees")]

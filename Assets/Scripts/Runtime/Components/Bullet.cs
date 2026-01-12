@@ -39,7 +39,7 @@ public class Bullet : MonoBehaviour
             }
             System.Array.Sort(hitResults, delegate(RaycastHit a, RaycastHit b) { return a.distance.CompareTo(b.distance); });
             float velocity = rigidBody.linearVelocity.magnitude;
-            Vector3 direction = (hitResults[0].transform.position - transform.position).normalized;
+            Vector3 direction = ((weaponData.targetCenterOfMass ? hitResults[0].transform.position : hitResults[0].point) - transform.position).normalized;
             direction *= velocity;
             rigidBody.linearVelocity = Vector3.Slerp(rigidBody.linearVelocity, direction, weaponData.homingSpeed * Time.deltaTime);
         }

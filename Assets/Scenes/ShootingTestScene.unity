@@ -1439,7 +1439,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56914d3af04269543aff3da450295c14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponData: {fileID: 11400000, guid: e7b7eb6921b285540a4fc212fede5b36, type: 2}
+  weaponData: {fileID: 11400000, guid: d6eee71de038d2d4dbafe99ba80c1d1c, type: 2}
   barrelPoint: {fileID: 863397004}
   crosshairHandler: {fileID: 1826949406}
   cameraRecoilHandler: {fileID: 1066464983}
