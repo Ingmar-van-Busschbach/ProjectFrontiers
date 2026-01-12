@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74027454f8a669b46be2fc2c10fccded, type: 3}
+  m_Name: MissileLauncher
+  m_EditorClassIdentifier: 
+  weaponName: Rocket Launcher
+  weaponType: 1
+  damageData:
+  - maxDamage: 25
+    minDamage: 5
+    damageType: 1
+  rateOfFire: 90
+  multishot: 1
+  shotsPerBurst: 1
+  timePerShotInBurst: 0.1
+  magazineSize: 1
+  firingAudio: {fileID: 0}
+  minDispersion: {x: 0, y: 0}
+  maxDispersion: {x: 0, y: 0}
+  dispersionPerShot: {x: 0, y: 0}
+  dispersionBloomSpeed: 0
+  dispersionRecoverySpeed: 0
+  recoilAmount: {x: 10, y: 10}
+  recoilOffset: {x: 0, y: -1}
+  maxRecoilAngle: {x: 25, y: 25}
+  recoilSnappiness: 10
+  recoilRecoverySpeed: 2
+  minRange: 0.1
+  optimalRange: 5
+  maxRange: 15
+  roundDamage: 0
+  aimAssist: 0
+  aimAssistFidelity: 2
+  penetratesTargets: 1
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  bullet: {fileID: 7726416138810722538, guid: 7d2b97016597a4c42a5fc1c0b9061e12, type: 3}
+  velocity: 15
+  bulletDrop: 0
+  explosionMaxRadius: 5
+  explosionOptimalRadius: 3
+  isHoming: 1
+  homingSpeed: 5
+  homingConeAngle: 15
+  homingMaxRange: 25
+  homingLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
