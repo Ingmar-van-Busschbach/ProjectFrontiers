@@ -10,6 +10,11 @@ public class WeaponData : ScriptableObject
     [Header("Weapon Statistics")]
     public string weaponName = "DefaultWeapon";
     public EnumLibrary.EWeaponType weaponType;
+
+    [Space]
+    public AudioClip firingAudio;
+
+    [Space]
     [Tooltip("The amount of each damage type this weapon deals upon a successful hit")]
     public StructLibrary.Struct_DamageEntry[] damageData;
     [Range(10, 1000)]
