@@ -1379,7 +1379,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8289309d054664282a5a7b38b5cf6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 0}
+  weapon: {fileID: 1238158310}
   cameraController: {fileID: 1054107475}
   lookSensitivity: 10
   lookAngle: {x: -50, y: 70}
