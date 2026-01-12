@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponName: Sniper RIfle
   weaponType: 0
+  firingAudio: {fileID: 8300000, guid: e5a9937bc2cae8a44b894f427518e92f, type: 3}
   damageData:
   - maxDamage: 25
     minDamage: 5

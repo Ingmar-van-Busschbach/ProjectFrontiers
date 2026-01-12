@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 11447469}
   - component: {fileID: 11447468}
   m_Layer: 0
-  m_Name: Cube (4)
+  m_Name: Target 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -527,7 +527,7 @@ GameObject:
   - component: {fileID: 402347043}
   - component: {fileID: 402347042}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: Target 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -956,7 +956,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 863397004}
-  - component: {fileID: 863397005}
   m_Layer: 0
   m_Name: BarrelEnd
   m_TagString: Untagged
@@ -979,26 +978,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 794161298}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &863397005
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 863397003}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56914d3af04269543aff3da450295c14, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weaponData: {fileID: 11400000, guid: d3be368a61403fd42b3901357e13335a, type: 2}
-  barrelPoint: {fileID: 863397004}
-  crosshairHandler: {fileID: 1826949406}
-  cameraRecoilHandler: {fileID: 1066464983}
-  objectsToIgnore:
-  - {fileID: 1238158302}
-  - {fileID: 794161294}
-  drawDebug: 1
 --- !u!1 &920470001
 GameObject:
   m_ObjectHideFlags: 0
@@ -1012,7 +991,7 @@ GameObject:
   - component: {fileID: 920470003}
   - component: {fileID: 920470002}
   m_Layer: 0
-  m_Name: Cube (5)
+  m_Name: Target 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1288,6 +1267,7 @@ GameObject:
   - component: {fileID: 1238158309}
   - component: {fileID: 1238158308}
   - component: {fileID: 1238158307}
+  - component: {fileID: 1238158310}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1399,7 +1379,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8289309d054664282a5a7b38b5cf6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 863397005}
+  weapon: {fileID: 1238158310}
   cameraController: {fileID: 1054107475}
   lookSensitivity: 10
   lookAngle: {x: -50, y: 70}
@@ -1446,6 +1426,26 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1238158310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1238158302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56914d3af04269543aff3da450295c14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponData: {fileID: 11400000, guid: 165a213744f48a0409ef80caa6e72b34, type: 2}
+  barrelPoint: {fileID: 863397004}
+  crosshairHandler: {fileID: 1826949406}
+  cameraRecoilHandler: {fileID: 1066464983}
+  objectsToIgnore:
+  - {fileID: 1238158302}
+  - {fileID: 794161294}
+  drawDebug: 1
 --- !u!1 &1277976035
 GameObject:
   m_ObjectHideFlags: 0
@@ -1534,7 +1534,7 @@ GameObject:
   - component: {fileID: 1294010590}
   - component: {fileID: 1294010589}
   m_Layer: 0
-  m_Name: Cube (2)
+  m_Name: Target 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1976,6 +1976,7 @@ MonoBehaviour:
   - {fileID: 375777145}
   - {fileID: 297959142}
   spacing: 10
+  accuracySize: 5
 --- !u!1 &2012719112
 GameObject:
   m_ObjectHideFlags: 0
@@ -1989,7 +1990,7 @@ GameObject:
   - component: {fileID: 2012719114}
   - component: {fileID: 2012719113}
   m_Layer: 0
-  m_Name: Cube (3)
+  m_Name: Target 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

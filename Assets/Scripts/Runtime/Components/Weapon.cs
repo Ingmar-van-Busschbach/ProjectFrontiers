@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using static UnityEngine.InputSystem.LowLevel.InputStateHistory;
 
+[RequireComponent(typeof(AudioSource))]
 public abstract class Weapon : MonoBehaviour
 {
     [SerializeField] protected WeaponData weaponData;
@@ -14,11 +15,11 @@ public abstract class Weapon : MonoBehaviour
     private Vector2 targetDispersion;
     private float timeOfNextShot;
     private int currentMagazine;
+    private AudioSource audioSource;
     private void Start()
     {
-        currentDispersion = weaponData.minDispersion;
-        targetDispersion = weaponData.minDispersion;
-        currentMagazine = weaponData.magazineSize;
+        audioSource = GetComponent<AudioSource>();
+        WeaponSetup();
     }
     private void Update()
     {
@@ -30,6 +31,13 @@ public abstract class Weapon : MonoBehaviour
         targetDispersion = Vector2.Lerp(targetDispersion, weaponData.minDispersion, weaponData.dispersionRecoverySpeed * Time.deltaTime);
         currentDispersion = Vector2.Lerp(currentDispersion, targetDispersion, weaponData.dispersionBloomSpeed * Time.deltaTime);
         crosshairHandler.SetBloom(currentDispersion);
+    }
+    private void WeaponSetup()
+    {
+        audioSource.clip = weaponData.firingAudio;
+        currentDispersion = weaponData.minDispersion;
+        targetDispersion = weaponData.minDispersion;
+        currentMagazine = weaponData.magazineSize;
     }
     public void Shoot()
     {
@@ -67,6 +75,7 @@ public abstract class Weapon : MonoBehaviour
         for(int i = 0; i < weaponData.multishot; i++)
         {
             HandleRecoil();
+            HandleAudio();
             HandleShot();
         }
     }
@@ -96,5 +105,10 @@ public abstract class Weapon : MonoBehaviour
         }
         Vector2 recoilAmount = new Vector2((Random.value - 0.5f + weaponData.recoilOffset.x) / 2 * weaponData.recoilAmount.x, (Random.value - 0.5f + weaponData.recoilOffset.y) / 2 * weaponData.recoilAmount.y);
         cameraRecoilHandler.ApplyRecoil(recoilAmount, weaponData.recoilSnappiness, weaponData.recoilRecoverySpeed, weaponData.maxRecoilAngle);
+    }
+
+    protected void HandleAudio()
+    {
+        audioSource.Play();
     }
 }
