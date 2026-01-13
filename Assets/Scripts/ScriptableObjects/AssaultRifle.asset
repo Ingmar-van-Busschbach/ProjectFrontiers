@@ -13,16 +13,19 @@ MonoBehaviour:
   m_Name: AssaultRifle
   m_EditorClassIdentifier: 
   weaponName: Assault Rifle
+  weaponMesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
   weaponType: 0
   damageData:
   - maxDamage: 10
     minDamage: 1
     damageType: 0
-  rateOfFire: 720
+  rateOfFire: 1000
   multishot: 1
   shotsPerBurst: 1
   timePerShotInBurst: 0.1
   magazineSize: 30
+  reloadDuration: 0.5
+  firingAudio: {fileID: 8300000, guid: e5a9937bc2cae8a44b894f427518e92f, type: 3}
   minDispersion: {x: 0.5, y: 0.5}
   maxDispersion: {x: 5, y: 5}
   dispersionPerShot: {x: 1, y: 1}
@@ -48,3 +51,11 @@ MonoBehaviour:
   bulletDrop: 0
   explosionMaxRadius: 0
   explosionOptimalRadius: 0
+  isHoming: 0
+  targetCenterOfMass: 0
+  homingSpeed: 0
+  homingConeAngle: 0
+  homingMaxRange: 0
+  homingLayerMask:
+    serializedVersion: 2
+    m_Bits: 0

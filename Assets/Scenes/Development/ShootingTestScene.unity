@@ -801,6 +801,7 @@ GameObject:
   - component: {fileID: 794161297}
   - component: {fileID: 794161296}
   - component: {fileID: 794161295}
+  - component: {fileID: 794161299}
   m_Layer: 0
   m_Name: Gun
   m_TagString: Untagged
@@ -898,6 +899,28 @@ Transform:
   - {fileID: 863397004}
   m_Father: {fileID: 1054107474}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &794161299
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 794161294}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8d0ee1f2034b9b64d87e4f86b752fa45, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -1268,7 +1291,7 @@ GameObject:
   - component: {fileID: 1238158308}
   - component: {fileID: 1238158307}
   - component: {fileID: 1238158310}
-  - component: {fileID: 1238158311}
+  - component: {fileID: 1238158312}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1380,7 +1403,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8289309d054664282a5a7b38b5cf6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 1238158310}
   cameraController: {fileID: 1054107475}
   lookSensitivity: 10
   lookAngle: {x: -50, y: 70}
@@ -1439,7 +1461,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56914d3af04269543aff3da450295c14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponData: {fileID: 11400000, guid: d6eee71de038d2d4dbafe99ba80c1d1c, type: 2}
+  weaponData: {fileID: 11400000, guid: 1aaa2221db6291148bb144cbfb3a8936, type: 2}
+  canShoot: 1
   barrelPoint: {fileID: 863397004}
   crosshairHandler: {fileID: 1826949406}
   cameraRecoilHandler: {fileID: 1066464983}
@@ -1447,103 +1470,23 @@ MonoBehaviour:
   - {fileID: 1238158302}
   - {fileID: 794161294}
   drawDebug: 1
---- !u!82 &1238158311
-AudioSource:
+--- !u!114 &1238158312
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1238158302}
   m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e615349d7c524c94cbc1ebc683986d81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponAnimator: {fileID: 794161299}
+  weaponMesh: {fileID: 794161297}
+  weapon1: {fileID: 11400000, guid: 1aaa2221db6291148bb144cbfb3a8936, type: 2}
+  weapon2: {fileID: 11400000, guid: d6eee71de038d2d4dbafe99ba80c1d1c, type: 2}
+  weapon3: {fileID: 11400000, guid: 165a213744f48a0409ef80caa6e72b34, type: 2}
 --- !u!1 &1277976035
 GameObject:
   m_ObjectHideFlags: 0
