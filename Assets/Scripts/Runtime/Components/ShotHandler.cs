@@ -32,7 +32,7 @@ public abstract class ShotHandler : MonoBehaviour
         currentDispersion = Vector2.Lerp(currentDispersion, targetDispersion, weaponData.dispersionBloomSpeed * Time.deltaTime);
         crosshairHandler.SetBloom(currentDispersion);
     }
-    private void WeaponSetup()
+    protected void WeaponSetup()
     {
         audioSource.clip = weaponData.firingAudio;
         currentDispersion = weaponData.minDispersion;

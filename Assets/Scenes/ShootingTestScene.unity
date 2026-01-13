@@ -1269,6 +1269,7 @@ GameObject:
   - component: {fileID: 1238158307}
   - component: {fileID: 1238158310}
   - component: {fileID: 1238158311}
+  - component: {fileID: 1238158312}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1380,7 +1381,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8289309d054664282a5a7b38b5cf6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 1238158310}
   cameraController: {fileID: 1054107475}
   lookSensitivity: 10
   lookAngle: {x: -50, y: 70}
@@ -1544,6 +1544,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1238158312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1238158302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e615349d7c524c94cbc1ebc683986d81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapon1: {fileID: 11400000, guid: 1aaa2221db6291148bb144cbfb3a8936, type: 2}
+  weapon2: {fileID: 11400000, guid: d6eee71de038d2d4dbafe99ba80c1d1c, type: 2}
+  weapon3: {fileID: 11400000, guid: 165a213744f48a0409ef80caa6e72b34, type: 2}
 --- !u!1 &1277976035
 GameObject:
   m_ObjectHideFlags: 0
