@@ -7,13 +7,14 @@ using UnityEngine.InputSystem;
 /// </summary>
 
 [RequireComponent(typeof(Controller3D))]
+[RequireComponent(typeof(Weapon))]
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private Weapon weapon;
     [SerializeField] private CameraController cameraController;
     [SerializeField] private float lookSensitivity;
     [SerializeField] private Vector2 lookAngle;
     private Controller3D controller;
+    private Weapon weapon;
     private PlayerInputs playerInputs;
     private InputAction move;
     private InputAction look;
@@ -22,6 +23,7 @@ public class PlayerController : MonoBehaviour
     void Awake()
     {
         controller = GetComponent<Controller3D>();
+        weapon = GetComponent<Weapon>();
         playerInputs = new PlayerInputs();
     }
     private void OnEnable()

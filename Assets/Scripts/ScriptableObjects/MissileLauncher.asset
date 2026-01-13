@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: MissileLauncher
   m_EditorClassIdentifier: 
   weaponName: Rocket Launcher
+  weaponMesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
   weaponType: 1
   damageData:
   - maxDamage: 25
@@ -23,7 +24,8 @@ MonoBehaviour:
   shotsPerBurst: 1
   timePerShotInBurst: 0.1
   magazineSize: 1
-  firingAudio: {fileID: 0}
+  reloadDuration: 0.5
+  firingAudio: {fileID: 8300000, guid: e5a9937bc2cae8a44b894f427518e92f, type: 3}
   minDispersion: {x: 0, y: 0}
   maxDispersion: {x: 0, y: 0}
   dispersionPerShot: {x: 0, y: 0}
@@ -50,6 +52,7 @@ MonoBehaviour:
   explosionMaxRadius: 5
   explosionOptimalRadius: 3
   isHoming: 1
+  targetCenterOfMass: 0
   homingSpeed: 5
   homingConeAngle: 15
   homingMaxRange: 25

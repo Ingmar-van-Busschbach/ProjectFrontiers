@@ -1,11 +1,12 @@
 using System.Collections;
 using UnityEngine;
-using static UnityEngine.InputSystem.LowLevel.InputStateHistory;
 
 [RequireComponent(typeof(AudioSource))]
 public abstract class ShotHandler : MonoBehaviour
 {
-    [SerializeField] protected WeaponData weaponData;
+    public WeaponData weaponData;
+    [HideInInspector] public bool canShoot = true;
+
     [SerializeField] protected Transform barrelPoint;
     [SerializeField] protected CrosshairBloom crosshairHandler;
     [SerializeField] protected CameraRecoil cameraRecoilHandler;
@@ -15,6 +16,7 @@ public abstract class ShotHandler : MonoBehaviour
     private Vector2 targetDispersion;
     private float timeOfNextShot;
     private int currentMagazine;
+    private bool isReloading;
     private AudioSource audioSource;
     private void Start()
     {
@@ -32,15 +34,18 @@ public abstract class ShotHandler : MonoBehaviour
         currentDispersion = Vector2.Lerp(currentDispersion, targetDispersion, weaponData.dispersionBloomSpeed * Time.deltaTime);
         crosshairHandler.SetBloom(currentDispersion);
     }
-    private void WeaponSetup()
+    protected void WeaponSetup()
     {
-        audioSource.clip = weaponData.firingAudio;
         currentDispersion = weaponData.minDispersion;
         targetDispersion = weaponData.minDispersion;
         currentMagazine = weaponData.magazineSize;
     }
     public void Shoot()
     {
+        if (!canShoot || isReloading)
+        {
+            return;
+        }
         if(barrelPoint == null)
         {
             Debug.LogWarning("The barrel point has not been applied! Unable to shoot!", this);
@@ -53,20 +58,28 @@ public abstract class ShotHandler : MonoBehaviour
         if (Time.time > timeOfNextShot && currentMagazine > 0)
         {
             timeOfNextShot = Time.time + weaponData.timePerShotInBurst * (weaponData.shotsPerBurst - 1) + 60 / weaponData.rateOfFire;
-            currentMagazine--;
             if(weaponData.shotsPerBurst > 1)
             {
                 StartCoroutine(HandleBurst());
             }
             else
             {
+                currentMagazine--;
                 HandleMultishot();
             }
         }
     }
     public void Reload()
     {
+        StartCoroutine(HandleReload());
+    }
+    private IEnumerator HandleReload()
+    {
+        audioSource.PlayOneShot(weaponData.reloadAudio);
+        isReloading = true;
+        yield return new WaitForSeconds(weaponData.reloadDuration);
         currentMagazine = weaponData.magazineSize;
+        isReloading = false;
     }
     protected abstract void HandleShot();
     
@@ -84,8 +97,12 @@ public abstract class ShotHandler : MonoBehaviour
     {
         for(int i = 0; i < weaponData.shotsPerBurst; i++)
         {
-            HandleMultishot();
-            yield return new WaitForSeconds(weaponData.timePerShotInBurst);
+            if(currentMagazine > 0)
+            {
+                currentMagazine--;
+                HandleMultishot();
+                yield return new WaitForSeconds(weaponData.timePerShotInBurst);
+            }
         }
     }
     protected Quaternion HandleDispersion()
@@ -109,6 +126,12 @@ public abstract class ShotHandler : MonoBehaviour
 
     protected void HandleAudio()
     {
-        audioSource.Play();
+        audioSource.PlayOneShot(weaponData.firingAudio);
+    }
+
+    public void SwapWeapon(WeaponData newWeapon)
+    {
+        weaponData = newWeapon;
+        WeaponSetup();
     }
 }
