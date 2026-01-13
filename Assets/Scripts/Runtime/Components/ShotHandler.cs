@@ -1,10 +1,12 @@
 using System.Collections;
 using UnityEngine;
-using static UnityEngine.InputSystem.LowLevel.InputStateHistory;
 
-public abstract class Weapon : MonoBehaviour
+[RequireComponent(typeof(AudioSource))]
+public abstract class ShotHandler : MonoBehaviour
 {
-    [SerializeField] protected WeaponData weaponData;
+    public WeaponData weaponData;
+    [HideInInspector] public bool canShoot = true;
+
     [SerializeField] protected Transform barrelPoint;
     [SerializeField] protected CrosshairBloom crosshairHandler;
     [SerializeField] protected CameraRecoil cameraRecoilHandler;
@@ -14,11 +16,12 @@ public abstract class Weapon : MonoBehaviour
     private Vector2 targetDispersion;
     private float timeOfNextShot;
     private int currentMagazine;
+    private bool isReloading;
+    private AudioSource audioSource;
     private void Start()
     {
-        currentDispersion = weaponData.minDispersion;
-        targetDispersion = weaponData.minDispersion;
-        currentMagazine = weaponData.magazineSize;
+        audioSource = GetComponent<AudioSource>();
+        WeaponSetup();
     }
     private void Update()
     {
@@ -31,8 +34,18 @@ public abstract class Weapon : MonoBehaviour
         currentDispersion = Vector2.Lerp(currentDispersion, targetDispersion, weaponData.dispersionBloomSpeed * Time.deltaTime);
         crosshairHandler.SetBloom(currentDispersion);
     }
+    protected void WeaponSetup()
+    {
+        currentDispersion = weaponData.minDispersion;
+        targetDispersion = weaponData.minDispersion;
+        currentMagazine = weaponData.magazineSize;
+    }
     public void Shoot()
     {
+        if (!canShoot || isReloading)
+        {
+            return;
+        }
         if(barrelPoint == null)
         {
             Debug.LogWarning("The barrel point has not been applied! Unable to shoot!", this);
@@ -45,20 +58,27 @@ public abstract class Weapon : MonoBehaviour
         if (Time.time > timeOfNextShot && currentMagazine > 0)
         {
             timeOfNextShot = Time.time + weaponData.timePerShotInBurst * (weaponData.shotsPerBurst - 1) + 60 / weaponData.rateOfFire;
-            currentMagazine--;
             if(weaponData.shotsPerBurst > 1)
             {
                 StartCoroutine(HandleBurst());
             }
             else
             {
+                currentMagazine--;
                 HandleMultishot();
             }
         }
     }
     public void Reload()
     {
+        StartCoroutine(HandleReload());
+    }
+    private IEnumerator HandleReload()
+    {
+        isReloading = true;
+        yield return new WaitForSeconds(weaponData.reloadDuration);
         currentMagazine = weaponData.magazineSize;
+        isReloading = false;
     }
     protected abstract void HandleShot();
     
@@ -67,6 +87,7 @@ public abstract class Weapon : MonoBehaviour
         for(int i = 0; i < weaponData.multishot; i++)
         {
             HandleRecoil();
+            HandleAudio();
             HandleShot();
         }
     }
@@ -75,8 +96,12 @@ public abstract class Weapon : MonoBehaviour
     {
         for(int i = 0; i < weaponData.shotsPerBurst; i++)
         {
-            HandleMultishot();
-            yield return new WaitForSeconds(weaponData.timePerShotInBurst);
+            if(currentMagazine > 0)
+            {
+                currentMagazine--;
+                HandleMultishot();
+                yield return new WaitForSeconds(weaponData.timePerShotInBurst);
+            }
         }
     }
     protected Quaternion HandleDispersion()
@@ -96,5 +121,16 @@ public abstract class Weapon : MonoBehaviour
         }
         Vector2 recoilAmount = new Vector2((Random.value - 0.5f + weaponData.recoilOffset.x) / 2 * weaponData.recoilAmount.x, (Random.value - 0.5f + weaponData.recoilOffset.y) / 2 * weaponData.recoilAmount.y);
         cameraRecoilHandler.ApplyRecoil(recoilAmount, weaponData.recoilSnappiness, weaponData.recoilRecoverySpeed, weaponData.maxRecoilAngle);
+    }
+
+    protected void HandleAudio()
+    {
+        audioSource.PlayOneShot(weaponData.firingAudio);
+    }
+
+    public void SwapWeapon(WeaponData newWeapon)
+    {
+        weaponData = newWeapon;
+        WeaponSetup();
     }
 }

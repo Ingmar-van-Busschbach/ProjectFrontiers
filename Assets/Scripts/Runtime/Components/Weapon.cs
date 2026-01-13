@@ -1,13 +1,26 @@
 using UnityEngine;
 
 /// <summary>
-/// Hitscan weapon script. Implements weapon accuracy, a cone cast aim assist, linear damage falloff, damage types and hit data.
+/// Player weapon script. Implements weapon accuracy, a cone cast aim assist, linear damage falloff, damage types and hit data.
 /// </summary>
 
-public class HitScanWeapon : Weapon
+public class Weapon : ShotHandler
 {
     [SerializeField] private bool drawDebug;
     protected override void HandleShot()
+    {
+        switch (weaponData.weaponType)
+        {
+            case EnumLibrary.EWeaponType.hitscan:
+                HandleHitscanShot();
+                break;
+            case EnumLibrary.EWeaponType.projectile:
+                HandleProjectileShot();
+                break;
+        }
+    }
+
+    private void HandleHitscanShot()
     {
         //Handle accuracy of the weapon.
         Quaternion dispersion = HandleDispersion();
@@ -17,7 +30,7 @@ public class HitScanWeapon : Weapon
         if (weaponData.aimAssist > 0)
         {
             hitResults = ConePhysics.ConeCastAll(barrelPoint.position, dispersion * barrelPoint.forward, weaponData.aimAssist, weaponData.aimAssistFidelity, weaponData.minRange, weaponData.maxRange, weaponData.layerMask, true, 0.1f, QueryTriggerInteraction.Ignore, true, Color.white);
-            
+
         }
         else
         {
@@ -50,7 +63,7 @@ public class HitScanWeapon : Weapon
             RaycastHit currentHit = new RaycastHit();
             foreach (RaycastHit hit in hitResults)
             { //Check if the target is both closer than any previous target, and is DamageAble.
-                if(hit.distance < currentHitDistance && hit.collider.gameObject.TryGetComponent<IDamageAble>(out IDamageAble target))
+                if (hit.distance < currentHitDistance && hit.collider.gameObject.TryGetComponent<IDamageAble>(out IDamageAble target))
                 {
                     currentHitDistance = hit.distance;
                     currentHit = hit;
@@ -61,6 +74,12 @@ public class HitScanWeapon : Weapon
                 OnHit(currentHit);
             }
         }
+    }
+
+    private void HandleProjectileShot()
+    {
+        Bullet bullet = Instantiate(weaponData.bullet, barrelPoint.position, barrelPoint.rotation * HandleDispersion());
+        bullet.Constructor(weaponData, objectsToIgnore);
     }
 
     private void OnHit(RaycastHit hitData)

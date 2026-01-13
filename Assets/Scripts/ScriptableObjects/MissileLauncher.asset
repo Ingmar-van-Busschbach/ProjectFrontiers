@@ -10,52 +10,52 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 74027454f8a669b46be2fc2c10fccded, type: 3}
-  m_Name: AssaultRifle
+  m_Name: MissileLauncher
   m_EditorClassIdentifier: 
-  weaponName: Assault Rifle
-  weaponMesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
-  weaponType: 0
+  weaponName: Rocket Launcher
+  weaponMesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  weaponType: 1
   damageData:
-  - maxDamage: 10
-    minDamage: 1
-    damageType: 0
-  rateOfFire: 1000
+  - maxDamage: 25
+    minDamage: 5
+    damageType: 1
+  rateOfFire: 90
   multishot: 1
   shotsPerBurst: 1
   timePerShotInBurst: 0.1
-  magazineSize: 30
+  magazineSize: 1
   reloadDuration: 0.5
   firingAudio: {fileID: 8300000, guid: e5a9937bc2cae8a44b894f427518e92f, type: 3}
-  minDispersion: {x: 0.5, y: 0.5}
-  maxDispersion: {x: 5, y: 5}
-  dispersionPerShot: {x: 1, y: 1}
-  dispersionBloomSpeed: 10
-  dispersionRecoverySpeed: 5
-  recoilAmount: {x: 5, y: 5}
-  recoilOffset: {x: 0.2, y: -1}
+  minDispersion: {x: 0, y: 0}
+  maxDispersion: {x: 0, y: 0}
+  dispersionPerShot: {x: 0, y: 0}
+  dispersionBloomSpeed: 0
+  dispersionRecoverySpeed: 0
+  recoilAmount: {x: 10, y: 10}
+  recoilOffset: {x: 0, y: -1}
   maxRecoilAngle: {x: 25, y: 25}
   recoilSnappiness: 10
-  recoilRecoverySpeed: 3
+  recoilRecoverySpeed: 2
   minRange: 0.1
   optimalRange: 5
   maxRange: 15
   roundDamage: 0
   aimAssist: 0
   aimAssistFidelity: 2
-  penetratesTargets: 0
+  penetratesTargets: 1
   layerMask:
     serializedVersion: 2
     m_Bits: 1
-  bullet: {fileID: 0}
-  velocity: 0
+  bullet: {fileID: 7726416138810722538, guid: 7d2b97016597a4c42a5fc1c0b9061e12, type: 3}
+  velocity: 15
   bulletDrop: 0
-  explosionMaxRadius: 0
-  explosionOptimalRadius: 0
-  isHoming: 0
+  explosionMaxRadius: 5
+  explosionOptimalRadius: 3
+  isHoming: 1
   targetCenterOfMass: 0
-  homingSpeed: 0
-  homingConeAngle: 0
-  homingMaxRange: 0
+  homingSpeed: 5
+  homingConeAngle: 15
+  homingMaxRange: 25
   homingLayerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4294967295
