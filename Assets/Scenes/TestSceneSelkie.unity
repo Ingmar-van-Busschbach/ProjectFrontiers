@@ -354,6 +354,7 @@ GameObject:
   - component: {fileID: 165880893}
   - component: {fileID: 165880892}
   - component: {fileID: 165880891}
+  - component: {fileID: 165880895}
   m_Layer: 0
   m_Name: Target_2
   m_TagString: Untagged
@@ -450,6 +451,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -35.25, y: 0, z: 0}
+--- !u!114 &165880895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 165880890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a45c7eeea6f0b304a8a916f2cf825a5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resistanceEntries: []
+  maxHealth: 20
 --- !u!1 &441925174
 GameObject:
   m_ObjectHideFlags: 0
@@ -462,6 +477,7 @@ GameObject:
   - component: {fileID: 441925177}
   - component: {fileID: 441925176}
   - component: {fileID: 441925175}
+  - component: {fileID: 441925179}
   m_Layer: 0
   m_Name: Target_5
   m_TagString: Untagged
@@ -558,6 +574,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -35.25, y: 0, z: 0}
+--- !u!114 &441925179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 441925174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a45c7eeea6f0b304a8a916f2cf825a5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resistanceEntries:
+  - damageMultiplier: 0
+    resistanceType: 0
+  - damageMultiplier: 0
+    resistanceType: 1
+  maxHealth: 100
 --- !u!1 &692289140
 GameObject:
   m_ObjectHideFlags: 0
@@ -828,6 +862,7 @@ GameObject:
   - component: {fileID: 1084632009}
   - component: {fileID: 1084632008}
   - component: {fileID: 1084632007}
+  - component: {fileID: 1084632011}
   m_Layer: 0
   m_Name: Target_4
   m_TagString: Untagged
@@ -924,6 +959,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -35.25, y: 0, z: 0}
+--- !u!114 &1084632011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1084632006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a45c7eeea6f0b304a8a916f2cf825a5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resistanceEntries: []
+  maxHealth: 100
 --- !u!1 &1089681695
 GameObject:
   m_ObjectHideFlags: 0
@@ -1655,6 +1704,7 @@ GameObject:
   - component: {fileID: 1463379169}
   - component: {fileID: 1463379168}
   - component: {fileID: 1463379167}
+  - component: {fileID: 1463379171}
   m_Layer: 0
   m_Name: Target_3
   m_TagString: Untagged
@@ -1751,6 +1801,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -35.25, y: 0, z: 0}
+--- !u!114 &1463379171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1463379166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a45c7eeea6f0b304a8a916f2cf825a5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resistanceEntries: []
+  maxHealth: 100
 --- !u!1 &1677069785
 GameObject:
   m_ObjectHideFlags: 0
@@ -1978,6 +2042,7 @@ GameObject:
   - component: {fileID: 2020882003}
   - component: {fileID: 2020882002}
   - component: {fileID: 2020882001}
+  - component: {fileID: 2020882005}
   m_Layer: 0
   m_Name: Target_1
   m_TagString: Untagged
@@ -2074,6 +2139,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -35.25, y: 0, z: 0}
+--- !u!114 &2020882005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2020882000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a45c7eeea6f0b304a8a916f2cf825a5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resistanceEntries: []
+  maxHealth: 100
 --- !u!1 &2117142751
 GameObject:
   m_ObjectHideFlags: 0

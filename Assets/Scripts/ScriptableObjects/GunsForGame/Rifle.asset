@@ -12,18 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74027454f8a669b46be2fc2c10fccded, type: 3}
   m_Name: Rifle
   m_EditorClassIdentifier: 
-  weaponName: DefaultWeapon
+  weaponName: Rifle
   weaponType: 0
-  firingAudio: {fileID: 8300000, guid: b535415ed5b34874aae7c43513c3055a, type: 3}
   damageData:
   - maxDamage: 40
-    minDamage: 5
+    minDamage: 10
     damageType: 1
   rateOfFire: 25
   multishot: 1
   shotsPerBurst: 1
   timePerShotInBurst: 0.03
   magazineSize: 12
+  firingAudio: {fileID: 8300000, guid: b535415ed5b34874aae7c43513c3055a, type: 3}
   minDispersion: {x: 0.1, y: 0.1}
   maxDispersion: {x: 30, y: 30}
   dispersionPerShot: {x: 15, y: 15}
@@ -43,9 +43,17 @@ MonoBehaviour:
   penetratesTargets: 0
   layerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4294967295
   bullet: {fileID: 0}
   velocity: 0
   bulletDrop: 0
   explosionMaxRadius: 0
   explosionOptimalRadius: 0
+  isHoming: 0
+  targetCenterOfMass: 0
+  homingSpeed: 0
+  homingConeAngle: 0
+  homingMaxRange: 0
+  homingLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
