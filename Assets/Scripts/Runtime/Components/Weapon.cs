@@ -108,10 +108,4 @@ public class Weapon : ShotHandler
             }
         }
     }
-
-    public void SwapWeapon(WeaponData newWeapon)
-    {
-        weaponData = newWeapon;
-        WeaponSetup();
-    }
 }

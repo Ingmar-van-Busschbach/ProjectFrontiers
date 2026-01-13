@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.XR;
@@ -6,6 +7,8 @@ using static UnityEngine.InputSystem.LowLevel.InputStateHistory;
 [RequireComponent(typeof(Weapon))]
 public class WeaponSwappingHandler : MonoBehaviour
 {
+    [SerializeField] private Animator weaponAnimator;
+    [SerializeField] private MeshFilter weaponMesh;
     [SerializeField] private WeaponData weapon1;
     [SerializeField] private WeaponData weapon2;
     [SerializeField] private WeaponData weapon3;
@@ -19,6 +22,7 @@ public class WeaponSwappingHandler : MonoBehaviour
     {
         playerInputs = new PlayerInputs();
         weapon = GetComponent<Weapon>();
+        StartCoroutine(HandleSwapWeapon(weapon1));
     }
     private void OnEnable()
     {
@@ -41,15 +45,30 @@ public class WeaponSwappingHandler : MonoBehaviour
     {
         if (swapWeapon1.WasPressedThisFrame())
         {
-            weapon.SwapWeapon(weapon1);
+            StartCoroutine(HandleSwapWeapon(weapon1));
         }
         if (swapWeapon2.WasPressedThisFrame())
         {
-            weapon.SwapWeapon(weapon2);
+            StartCoroutine(HandleSwapWeapon(weapon2));
         }
         if (swapWeapon3.WasPressedThisFrame())
         {
-            weapon.SwapWeapon(weapon3);
+            StartCoroutine(HandleSwapWeapon(weapon3));
         }
+    }
+
+    private IEnumerator HandleSwapWeapon(WeaponData newWeapon)
+    {
+        if(weapon.weaponData == newWeapon)
+        {
+            yield break;
+        }
+        weapon.canShoot = false;
+        weaponAnimator.SetTrigger("WeaponSwap");
+        yield return new WaitForSeconds(0.25f);
+        weapon.SwapWeapon(newWeapon);
+        weaponMesh.mesh = newWeapon.weaponMesh;
+        yield return new WaitForSeconds(0.25f);
+        weapon.canShoot = true;
     }
 }

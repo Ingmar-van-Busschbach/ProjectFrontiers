@@ -9,6 +9,7 @@ public class WeaponData : ScriptableObject
 {
     [Header("Weapon Statistics")]
     public string weaponName = "DefaultWeapon";
+    public Mesh weaponMesh;
     public EnumLibrary.EWeaponType weaponType;
 
     [Space]
@@ -33,6 +34,7 @@ public class WeaponData : ScriptableObject
     [Header("Magazine")]
     [Tooltip("The amount of bullets in the magazine")]
     public int magazineSize;
+    public float reloadDuration;
 
 
     [Header("Audio")]
