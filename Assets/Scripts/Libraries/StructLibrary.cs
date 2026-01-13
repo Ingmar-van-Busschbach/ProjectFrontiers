@@ -11,4 +11,13 @@ public class StructLibrary : MonoBehaviour
         public float minDamage;
         public EnumLibrary.EDamageType damageType;
     }
+
+    [System.Serializable]
+
+    public struct Struct_ResistanceEntry
+    {
+        [Tooltip("Damage multiplier >0 = more damage <0 = less damage")]
+        public float damageMultiplier;
+        public EnumLibrary.EDamageType resistanceType;
+    }
 }

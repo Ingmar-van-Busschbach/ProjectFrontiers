@@ -75,6 +75,7 @@ public abstract class ShotHandler : MonoBehaviour
     }
     private IEnumerator HandleReload()
     {
+        audioSource.PlayOneShot(weaponData.reloadAudio);
         isReloading = true;
         yield return new WaitForSeconds(weaponData.reloadDuration);
         currentMagazine = weaponData.magazineSize;

@@ -39,6 +39,7 @@ public class WeaponData : ScriptableObject
 
     [Header("Audio")]
     public AudioClip firingAudio;
+    public AudioClip reloadAudio;
 
 
     [Header("Accuracy")]
