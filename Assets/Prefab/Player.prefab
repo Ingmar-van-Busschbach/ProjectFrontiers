@@ -245,6 +245,7 @@ GameObject:
   - component: {fileID: 7785707335607502895}
   - component: {fileID: 3942344222385171422}
   - component: {fileID: 4794944979234320835}
+  - component: {fileID: 5330053250432847351}
   - component: {fileID: 5391936857732078238}
   m_Layer: 0
   m_Name: Player
@@ -441,6 +442,25 @@ MonoBehaviour:
   weapon1: {fileID: 11400000, guid: 1aaa2221db6291148bb144cbfb3a8936, type: 2}
   weapon2: {fileID: 11400000, guid: d6eee71de038d2d4dbafe99ba80c1d1c, type: 2}
   weapon3: {fileID: 11400000, guid: 165a213744f48a0409ef80caa6e72b34, type: 2}
+--- !u!114 &5330053250432847351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5737278089945899384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 743418d1dc313cb47aaba08752b9ed5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetingOrigin: {fileID: 2108394454284556744}
+  teleportRange: 25
+  teleportLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  teleportNormalOffset: 1
+  teleportCooldown: 2
 --- !u!82 &5391936857732078238
 AudioSource:
   m_ObjectHideFlags: 0
