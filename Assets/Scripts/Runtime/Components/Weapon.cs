@@ -1,114 +1,111 @@
-using System.Collections;
 using UnityEngine;
-using static UnityEngine.InputSystem.LowLevel.InputStateHistory;
 
-[RequireComponent(typeof(AudioSource))]
-public abstract class Weapon : MonoBehaviour
+/// <summary>
+/// Player weapon script. Implements weapon accuracy, a cone cast aim assist, linear damage falloff, damage types and hit data.
+/// </summary>
+
+public class Weapon : ShotHandler
 {
-    [SerializeField] protected WeaponData weaponData;
-    [SerializeField] protected Transform barrelPoint;
-    [SerializeField] protected CrosshairBloom crosshairHandler;
-    [SerializeField] protected CameraRecoil cameraRecoilHandler;
-    [SerializeField] protected GameObject[] objectsToIgnore;
+    [SerializeField] private bool drawDebug;
+    protected override void HandleShot()
+    {
+        switch (weaponData.weaponType)
+        {
+            case EnumLibrary.EWeaponType.hitscan:
+                HandleHitscanShot();
+                break;
+            case EnumLibrary.EWeaponType.projectile:
+                HandleProjectileShot();
+                break;
+        }
+    }
 
-    private Vector2 currentDispersion;
-    private Vector2 targetDispersion;
-    private float timeOfNextShot;
-    private int currentMagazine;
-    private AudioSource audioSource;
-    private void Start()
+    private void HandleHitscanShot()
     {
-        audioSource = GetComponent<AudioSource>();
-        WeaponSetup();
-    }
-    private void Update()
-    {
-        if (crosshairHandler == null)
+        //Handle accuracy of the weapon.
+        Quaternion dispersion = HandleDispersion();
+
+        // We use a cone cast if we are using aim assist. Otherwise we use a simple raycast.
+        RaycastHit[] hitResults = null;
+        if (weaponData.aimAssist > 0)
         {
-            Debug.LogWarning("The crosshair handler has not been applied! Recoil only uses weapondata minimum dispersion now!", this);
+            hitResults = ConePhysics.ConeCastAll(barrelPoint.position, dispersion * barrelPoint.forward, weaponData.aimAssist, weaponData.aimAssistFidelity, weaponData.minRange, weaponData.maxRange, weaponData.layerMask, true, 0.1f, QueryTriggerInteraction.Ignore, true, Color.white);
+
+        }
+        else
+        {
+            hitResults = Physics.RaycastAll(barrelPoint.position + dispersion * barrelPoint.forward * weaponData.minRange, dispersion * barrelPoint.forward, weaponData.maxRange, weaponData.layerMask, QueryTriggerInteraction.Ignore);
+        }
+
+        if (drawDebug)
+        {
+            Debug.DrawLine(barrelPoint.position + dispersion * barrelPoint.forward * weaponData.minRange, barrelPoint.position + dispersion * barrelPoint.forward * weaponData.maxRange, Color.white, 0.1f);
+        }
+
+        //Abort if there are no hits.
+        if (hitResults.Length <= 0)
+        {
             return;
         }
-        targetDispersion = Vector2.Lerp(targetDispersion, weaponData.minDispersion, weaponData.dispersionRecoverySpeed * Time.deltaTime);
-        currentDispersion = Vector2.Lerp(currentDispersion, targetDispersion, weaponData.dispersionBloomSpeed * Time.deltaTime);
-        crosshairHandler.SetBloom(currentDispersion);
-    }
-    private void WeaponSetup()
-    {
-        audioSource.clip = weaponData.firingAudio;
-        currentDispersion = weaponData.minDispersion;
-        targetDispersion = weaponData.minDispersion;
-        currentMagazine = weaponData.magazineSize;
-    }
-    public void Shoot()
-    {
-        if(barrelPoint == null)
+
+        //If we penetrate targets, we apply a hit to every target in the raycast.
+        if (weaponData.penetratesTargets)
         {
-            Debug.LogWarning("The barrel point has not been applied! Unable to shoot!", this);
-            return;
-        }
-        if (objectsToIgnore == null)
-        {
-            Debug.LogWarning("No objects to ignore have been applied. Adding the player's geometry is recommended.", this);
-        }
-        if (Time.time > timeOfNextShot && currentMagazine > 0)
-        {
-            timeOfNextShot = Time.time + weaponData.timePerShotInBurst * (weaponData.shotsPerBurst - 1) + 60 / weaponData.rateOfFire;
-            currentMagazine--;
-            if(weaponData.shotsPerBurst > 1)
+            foreach (RaycastHit hit in hitResults)
             {
-                StartCoroutine(HandleBurst());
-            }
-            else
-            {
-                HandleMultishot();
+                OnHit(hit);
             }
         }
-    }
-    public void Reload()
-    {
-        currentMagazine = weaponData.magazineSize;
-    }
-    protected abstract void HandleShot();
-    
-    protected void HandleMultishot()
-    {
-        for(int i = 0; i < weaponData.multishot; i++)
+        //Otherwise, we filter the hit results for the target most close to the weapon's origin that can also be damaged, then apply a hit to that.
+        else
         {
-            HandleRecoil();
-            HandleAudio();
-            HandleShot();
+            float currentHitDistance = Mathf.Infinity;
+            RaycastHit currentHit = new RaycastHit();
+            foreach (RaycastHit hit in hitResults)
+            { //Check if the target is both closer than any previous target, and is DamageAble.
+                if (hit.distance < currentHitDistance && hit.collider.gameObject.TryGetComponent<IDamageAble>(out IDamageAble target))
+                {
+                    currentHitDistance = hit.distance;
+                    currentHit = hit;
+                }
+            }
+            if (currentHitDistance < Mathf.Infinity)
+            {
+                OnHit(currentHit);
+            }
         }
     }
 
-    IEnumerator HandleBurst()
+    private void HandleProjectileShot()
     {
-        for(int i = 0; i < weaponData.shotsPerBurst; i++)
-        {
-            HandleMultishot();
-            yield return new WaitForSeconds(weaponData.timePerShotInBurst);
-        }
-    }
-    protected Quaternion HandleDispersion()
-    {
-        targetDispersion += weaponData.dispersionPerShot;
-        targetDispersion = new Vector2(Mathf.Clamp(targetDispersion.x, weaponData.minDispersion.x, weaponData.maxDispersion.x), Mathf.Clamp(targetDispersion.y, weaponData.minDispersion.y, weaponData.maxDispersion.y));
-        Vector2 dispersion = Random.insideUnitCircle;
-        dispersion = new Vector2(dispersion.x * currentDispersion.x, dispersion.y * currentDispersion.y);
-        return Quaternion.Euler(dispersion.x, dispersion.y, 0);
-    }
-    protected void HandleRecoil()
-    {
-        if (cameraRecoilHandler == null)
-        {
-            Debug.LogWarning("The recoil handler has not been applied! Unable to apply recoil!", this);
-            return;
-        }
-        Vector2 recoilAmount = new Vector2((Random.value - 0.5f + weaponData.recoilOffset.x) / 2 * weaponData.recoilAmount.x, (Random.value - 0.5f + weaponData.recoilOffset.y) / 2 * weaponData.recoilAmount.y);
-        cameraRecoilHandler.ApplyRecoil(recoilAmount, weaponData.recoilSnappiness, weaponData.recoilRecoverySpeed, weaponData.maxRecoilAngle);
+        Bullet bullet = Instantiate(weaponData.bullet, barrelPoint.position, barrelPoint.rotation * HandleDispersion());
+        bullet.Constructor(weaponData, objectsToIgnore);
     }
 
-    protected void HandleAudio()
+    private void OnHit(RaycastHit hitData)
     {
-        audioSource.Play();
+        //We check if the target we hit can be damaged.
+        if (hitData.collider.gameObject.TryGetComponent<IDamageAble>(out IDamageAble target))
+        {
+            //Loop through all the different DamageData entries on the weapon.
+            foreach (StructLibrary.Struct_DamageEntry damageData in weaponData.damageData)
+            {
+                //Standard linear damage falloff formula.
+                float normalizedRange = (hitData.distance - weaponData.optimalRange) / (weaponData.maxRange - weaponData.optimalRange);
+                normalizedRange = Mathf.Clamp01(normalizedRange);
+                float damage = damageData.maxDamage - (normalizedRange * (damageData.maxDamage - damageData.minDamage));
+
+                //Round damage to whole number if rounding is enabled.
+                if (weaponData.roundDamage)
+                {
+                    damage = Mathf.Round(damage);
+                }
+
+                //Apply to interface IDamageAble.
+                target.ApplyDamage(damage, damageData.damageType, hitData);
+                
+                Debug.Log(damage);
+            }
+        }
     }
 }
