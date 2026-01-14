@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
+[RequireComponent(typeof(Collider))]
 public class OnTriggerEvent : MonoBehaviour
 {
     [SerializeField] private UnityEvent onTriggerEnter;

@@ -20,4 +20,15 @@ public class StructLibrary : MonoBehaviour
         public float damageMultiplier;
         public EnumLibrary.EDamageType resistanceType;
     }
+
+    [System.Serializable]
+    public struct Struct_DialogueEntry
+    {
+        [Tooltip("Who is speaking?")]
+        public string speakerName;
+        [Tooltip("What are they saying?")]
+        public string dialogue;
+        [Tooltip("How long does it take for the dialogue to print onto the screen?")]
+        public float printDuration;
+    }
 }
