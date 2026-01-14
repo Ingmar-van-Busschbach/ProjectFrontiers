@@ -60,6 +60,8 @@ public class DialogueWriter : MonoBehaviour
             currentDialogueIndex++;
             if (currentDialogueIndex > currentDialogue.dialogue.Length)
             {
+                nameText.text = "";
+                dialogueText.text = "";
                 return;
             }
             WriteDialogue(currentDialogue.dialogue[currentDialogueIndex]);
