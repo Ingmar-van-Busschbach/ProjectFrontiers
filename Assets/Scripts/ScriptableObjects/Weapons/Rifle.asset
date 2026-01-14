@@ -24,9 +24,9 @@ MonoBehaviour:
   shotsPerBurst: 1
   timePerShotInBurst: 0.03
   magazineSize: 12
-  reloadDuration: 0
+  reloadDuration: 1
   firingAudio: {fileID: 8300000, guid: b535415ed5b34874aae7c43513c3055a, type: 3}
-  reloadAudio: {fileID: 0}
+  reloadAudio: {fileID: 8300000, guid: d2852a0fa0c75434fb1e47657d6f0897, type: 3}
   minDispersion: {x: 0.1, y: 0.1}
   maxDispersion: {x: 30, y: 30}
   dispersionPerShot: {x: 15, y: 15}

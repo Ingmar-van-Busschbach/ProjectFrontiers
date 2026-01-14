@@ -60,6 +60,8 @@ public class DialogueWriter : MonoBehaviour
             currentDialogueIndex++;
             if (currentDialogueIndex > currentDialogue.dialogue.Length)
             {
+                nameText.text = "";
+                dialogueText.text = "";
                 return;
             }
             WriteDialogue(currentDialogue.dialogue[currentDialogueIndex]);
@@ -78,7 +80,7 @@ public class DialogueWriter : MonoBehaviour
         string displayText = "";
         foreach(char letter in letters)
         {
-            yield return new WaitForSeconds(dialogueEntry.printDuration / letters.Length);
+            yield return new WaitForSeconds(dialogueEntry.printDuration);
             displayText += letter;
             dialogueText.text = displayText;
         }

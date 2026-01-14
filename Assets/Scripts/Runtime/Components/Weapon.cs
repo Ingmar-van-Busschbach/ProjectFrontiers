@@ -103,8 +103,6 @@ public class Weapon : ShotHandler
 
                 //Apply to interface IDamageAble.
                 target.ApplyDamage(damage, damageData.damageType, hitData);
-                
-                Debug.Log(damage);
             }
         }
     }
