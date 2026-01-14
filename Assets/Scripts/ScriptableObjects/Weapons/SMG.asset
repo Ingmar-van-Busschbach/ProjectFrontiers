@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SMG
   m_EditorClassIdentifier: 
   weaponName: SMG
-  weaponMesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  weaponObject: {fileID: 7242832404652215190, guid: 53113481a08c0f045a8ac800b0cf6b63, type: 3}
   weaponType: 0
   damageData:
   - maxDamage: 3

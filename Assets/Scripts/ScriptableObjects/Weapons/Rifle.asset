@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Rifle
   m_EditorClassIdentifier: 
   weaponName: Rifle
-  weaponMesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  weaponObject: {fileID: 1742676961064738901, guid: 11a84c55670aec843bc63721bfc2ab79, type: 3}
   weaponType: 0
   damageData:
   - maxDamage: 50
