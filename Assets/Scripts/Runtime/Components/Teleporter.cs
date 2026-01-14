@@ -13,6 +13,8 @@ public class Teleporter : MonoBehaviour
     [SerializeField] private float teleportNormalOffset;
     [Tooltip("Cooldown between teleports in seconds.")]
     [SerializeField] private float teleportCooldown;
+    [Tooltip("The amount of mana the teport uses")]
+    [SerializeField] private float manaUsage;
     private float timeOfNextTeleport;
     public void AttemptTeleport()
     {
@@ -23,7 +25,10 @@ public class Teleporter : MonoBehaviour
         timeOfNextTeleport = Time.time + teleportCooldown;
         if (Physics.Raycast(targetingOrigin.position, targetingOrigin.forward, out RaycastHit hit, teleportRange, teleportLayerMask, QueryTriggerInteraction.Ignore))
         {
-            HandleTeleport(hit);
+            if (ManaManager.Instance.TryUseMana(manaUsage))
+            {
+                HandleTeleport(hit);
+            }
         }
     }
 
