@@ -13,7 +13,7 @@ public class Teleporter : MonoBehaviour
     [SerializeField] private float teleportNormalOffset;
     [Tooltip("Cooldown between teleports in seconds.")]
     [SerializeField] private float teleportCooldown;
-    [Tooltip("The amount of mana the teport uses")]
+    [Tooltip("The amount of mana the teleport uses")]
     [SerializeField] private float manaUsage;
     private float timeOfNextTeleport;
     public void AttemptTeleport()

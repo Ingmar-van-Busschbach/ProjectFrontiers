@@ -1,4 +1,3 @@
-using System.Runtime.InteropServices;
 using UnityEngine;
 
 
@@ -26,6 +25,7 @@ public abstract class Health : MonoBehaviour, IDamageAble
             }
         }
         currentHealth -= currentDamage;
+        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
         OnDamaged(damage);
         if (currentHealth <= 0)
         {
