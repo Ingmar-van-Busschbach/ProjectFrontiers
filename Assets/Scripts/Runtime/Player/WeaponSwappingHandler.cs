@@ -8,11 +8,12 @@ using static UnityEngine.InputSystem.LowLevel.InputStateHistory;
 public class WeaponSwappingHandler : MonoBehaviour
 {
     [SerializeField] private Animator weaponAnimator;
-    [SerializeField] private MeshFilter weaponMesh;
+    [SerializeField] private Transform weaponLocation;
     [SerializeField] private WeaponData weapon1;
     [SerializeField] private WeaponData weapon2;
     [SerializeField] private WeaponData weapon3;
     private Weapon weapon;
+    private GameObject weaponObject;
     private PlayerInputs playerInputs;
     private InputAction swapWeapon1;
     private InputAction swapWeapon2;
@@ -67,7 +68,9 @@ public class WeaponSwappingHandler : MonoBehaviour
         weaponAnimator.SetTrigger("WeaponSwap");
         yield return new WaitForSeconds(0.25f);
         weapon.SwapWeapon(newWeapon);
-        weaponMesh.mesh = newWeapon.weaponMesh;
+        Destroy(weaponObject);
+        weaponObject = Instantiate(newWeapon.weaponObject, weaponLocation);
+        weaponObject.transform.SetParent(weaponLocation);
         yield return new WaitForSeconds(0.25f);
         weapon.canShoot = true;
     }

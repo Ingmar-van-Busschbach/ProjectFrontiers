@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Pistol
   m_EditorClassIdentifier: 
   weaponName: Pistol
-  weaponMesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  weaponObject: {fileID: 5337594909560648352, guid: ee571d7b6cda953469cc2ad1a6f8ec02, type: 3}
   weaponType: 0
   damageData:
   - maxDamage: 15

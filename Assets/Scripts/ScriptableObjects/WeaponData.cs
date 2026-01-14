@@ -9,7 +9,7 @@ public class WeaponData : ScriptableObject
 {
     [Header("Weapon Statistics")]
     public string weaponName = "DefaultWeapon";
-    public Mesh weaponMesh;
+    public GameObject weaponObject;
     public EnumLibrary.EWeaponType weaponType;
 
     [Space]
