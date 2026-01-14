@@ -39,6 +39,7 @@ public abstract class ShotHandler : MonoBehaviour
         currentDispersion = weaponData.minDispersion;
         targetDispersion = weaponData.minDispersion;
         currentMagazine = weaponData.magazineSize;
+        timeOfNextShot = Time.time;
     }
     public void Shoot()
     {
