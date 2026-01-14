@@ -986,6 +986,7 @@ GameObject:
   - component: {fileID: 8001554155166120642}
   - component: {fileID: 7903287771677606296}
   - component: {fileID: 8643275286375582402}
+  - component: {fileID: 7209524626357905640}
   m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
@@ -1275,7 +1276,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponAnimator: {fileID: 4315699988408764828}
-  weaponLocation: {fileID: 6306851479144602756}
+  weaponLocation: {fileID: 5001382062582461814}
   weapon1: {fileID: 11400000, guid: ec75bd7fd5c758847b1e592c2a208936, type: 2}
   weapon2: {fileID: 11400000, guid: ee19d32c75e06394692785c7324acb14, type: 2}
   weapon3: {fileID: 11400000, guid: d7b835b4e0d206a41804fda597243c16, type: 2}
@@ -1356,6 +1357,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6816153847b481649bcdae8c4b587e7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7209524626357905640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5737278089945899384}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e78a20417f42834a99681e0d0a17f4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camera: {fileID: 8078602070079154223}
+  barrelEnd: {fileID: 6306851479144602756}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!1 &6484085160330840935
 GameObject:
   m_ObjectHideFlags: 0
@@ -1657,7 +1675,7 @@ Transform:
   m_GameObject: {fileID: 8742666687095476269}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.281, y: -0.35399997, z: 0.781}
+  m_LocalPosition: {x: 0.281, y: -0.35399997, z: 1.324}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
