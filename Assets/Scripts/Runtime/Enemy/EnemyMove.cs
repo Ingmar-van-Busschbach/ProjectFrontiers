@@ -17,6 +17,7 @@ public class EnemyMove : MonoBehaviour
     [SerializeField] private float gravityStrength = 2f;
     [Tooltip("m/s")]
     [SerializeField] private float maxFallSpeed = 10f;
+    [SerializeField] private bool drawDebug;
 
     [SerializeField] private Transform eyeTransform;
     [SerializeField] private LayerMask PlayerLayer;
@@ -28,8 +29,8 @@ public class EnemyMove : MonoBehaviour
 
     private CharacterController controller;
 
-    public Transform target;
-    public bool isFollowing = false;
+    [HideInInspector] public Transform target;
+    [HideInInspector] public bool isFollowing = false;
 
     
 
@@ -75,7 +76,7 @@ public class EnemyMove : MonoBehaviour
 
     void FollowInstuctions()
     {
-        if (Vector3.Distance(transform.position, Locations[nextLocation].position) < acceptanceRadius)
+        if (Vector3.Distance(new Vector3(transform.position.x, 0, transform.position.z), new Vector3(Locations[nextLocation].position.x, 0, Locations[nextLocation].position.z)) < acceptanceRadius)
         {
             currentLocation = nextLocation;
             nextLocation = (currentLocation + 1) % Locations.Count;
@@ -96,7 +97,7 @@ public class EnemyMove : MonoBehaviour
     }
     public void CheckLineOfSight()
     {
-        if (ConePhysics.ConeCast(out RaycastHit hit, eyeTransform.position, eyeTransform.forward, fieldOfView, 3, 0.5f, viewDistance, PlayerLayer, false, 0.1f, QueryTriggerInteraction.Ignore, true, Color.cyan))
+        if (ConePhysics.ConeCast(out RaycastHit hit, eyeTransform.position, eyeTransform.forward, fieldOfView, 3, 0.5f, viewDistance, PlayerLayer, false, 0.1f, QueryTriggerInteraction.Ignore, drawDebug, Color.cyan))
         {
             target = hit.collider.transform;
             isFollowing = true;

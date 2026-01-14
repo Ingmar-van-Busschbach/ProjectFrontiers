@@ -8,7 +8,7 @@ public class EnemyAttack: MonoBehaviour
 {
     [SerializeField] Weapon weapon;
     [SerializeField] private EnumLibrary.EAttackType attackType;
-    [SerializeField] private GameObject AreaAttackPrefab;
+    [SerializeField] private AreaAttack AreaAttackPrefab;
     [Header("Only for Area attack")]
     [SerializeField] private float attackCooldown = 10;
 
