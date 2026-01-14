@@ -29,9 +29,9 @@ MonoBehaviour:
   reloadAudio: {fileID: 0}
   minDispersion: {x: 0.5, y: 0.5}
   maxDispersion: {x: 5, y: 5}
-  dispersionPerShot: {x: 1, y: 1}
-  dispersionBloomSpeed: 0
-  dispersionRecoverySpeed: 0
+  dispersionPerShot: {x: 1.5, y: 1.5}
+  dispersionBloomSpeed: 10
+  dispersionRecoverySpeed: 4
   recoilAmount: {x: 7, y: 7}
   recoilOffset: {x: 0.2, y: -5}
   maxRecoilAngle: {x: 15, y: 15}
