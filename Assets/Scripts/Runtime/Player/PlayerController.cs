@@ -1,4 +1,3 @@
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -9,6 +8,7 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(Controller3D))]
 [RequireComponent(typeof(Weapon))]
 [RequireComponent(typeof(Teleporter))]
+[RequireComponent(typeof(Healer))]
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private CameraController cameraController;
@@ -17,17 +17,20 @@ public class PlayerController : MonoBehaviour
     private Controller3D controller;
     private Weapon weapon;
     private Teleporter teleporter;
+    private Healer healer;
     private PlayerInputs playerInputs;
     private InputAction move;
     private InputAction look;
     private InputAction attack;
     private InputAction reload;
     private InputAction teleport;
+    private InputAction heal;
     void Awake()
     {
         controller = GetComponent<Controller3D>();
         weapon = GetComponent<Weapon>();
         teleporter = GetComponent<Teleporter>();
+        healer = GetComponent<Healer>();
         playerInputs = new PlayerInputs();
     }
     private void OnEnable()
@@ -42,6 +45,8 @@ public class PlayerController : MonoBehaviour
         reload.Enable();
         teleport = playerInputs.Player.Teleport;
         teleport.Enable();
+        heal = playerInputs.Player.Heal;
+        heal.Enable();
     }
     private void OnDisable()
     {
@@ -50,6 +55,7 @@ public class PlayerController : MonoBehaviour
         attack.Disable();
         reload.Disable();
         teleport.Disable();
+        heal.Disable();
     }
     void Update()
     {
@@ -64,6 +70,10 @@ public class PlayerController : MonoBehaviour
         if (teleport.WasPressedThisFrame())
         {
             teleporter.AttemptTeleport();
+        }
+        if (heal.WasPressedThisFrame())
+        {
+            healer.AttemptHeal();
         }
         controller.HandleHorizontalLook(look.ReadValue<Vector2>().x, lookSensitivity);
         cameraController.HandleVerticalLook(-look.ReadValue<Vector2>().y, lookSensitivity, lookAngle);

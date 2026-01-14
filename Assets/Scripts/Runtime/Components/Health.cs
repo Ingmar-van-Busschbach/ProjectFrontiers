@@ -1,5 +1,5 @@
-using System.Runtime.InteropServices;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 [RequireComponent (typeof(Collider))]
@@ -7,12 +7,14 @@ public abstract class Health : MonoBehaviour, IDamageAble
 {
     [SerializeField] private StructLibrary.Struct_ResistanceEntry[] resistanceEntries;
     [SerializeField] private float maxHealth = 100;
+    [SerializeField] private Slider healthSlider;
 
     private float currentHealth;
 
     private void Start()
     {
         currentHealth = maxHealth;
+        UpdateHealthSlider();
     }
 
     public void ApplyDamage(float damage, EnumLibrary.EDamageType damageType, RaycastHit hitData)
@@ -26,7 +28,9 @@ public abstract class Health : MonoBehaviour, IDamageAble
             }
         }
         currentHealth -= currentDamage;
-        OnDamaged(damage);
+        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+        UpdateHealthSlider();
+            OnDamaged(damage);
         if (currentHealth <= 0)
         {
             OnDeath();
@@ -34,6 +38,17 @@ public abstract class Health : MonoBehaviour, IDamageAble
 
     }
 
+    private void UpdateHealthSlider()
+    {
+        if (healthSlider != null)
+        {
+            healthSlider.value = currentHealth / maxHealth;
+        }
+        else
+        {
+            Debug.LogWarning(gameObject.name + "'s health component does not have its display slider assigned!");
+        }
+    }
     protected abstract void OnDamaged(float damage);
     protected abstract void OnDeath();
 }
