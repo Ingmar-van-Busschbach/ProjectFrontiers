@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: SMG
   m_EditorClassIdentifier: 
   weaponName: SMG
+  weaponMesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
   weaponType: 0
   damageData:
-  - maxDamage: 2
+  - maxDamage: 3
     minDamage: 1
     damageType: 0
   rateOfFire: 500
@@ -23,7 +24,9 @@ MonoBehaviour:
   shotsPerBurst: 1
   timePerShotInBurst: 0.03
   magazineSize: 50
-  firingAudio: {fileID: 8300000, guid: 5e3d59c5e4f1c9740b8916daed3aad5b, type: 3}
+  reloadDuration: 0
+  firingAudio: {fileID: 8300000, guid: 646b7492b6784574292c5934716a99bd, type: 3}
+  reloadAudio: {fileID: 0}
   minDispersion: {x: 0.5, y: 0.5}
   maxDispersion: {x: 5, y: 5}
   dispersionPerShot: {x: 1, y: 1}
