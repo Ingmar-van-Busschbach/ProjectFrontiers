@@ -19,17 +19,19 @@ public class EnemyMove : MonoBehaviour
     [SerializeField] private float maxFallSpeed = 10f;
 
     [SerializeField] private Transform eyeTransform;
-    [SerializeField] private Transform Target;
-
     [SerializeField] private LayerMask PlayerLayer;
 
     private int currentLocation;
     private int nextLocation;
     private float acceptanceRadius = 0.7f;
-    private bool isFollowing = false;
     private float verticalVelocity;
 
     private CharacterController controller;
+
+    public Transform target;
+    public bool isFollowing = false;
+
+    
 
     void Start()
     {
@@ -43,13 +45,13 @@ public class EnemyMove : MonoBehaviour
 
         if (isFollowing) 
         {
-            float distance = Vector3.Distance(transform.position, Target.position);
-            transform.LookAt(new Vector3(Target.position.x, transform.position.y, Target.position.z));
+            float distance = Vector3.Distance(transform.position, target.position);
+            transform.LookAt(new Vector3(target.position.x, transform.position.y, target.position.z));
             HandleGravity();
             controller.Move(Time.deltaTime * new Vector3(0, verticalVelocity, 0));
             if (distance > minDistanceToPlayer)
             {
-                Vector3 direction = (Target.position - transform.position);
+                Vector3 direction = (target.position - transform.position);
                 direction.y = 0;
                 controller.Move(direction.normalized * Time.deltaTime * speed);
             }
@@ -92,10 +94,11 @@ public class EnemyMove : MonoBehaviour
 
         controller.Move(moveDirection);
     }
-    void CheckLineOfSight()
+    public void CheckLineOfSight()
     {
         if (ConePhysics.ConeCast(out RaycastHit hit, eyeTransform.position, eyeTransform.forward, fieldOfView, 3, 0.5f, viewDistance, PlayerLayer, false, 0.1f, QueryTriggerInteraction.Ignore, true, Color.cyan))
         {
+            target = hit.collider.transform;
             isFollowing = true;
         }
 

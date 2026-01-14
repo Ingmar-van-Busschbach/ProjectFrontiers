@@ -19,13 +19,14 @@ MonoBehaviour:
   - maxDamage: 25
     minDamage: 5
     damageType: 1
-  rateOfFire: 90
+  rateOfFire: 12
   multishot: 1
   shotsPerBurst: 1
   timePerShotInBurst: 0.1
-  magazineSize: 1
+  magazineSize: 10000
   reloadDuration: 0.5
   firingAudio: {fileID: 8300000, guid: e5a9937bc2cae8a44b894f427518e92f, type: 3}
+  reloadAudio: {fileID: 0}
   minDispersion: {x: 0, y: 0}
   maxDispersion: {x: 0, y: 0}
   dispersionPerShot: {x: 0, y: 0}
