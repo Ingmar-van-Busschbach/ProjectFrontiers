@@ -78,7 +78,7 @@ public class DialogueWriter : MonoBehaviour
         string displayText = "";
         foreach(char letter in letters)
         {
-            yield return new WaitForSeconds(dialogueEntry.printDuration / letters.Length);
+            yield return new WaitForSeconds(dialogueEntry.printDuration);
             displayText += letter;
             dialogueText.text = displayText;
         }
