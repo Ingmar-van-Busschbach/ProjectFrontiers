@@ -53,7 +53,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7092278297017488662, guid: e8434424552a8704494c428834fa4800, type: 3}
       propertyPath: Locations.Array.size
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7903817954157877558, guid: e8434424552a8704494c428834fa4800, type: 3}
       propertyPath: m_LocalPosition.x
