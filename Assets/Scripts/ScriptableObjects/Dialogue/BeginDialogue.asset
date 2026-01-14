@@ -30,4 +30,4 @@ MonoBehaviour:
   - speakerName: Wizard
     dialogue: We must move onwards for now. Whatever it is you want to tell me can
       wait.
-    printDuration: 4
+    printDuration: 0.05
