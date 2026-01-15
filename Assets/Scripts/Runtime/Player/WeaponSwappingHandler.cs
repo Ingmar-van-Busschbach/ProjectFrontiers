@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,7 +10,7 @@ public class WeaponSwappingHandler : MonoBehaviour
     [SerializeField] private Animator weaponAnimator;
     [SerializeField] private Transform weaponLocation;
     [SerializeField] private List<WeaponData> weapons = new List<WeaponData>();
-    private int weaponsUnlocked = 1;
+    private int weaponsUnlocked;
     private Weapon weapon;
     private GameObject weaponObject;
     private PlayerInputs playerInputs;
@@ -74,8 +75,19 @@ public class WeaponSwappingHandler : MonoBehaviour
         weapon.canShoot = true;
     }
 
-    public void UnlockWeapon(WeaponData weaponToUnlock)
+    public void UnlockWeapon(WeaponData weaponToUnlock, WeaponData replaceWeapon = null)
     {
+        if (replaceWeapon != null)
+        {
+            for (int i = 0; i < weapons.Count; i++)
+            {
+                if (weapons[i] == replaceWeapon)
+                {
+                    weapons[i] = weaponToUnlock;
+                    return;
+                }
+            }
+        }
         bool weaponAlreadyUnlocked = false;
         foreach (WeaponData weapon in weapons)
         {
