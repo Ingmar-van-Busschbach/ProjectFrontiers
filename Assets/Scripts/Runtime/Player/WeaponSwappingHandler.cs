@@ -9,7 +9,7 @@ public class WeaponSwappingHandler : MonoBehaviour
     [SerializeField] private Animator weaponAnimator;
     [SerializeField] private Transform weaponLocation;
     [SerializeField] private List<WeaponData> weapons = new List<WeaponData>();
-    [SerializeField] private int weaponsUnlocked = 1;
+    private int weaponsUnlocked = 1;
     private Weapon weapon;
     private GameObject weaponObject;
     private PlayerInputs playerInputs;
@@ -21,6 +21,7 @@ public class WeaponSwappingHandler : MonoBehaviour
     {
         playerInputs = new PlayerInputs();
         weapon = GetComponent<Weapon>();
+        weaponsUnlocked = weapons.Count;
         StartCoroutine(HandleSwapWeapon(weapons[0]));
     }
     private void OnEnable()
