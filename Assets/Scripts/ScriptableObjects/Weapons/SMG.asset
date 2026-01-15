@@ -17,7 +17,7 @@ MonoBehaviour:
   weaponBarrelIndexes: 0000000001000000
   weaponType: 0
   damageData:
-  - maxDamage: 3
+  - maxDamage: 4
     minDamage: 1
     damageType: 0
   rateOfFire: 500
@@ -33,10 +33,10 @@ MonoBehaviour:
   dispersionPerShot: {x: 1.5, y: 1.5}
   dispersionBloomSpeed: 10
   dispersionRecoverySpeed: 4
-  recoilAmount: {x: 3.5, y: 3.5}
-  recoilOffset: {x: 0.2, y: -5}
+  recoilAmount: {x: 2, y: 4}
+  recoilOffset: {x: 0.2, y: -3}
   maxRecoilAngle: {x: 15, y: 15}
-  recoilSnappiness: 6
+  recoilSnappiness: 4
   recoilRecoverySpeed: 2
   minRange: 0.5
   optimalRange: 10

@@ -30101,6 +30101,22 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4794944979234320835, guid: f41222e90b835d74ca65dbce80056a9b, type: 3}
+      propertyPath: weapons.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4794944979234320835, guid: f41222e90b835d74ca65dbce80056a9b, type: 3}
+      propertyPath: 'weapons.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: ec75bd7fd5c758847b1e592c2a208936, type: 2}
+    - target: {fileID: 4794944979234320835, guid: f41222e90b835d74ca65dbce80056a9b, type: 3}
+      propertyPath: 'weapons.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: d7b835b4e0d206a41804fda597243c16, type: 2}
+    - target: {fileID: 4794944979234320835, guid: f41222e90b835d74ca65dbce80056a9b, type: 3}
+      propertyPath: 'weapons.Array.data[2]'
+      value: 
+      objectReference: {fileID: 11400000, guid: ee19d32c75e06394692785c7324acb14, type: 2}
     - target: {fileID: 5737278089945899384, guid: f41222e90b835d74ca65dbce80056a9b, type: 3}
       propertyPath: m_Name
       value: Player
