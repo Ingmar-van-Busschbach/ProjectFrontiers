@@ -12,6 +12,8 @@ public class WeaponSwappingHandler : MonoBehaviour
     [SerializeField] private WeaponData weapon1;
     [SerializeField] private WeaponData weapon2;
     [SerializeField] private WeaponData weapon3;
+    [SerializeField] private bool weapon2Unlocked = false;
+    [SerializeField] private bool weapon3Unlocked = false;
     private Weapon weapon;
     private GameObject weaponObject;
     private PlayerInputs playerInputs;
@@ -48,11 +50,11 @@ public class WeaponSwappingHandler : MonoBehaviour
         {
             StartCoroutine(HandleSwapWeapon(weapon1));
         }
-        if (swapWeapon2.WasPressedThisFrame())
+        if (swapWeapon2.WasPressedThisFrame() && weapon2Unlocked)
         {
             StartCoroutine(HandleSwapWeapon(weapon2));
         }
-        if (swapWeapon3.WasPressedThisFrame())
+        if (swapWeapon3.WasPressedThisFrame() && weapon3Unlocked)
         {
             StartCoroutine(HandleSwapWeapon(weapon3));
         }
@@ -73,5 +75,18 @@ public class WeaponSwappingHandler : MonoBehaviour
         weaponObject.transform.SetParent(weaponLocation);
         yield return new WaitForSeconds(0.25f);
         weapon.canShoot = true;
+    }
+
+    public void UnlockWeapon(EnumLibrary.EWeaponPickup weaponPickup)
+    {
+        switch (weaponPickup)
+        {
+            case EnumLibrary.EWeaponPickup.weapon2:
+                weapon2Unlocked = true;
+                break;
+            case EnumLibrary.EWeaponPickup.weapon3:
+                weapon3Unlocked = true;
+                break;
+        }
     }
 }

@@ -6,4 +6,5 @@ public class EnumLibrary : MonoBehaviour
     public enum EWeaponType { hitscan, projectile };
 
     public enum EAttackType { Homing, Area };
+    public enum EWeaponPickup { weapon2, weapon3 };
 }

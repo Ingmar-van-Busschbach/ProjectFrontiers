@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponName: Pistol
   weaponObject: {fileID: 5337594909560648352, guid: ee571d7b6cda953469cc2ad1a6f8ec02, type: 3}
+  weaponBarrelIndexes: 
   weaponType: 0
   damageData:
   - maxDamage: 15
@@ -23,7 +24,7 @@ MonoBehaviour:
   multishot: 1
   shotsPerBurst: 1
   timePerShotInBurst: 0.03
-  magazineSize: 24
+  magazineSize: 8
   reloadDuration: 0.5
   firingAudio: {fileID: 8300000, guid: a359acac00101f2468577657fb37d557, type: 3}
   reloadAudio: {fileID: 8300000, guid: d2852a0fa0c75434fb1e47657d6f0897, type: 3}
