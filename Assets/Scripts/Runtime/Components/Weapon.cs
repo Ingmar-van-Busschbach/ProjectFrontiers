@@ -25,7 +25,8 @@ public class Weapon : ShotHandler
         Quaternion dispersion = HandleDispersion();
         if(weaponData.muzzleFlash != null)
         {
-            Instantiate(weaponData.muzzleFlash, barrelPoint.position, Quaternion.LookRotation(dispersion * barrelPoint.forward));
+            GameObject muzzleFlash = Instantiate(weaponData.muzzleFlash, barrelPoint.position, Quaternion.LookRotation(dispersion * barrelPoint.forward));
+            muzzleFlash.transform.parent = barrelPoint;
         }
         if (weaponData.tracer != null)
         {
