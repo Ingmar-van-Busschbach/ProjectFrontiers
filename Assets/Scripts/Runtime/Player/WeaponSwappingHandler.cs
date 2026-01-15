@@ -84,6 +84,7 @@ public class WeaponSwappingHandler : MonoBehaviour
                 if (weapons[i] == replaceWeapon)
                 {
                     weapons[i] = weaponToUnlock;
+                    StartCoroutine(HandleSwapWeapon(weapons[i]));
                     return;
                 }
             }
@@ -100,6 +101,7 @@ public class WeaponSwappingHandler : MonoBehaviour
         if (!weaponAlreadyUnlocked)
         {
             weapons.Insert(weaponsUnlocked, weaponToUnlock);
+            StartCoroutine(HandleSwapWeapon(weapons[weaponsUnlocked]));
             weaponsUnlocked++;
         }
     }
