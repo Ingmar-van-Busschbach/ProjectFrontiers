@@ -1,19 +1,15 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.XR;
-using static UnityEngine.InputSystem.LowLevel.InputStateHistory;
 
 [RequireComponent(typeof(Weapon))]
 public class WeaponSwappingHandler : MonoBehaviour
 {
     [SerializeField] private Animator weaponAnimator;
     [SerializeField] private Transform weaponLocation;
-    [SerializeField] private WeaponData weapon1;
-    [SerializeField] private WeaponData weapon2;
-    [SerializeField] private WeaponData weapon3;
-    [SerializeField] private bool weapon2Unlocked = false;
-    [SerializeField] private bool weapon3Unlocked = false;
+    [SerializeField] private List<WeaponData> weapons = new List<WeaponData>();
+    [SerializeField] private int weaponsUnlocked = 1;
     private Weapon weapon;
     private GameObject weaponObject;
     private PlayerInputs playerInputs;
@@ -25,7 +21,7 @@ public class WeaponSwappingHandler : MonoBehaviour
     {
         playerInputs = new PlayerInputs();
         weapon = GetComponent<Weapon>();
-        StartCoroutine(HandleSwapWeapon(weapon1));
+        StartCoroutine(HandleSwapWeapon(weapons[0]));
     }
     private void OnEnable()
     {
@@ -46,17 +42,17 @@ public class WeaponSwappingHandler : MonoBehaviour
 
     private void Update()
     {
-        if (swapWeapon1.WasPressedThisFrame())
+        if (swapWeapon1.WasPressedThisFrame() && weaponsUnlocked >= 1)
         {
-            StartCoroutine(HandleSwapWeapon(weapon1));
+            StartCoroutine(HandleSwapWeapon(weapons[0]));
         }
-        if (swapWeapon2.WasPressedThisFrame() && weapon2Unlocked)
+        if (swapWeapon2.WasPressedThisFrame() && weaponsUnlocked >= 2)
         {
-            StartCoroutine(HandleSwapWeapon(weapon2));
+            StartCoroutine(HandleSwapWeapon(weapons[1]));
         }
-        if (swapWeapon3.WasPressedThisFrame() && weapon3Unlocked)
+        if (swapWeapon3.WasPressedThisFrame() && weaponsUnlocked >= 3)
         {
-            StartCoroutine(HandleSwapWeapon(weapon3));
+            StartCoroutine(HandleSwapWeapon(weapons[2]));
         }
     }
 
@@ -77,16 +73,9 @@ public class WeaponSwappingHandler : MonoBehaviour
         weapon.canShoot = true;
     }
 
-    public void UnlockWeapon(EnumLibrary.EWeaponPickup weaponPickup)
+    public void UnlockWeapon(WeaponData weaponToUnlock)
     {
-        switch (weaponPickup)
-        {
-            case EnumLibrary.EWeaponPickup.weapon2:
-                weapon2Unlocked = true;
-                break;
-            case EnumLibrary.EWeaponPickup.weapon3:
-                weapon3Unlocked = true;
-                break;
-        }
+        weapons[weaponsUnlocked] = weaponToUnlock;
+        weaponsUnlocked++;
     }
 }

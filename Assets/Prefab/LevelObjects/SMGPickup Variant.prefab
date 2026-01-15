@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SMGPickup Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 1525506416350542128, guid: 77c8e6436e33a074287551b6b9df19da, type: 3}
+      propertyPath: weaponToUnlock
+      value: 
+      objectReference: {fileID: 11400000, guid: d7b835b4e0d206a41804fda597243c16, type: 2}
     - target: {fileID: 5550739181620652861, guid: 77c8e6436e33a074287551b6b9df19da, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

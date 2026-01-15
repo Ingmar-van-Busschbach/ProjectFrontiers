@@ -1281,11 +1281,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponAnimator: {fileID: 4315699988408764828}
   weaponLocation: {fileID: 5001382062582461814}
-  weapon1: {fileID: 11400000, guid: ec75bd7fd5c758847b1e592c2a208936, type: 2}
-  weapon2: {fileID: 11400000, guid: d7b835b4e0d206a41804fda597243c16, type: 2}
-  weapon3: {fileID: 11400000, guid: ee19d32c75e06394692785c7324acb14, type: 2}
-  weapon2Unlocked: 0
-  weapon3Unlocked: 0
+  weapons:
+  - {fileID: 11400000, guid: ec75bd7fd5c758847b1e592c2a208936, type: 2}
+  - {fileID: 11400000, guid: d7b835b4e0d206a41804fda597243c16, type: 2}
+  - {fileID: 11400000, guid: ee19d32c75e06394692785c7324acb14, type: 2}
+  weaponsUnlocked: 1
 --- !u!114 &5330053250432847351
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1370,7 +1370,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5737278089945899384}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9e78a20417f42834a99681e0d0a17f4d, type: 3}
   m_Name: 
