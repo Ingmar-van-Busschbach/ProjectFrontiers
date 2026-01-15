@@ -75,7 +75,19 @@ public class WeaponSwappingHandler : MonoBehaviour
 
     public void UnlockWeapon(WeaponData weaponToUnlock)
     {
-        weapons[weaponsUnlocked] = weaponToUnlock;
-        weaponsUnlocked++;
+        bool weaponAlreadyUnlocked = false;
+        foreach (WeaponData weapon in weapons)
+        {
+            if(weapon == weaponToUnlock)
+            {
+                weaponAlreadyUnlocked = true;
+                break;
+            }
+        }
+        if (!weaponAlreadyUnlocked)
+        {
+            weapons.Insert(weaponsUnlocked, weaponToUnlock);
+            weaponsUnlocked++;
+        }
     }
 }

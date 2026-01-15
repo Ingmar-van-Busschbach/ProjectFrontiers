@@ -206,6 +206,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4794944979234320835, guid: f41222e90b835d74ca65dbce80056a9b, type: 3}
+      propertyPath: weapons.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5330053250432847351, guid: f41222e90b835d74ca65dbce80056a9b, type: 3}
       propertyPath: manaUsage
       value: 4
