@@ -23,7 +23,14 @@ public class Weapon : ShotHandler
     {
         //Handle accuracy of the weapon.
         Quaternion dispersion = HandleDispersion();
-
+        if(weaponData.muzzleFlash != null)
+        {
+            Instantiate(weaponData.muzzleFlash, barrelPoint.position, Quaternion.LookRotation(dispersion * barrelPoint.forward));
+        }
+        if (weaponData.tracer != null)
+        {
+            Instantiate(weaponData.tracer, barrelPoint.position, Quaternion.LookRotation(dispersion * barrelPoint.forward));
+        }
         // We use a cone cast if we are using aim assist. Otherwise we use a simple raycast.
         RaycastHit[] hitResults = null;
         if (weaponData.aimAssist > 0)
@@ -77,7 +84,16 @@ public class Weapon : ShotHandler
 
     private void HandleProjectileShot()
     {
-        Bullet bullet = Instantiate(weaponData.bullet, barrelPoint.position, barrelPoint.rotation * HandleDispersion());
+        Quaternion dispersion = HandleDispersion();
+        if (weaponData.muzzleFlash != null)
+        {
+            Instantiate(weaponData.muzzleFlash, barrelPoint.position, Quaternion.LookRotation(dispersion * barrelPoint.forward));
+        }
+        if (weaponData.tracer != null)
+        {
+            Instantiate(weaponData.tracer, barrelPoint.position, Quaternion.LookRotation(dispersion * barrelPoint.forward));
+        }
+        Bullet bullet = Instantiate(weaponData.bullet, barrelPoint.position, barrelPoint.rotation * dispersion);
         bullet.Constructor(weaponData, objectsToIgnore);
     }
 

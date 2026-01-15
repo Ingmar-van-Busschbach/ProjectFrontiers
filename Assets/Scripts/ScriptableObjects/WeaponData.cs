@@ -11,6 +11,8 @@ public class WeaponData : ScriptableObject
     public string weaponName = "DefaultWeapon";
     public GameObject weaponObject;
     public int[] weaponBarrelIndexes;
+    public GameObject tracer;
+    public GameObject muzzleFlash;
     public EnumLibrary.EWeaponType weaponType;
 
     [Space]
