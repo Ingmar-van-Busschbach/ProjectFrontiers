@@ -9,7 +9,7 @@ public class EnemyMove : MonoBehaviour
     [SerializeField] private LayerMask PlayerLayer;
     [SerializeField] private LayerMask enemyLayer;
     [SerializeField] private Transform eyeTransform;
-    [SerializeField] private float timeBeforeReturnPatrol = 3;
+    public float timeBeforeReturnPatrol = 3;
     [Tooltip("m/s")]
     [SerializeField] private float speed = 2;
     [SerializeField] private bool drawDebug;
@@ -41,7 +41,7 @@ public class EnemyMove : MonoBehaviour
     private int nextLocation;
     private float acceptanceRadius = 0.7f;
     private float verticalVelocity;
-    private float currentTimeBeforeReturnPatrol;
+    [HideInInspector] public float currentTimeBeforeReturnPatrol;
 
     private CharacterController controller;
 
