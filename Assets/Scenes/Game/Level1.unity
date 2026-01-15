@@ -19002,7 +19002,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minDistance: 5
-  speed: 5
+  speed: 8
   gravityStrength: 2
   maxFallSpeed: 10
   followPoint: {fileID: 1345867734}
