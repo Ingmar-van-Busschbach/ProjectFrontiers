@@ -1,17 +1,16 @@
+using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.XR;
-using static UnityEngine.InputSystem.LowLevel.InputStateHistory;
 
 [RequireComponent(typeof(Weapon))]
 public class WeaponSwappingHandler : MonoBehaviour
 {
     [SerializeField] private Animator weaponAnimator;
     [SerializeField] private Transform weaponLocation;
-    [SerializeField] private WeaponData weapon1;
-    [SerializeField] private WeaponData weapon2;
-    [SerializeField] private WeaponData weapon3;
+    [SerializeField] private List<WeaponData> weapons = new List<WeaponData>();
+    private int weaponsUnlocked;
     private Weapon weapon;
     private GameObject weaponObject;
     private PlayerInputs playerInputs;
@@ -23,7 +22,8 @@ public class WeaponSwappingHandler : MonoBehaviour
     {
         playerInputs = new PlayerInputs();
         weapon = GetComponent<Weapon>();
-        StartCoroutine(HandleSwapWeapon(weapon1));
+        weaponsUnlocked = weapons.Count;
+        StartCoroutine(HandleSwapWeapon(weapons[0]));
     }
     private void OnEnable()
     {
@@ -44,17 +44,17 @@ public class WeaponSwappingHandler : MonoBehaviour
 
     private void Update()
     {
-        if (swapWeapon1.WasPressedThisFrame())
+        if (swapWeapon1.WasPressedThisFrame() && weaponsUnlocked >= 1)
         {
-            StartCoroutine(HandleSwapWeapon(weapon1));
+            StartCoroutine(HandleSwapWeapon(weapons[0]));
         }
-        if (swapWeapon2.WasPressedThisFrame())
+        if (swapWeapon2.WasPressedThisFrame() && weaponsUnlocked >= 2)
         {
-            StartCoroutine(HandleSwapWeapon(weapon2));
+            StartCoroutine(HandleSwapWeapon(weapons[1]));
         }
-        if (swapWeapon3.WasPressedThisFrame())
+        if (swapWeapon3.WasPressedThisFrame() && weaponsUnlocked >= 3)
         {
-            StartCoroutine(HandleSwapWeapon(weapon3));
+            StartCoroutine(HandleSwapWeapon(weapons[2]));
         }
     }
 
@@ -73,5 +73,36 @@ public class WeaponSwappingHandler : MonoBehaviour
         weaponObject.transform.SetParent(weaponLocation);
         yield return new WaitForSeconds(0.25f);
         weapon.canShoot = true;
+    }
+
+    public void UnlockWeapon(WeaponData weaponToUnlock, WeaponData replaceWeapon = null)
+    {
+        if (replaceWeapon != null)
+        {
+            for (int i = 0; i < weapons.Count; i++)
+            {
+                if (weapons[i] == replaceWeapon)
+                {
+                    weapons[i] = weaponToUnlock;
+                    StartCoroutine(HandleSwapWeapon(weapons[i]));
+                    return;
+                }
+            }
+        }
+        bool weaponAlreadyUnlocked = false;
+        foreach (WeaponData weapon in weapons)
+        {
+            if(weapon == weaponToUnlock)
+            {
+                weaponAlreadyUnlocked = true;
+                break;
+            }
+        }
+        if (!weaponAlreadyUnlocked)
+        {
+            weapons.Insert(weaponsUnlocked, weaponToUnlock);
+            StartCoroutine(HandleSwapWeapon(weapons[weaponsUnlocked]));
+            weaponsUnlocked++;
+        }
     }
 }

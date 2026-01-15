@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     private Healer healer;
     private PlayerInputs playerInputs;
     private InputAction move;
+    private InputAction sprint;
     private InputAction look;
     private InputAction attack;
     private InputAction reload;
@@ -37,6 +38,8 @@ public class PlayerController : MonoBehaviour
     {
         move = playerInputs.Player.Move;
         move.Enable();
+        sprint = playerInputs.Player.Sprint;
+        sprint.Enable();
         look = playerInputs.Player.Look;
         look.Enable();
         attack = playerInputs.Player.Attack;
@@ -51,6 +54,7 @@ public class PlayerController : MonoBehaviour
     private void OnDisable()
     {
         move.Disable();
+        sprint.Disable();
         look.Disable();
         attack.Disable();
         reload.Disable();
@@ -75,6 +79,7 @@ public class PlayerController : MonoBehaviour
         {
             healer.AttemptHeal();
         }
+        controller.isSprinting = sprint.IsPressed();
         controller.HandleHorizontalLook(look.ReadValue<Vector2>().x, lookSensitivity);
         cameraController.HandleVerticalLook(-look.ReadValue<Vector2>().y, lookSensitivity, lookAngle);
     }

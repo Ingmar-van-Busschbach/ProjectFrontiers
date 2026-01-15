@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponName: Rifle
   weaponObject: {fileID: 1742676961064738901, guid: 11a84c55670aec843bc63721bfc2ab79, type: 3}
+  weaponBarrelIndexes: 
   weaponType: 0
   damageData:
   - maxDamage: 50
@@ -23,7 +24,7 @@ MonoBehaviour:
   multishot: 1
   shotsPerBurst: 1
   timePerShotInBurst: 0.03
-  magazineSize: 12
+  magazineSize: 6
   reloadDuration: 1
   firingAudio: {fileID: 8300000, guid: b535415ed5b34874aae7c43513c3055a, type: 3}
   reloadAudio: {fileID: 8300000, guid: d2852a0fa0c75434fb1e47657d6f0897, type: 3}
