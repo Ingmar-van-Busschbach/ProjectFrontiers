@@ -10,6 +10,7 @@ public class WeaponData : ScriptableObject
     [Header("Weapon Statistics")]
     public string weaponName = "DefaultWeapon";
     public GameObject weaponObject;
+    public int[] weaponBarrelIndexes;
     public EnumLibrary.EWeaponType weaponType;
 
     [Space]

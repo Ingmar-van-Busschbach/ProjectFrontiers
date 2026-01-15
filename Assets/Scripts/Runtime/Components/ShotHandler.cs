@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(AudioSource))]
@@ -6,17 +7,21 @@ public abstract class ShotHandler : MonoBehaviour
 {
     public WeaponData weaponData;
     [HideInInspector] public bool canShoot = true;
-
-    [SerializeField] protected Transform barrelPoint;
+    [SerializeField] protected Transform[] barrelPoints;
     [SerializeField] protected CrosshairBloom crosshairHandler;
     [SerializeField] protected CameraRecoil cameraRecoilHandler;
     [SerializeField] protected GameObject[] objectsToIgnore;
+    [SerializeField] protected bool debugEnabled;
+
+    protected List<Transform> availableBarrels = new List<Transform>();
+    protected Transform barrelPoint;
 
     private Vector2 currentDispersion;
     private Vector2 targetDispersion;
     private float timeOfNextShot;
     private int currentMagazine;
     private bool isReloading;
+    private int barrelSelected;
     private AudioSource audioSource;
     private void Start()
     {
@@ -27,7 +32,10 @@ public abstract class ShotHandler : MonoBehaviour
     {
         if (crosshairHandler == null)
         {
-            Debug.LogWarning("The crosshair handler has not been applied! Recoil only uses weapondata minimum dispersion now!", this);
+            if (debugEnabled)
+            {
+                Debug.LogWarning("The crosshair handler has not been applied! Recoil only uses weapondata minimum dispersion now!", this);
+            }
             return;
         }
         targetDispersion = Vector2.Lerp(targetDispersion, weaponData.minDispersion, weaponData.dispersionRecoverySpeed * Time.deltaTime);
@@ -40,6 +48,7 @@ public abstract class ShotHandler : MonoBehaviour
         targetDispersion = weaponData.minDispersion;
         currentMagazine = weaponData.magazineSize;
         timeOfNextShot = Time.time;
+        SelectAvailableBarrels();
     }
     public void Shoot()
     {
@@ -47,14 +56,20 @@ public abstract class ShotHandler : MonoBehaviour
         {
             return;
         }
-        if(barrelPoint == null)
+        if(barrelPoints.Length == 0)
         {
-            Debug.LogWarning("The barrel point has not been applied! Unable to shoot!", this);
+            if (debugEnabled)
+            {
+                Debug.LogWarning("The barrel point has not been applied! Unable to shoot!", this);
+            }
             return;
         }
         if (objectsToIgnore == null)
         {
-            Debug.LogWarning("No objects to ignore have been applied. Adding the player's geometry is recommended.", this);
+            if (debugEnabled)
+            {
+                Debug.LogWarning("No objects to ignore have been applied. Adding the player's geometry is recommended.", this);
+            }
         }
         if (Time.time > timeOfNextShot && currentMagazine > 0)
         {
@@ -66,6 +81,7 @@ public abstract class ShotHandler : MonoBehaviour
             else
             {
                 currentMagazine--;
+                SelectCurrentBarrel();
                 HandleMultishot();
             }
         }
@@ -81,6 +97,27 @@ public abstract class ShotHandler : MonoBehaviour
         yield return new WaitForSeconds(weaponData.reloadDuration);
         currentMagazine = weaponData.magazineSize;
         isReloading = false;
+    }
+    private void SelectAvailableBarrels()
+    {
+        availableBarrels.Clear();
+        if(weaponData.weaponBarrelIndexes.Length == 0)
+        {
+            availableBarrels.Add(barrelPoints[0]);
+        }
+        else
+        {
+            foreach (int index in weaponData.weaponBarrelIndexes)
+            {
+                availableBarrels.Add(barrelPoints[index]);
+            }
+        } 
+    }
+    private void SelectCurrentBarrel()
+    {
+        barrelSelected++;
+        barrelSelected = barrelSelected % availableBarrels.Count;
+        barrelPoint = availableBarrels[barrelSelected];
     }
     protected abstract void HandleShot();
     
@@ -101,6 +138,7 @@ public abstract class ShotHandler : MonoBehaviour
             if(currentMagazine > 0)
             {
                 currentMagazine--;
+                SelectCurrentBarrel();
                 HandleMultishot();
                 yield return new WaitForSeconds(weaponData.timePerShotInBurst);
             }
@@ -118,7 +156,10 @@ public abstract class ShotHandler : MonoBehaviour
     {
         if (cameraRecoilHandler == null)
         {
-            Debug.LogWarning("The recoil handler has not been applied! Unable to apply recoil!", this);
+            if (debugEnabled)
+            {
+                Debug.LogWarning("The recoil handler has not been applied! Unable to apply recoil!", this);
+            }
             return;
         }
         Vector2 recoilAmount = new Vector2((Random.value - 0.5f + weaponData.recoilOffset.x) / 2 * weaponData.recoilAmount.x, (Random.value - 0.5f + weaponData.recoilOffset.y) / 2 * weaponData.recoilAmount.y);

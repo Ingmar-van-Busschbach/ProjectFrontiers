@@ -6,7 +6,6 @@ using UnityEngine;
 
 public class Weapon : ShotHandler
 {
-    [SerializeField] private bool drawDebug;
     protected override void HandleShot()
     {
         switch (weaponData.weaponType)
@@ -37,7 +36,7 @@ public class Weapon : ShotHandler
             hitResults = Physics.RaycastAll(barrelPoint.position + dispersion * barrelPoint.forward * weaponData.minRange, dispersion * barrelPoint.forward, weaponData.maxRange, weaponData.layerMask, QueryTriggerInteraction.Ignore);
         }
 
-        if (drawDebug)
+        if (debugEnabled)
         {
             Debug.DrawLine(barrelPoint.position + dispersion * barrelPoint.forward * weaponData.minRange, barrelPoint.position + dispersion * barrelPoint.forward * weaponData.maxRange, Color.white, 0.1f);
         }

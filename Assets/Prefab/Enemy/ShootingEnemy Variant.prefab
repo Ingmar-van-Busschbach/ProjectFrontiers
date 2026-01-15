@@ -254,10 +254,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponData: {fileID: 11400000, guid: d6eee71de038d2d4dbafe99ba80c1d1c, type: 2}
   canShoot: 1
-  barrelPoint: {fileID: 384026497907033552}
+  barrelPoints:
+  - {fileID: 384026497907033552}
   crosshairHandler: {fileID: 0}
   cameraRecoilHandler: {fileID: 0}
   objectsToIgnore:
   - {fileID: 5105660919388392809}
   - {fileID: 5317676265657318928}
-  drawDebug: 0
+  debugEnabled: 0
