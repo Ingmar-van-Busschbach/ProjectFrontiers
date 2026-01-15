@@ -1283,9 +1283,6 @@ MonoBehaviour:
   weaponLocation: {fileID: 5001382062582461814}
   weapons:
   - {fileID: 11400000, guid: ec75bd7fd5c758847b1e592c2a208936, type: 2}
-  - {fileID: 11400000, guid: d7b835b4e0d206a41804fda597243c16, type: 2}
-  - {fileID: 11400000, guid: ee19d32c75e06394692785c7324acb14, type: 2}
-  weaponsUnlocked: 1
 --- !u!114 &5330053250432847351
 MonoBehaviour:
   m_ObjectHideFlags: 0
