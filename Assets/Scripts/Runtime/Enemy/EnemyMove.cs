@@ -6,28 +6,36 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterController))]
 public class EnemyMove : MonoBehaviour
 {
-    [SerializeField] List<Transform> Locations;
+    [SerializeField] private LayerMask PlayerLayer;
+    [SerializeField] private LayerMask enemyLayer;
+    [SerializeField] private Transform eyeTransform;
+    [SerializeField] private float timeBeforeReturnPatrol = 3;
     [Tooltip("m/s")]
     [SerializeField] private float speed = 2;
-    [Tooltip("Angle in degrees")]  
+    [SerializeField] private bool drawDebug;
+
+
+    [Header("Patrol")]
+    [SerializeField] List<Transform> Locations;
+    
+    [Header("Line of sight")]
+    [Tooltip("Angle in degrees")]
     [SerializeField] private float fieldOfView;
     [Tooltip("Length of field of view")]
     [SerializeField] private float viewDistance;
     [Tooltip("enemy doesn't go closer to player then this")]
     [SerializeField] private float minDistanceToPlayer;
+
+
+    [Header("Alert")]
     [Tooltip("Radius of the EnemyAlarm")]
     [SerializeField] private float alarmRadius;
+
+    [Header("Gravity")]
     [Tooltip("m/s^2")]
     [SerializeField] private float gravityStrength = 2f;
     [Tooltip("m/s")]
     [SerializeField] private float maxFallSpeed = 10f;
-    [SerializeField] private bool drawDebug;
-    [SerializeField] private float timeBeforeReturnPatrol = 3;
-
-    [SerializeField] private Transform eyeTransform;
-    [SerializeField] private LayerMask PlayerLayer;
-    [SerializeField] private LayerMask enemyLayer;
-
 
     private int currentLocation;
     private int nextLocation;
@@ -38,7 +46,7 @@ public class EnemyMove : MonoBehaviour
     private CharacterController controller;
 
     [HideInInspector] public Transform target;
-    public bool isFollowing = false;
+    [HideInInspector] public bool isFollowing = false;
 
     
 
@@ -124,7 +132,7 @@ public class EnemyMove : MonoBehaviour
             }
         }
     }
-     private void HandleGravity()
+    private void HandleGravity()
     {
         if (controller.isGrounded)
         {
@@ -139,7 +147,7 @@ public class EnemyMove : MonoBehaviour
         }
     }
 
-     private void EnemyAlarm()
+    private void EnemyAlarm()
     {
         Collider[] alarmCollider = Physics.OverlapSphere(transform.position, alarmRadius, enemyLayer, QueryTriggerInteraction.Ignore);
         foreach (Collider col in alarmCollider)
