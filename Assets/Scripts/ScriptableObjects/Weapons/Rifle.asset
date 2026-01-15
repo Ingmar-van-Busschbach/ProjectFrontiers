@@ -33,7 +33,7 @@ MonoBehaviour:
   dispersionPerShot: {x: 15, y: 15}
   dispersionBloomSpeed: 10
   dispersionRecoverySpeed: 5
-  recoilAmount: {x: 8, y: 8}
+  recoilAmount: {x: 4, y: 4}
   recoilOffset: {x: 0.1, y: -4}
   maxRecoilAngle: {x: 30, y: 30}
   recoilSnappiness: 8
