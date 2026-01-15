@@ -7,8 +7,11 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterController))]
 public class Controller3D : MonoBehaviour
 {
+    [HideInInspector] public bool isSprinting;
+
     [Header("Movement Statistics")]
     [SerializeField] private float moveSpeed = 5f;
+    [SerializeField] private float sprintSpeed = 7f;
     [SerializeField] private float gravityStrength = 2f;
     [SerializeField] private float maxFallSpeed = 10f;
 
@@ -46,7 +49,7 @@ public class Controller3D : MonoBehaviour
     public void HandleMove(Vector2 moveInput)
     {
         HandleGravity();
-        controller.Move(transform.rotation * (moveSpeed * Time.fixedDeltaTime * new Vector3(moveInput.normalized.x, 0, moveInput.normalized.y) + Time.fixedDeltaTime * new Vector3(0, verticalVelocity, 0)));
+        controller.Move(transform.rotation * ((isSprinting ? sprintSpeed : moveSpeed) * Time.fixedDeltaTime * new Vector3(moveInput.normalized.x, 0, moveInput.normalized.y) + Time.fixedDeltaTime * new Vector3(0, verticalVelocity, 0)));
         
     }
 
