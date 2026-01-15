@@ -30,21 +30,21 @@ MonoBehaviour:
   reloadDuration: 2
   firingAudio: {fileID: 8300000, guid: 646b7492b6784574292c5934716a99bd, type: 3}
   reloadAudio: {fileID: 8300000, guid: d2852a0fa0c75434fb1e47657d6f0897, type: 3}
-  minDispersion: {x: 0.5, y: 0.5}
+  minDispersion: {x: 1, y: 1}
   maxDispersion: {x: 5, y: 5}
   dispersionPerShot: {x: 1.5, y: 1.5}
-  dispersionBloomSpeed: 10
-  dispersionRecoverySpeed: 4
-  recoilAmount: {x: 7, y: 7}
-  recoilOffset: {x: 0.2, y: -5}
-  maxRecoilAngle: {x: 15, y: 15}
-  recoilSnappiness: 6
-  recoilRecoverySpeed: 2
+  dispersionBloomSpeed: 15
+  dispersionRecoverySpeed: 5
+  recoilAmount: {x: 1.5, y: 2.5}
+  recoilOffset: {x: 0.2, y: -0.8}
+  maxRecoilAngle: {x: 25, y: 25}
+  recoilSnappiness: 10
+  recoilRecoverySpeed: 3
   minRange: 0.5
   optimalRange: 10
   maxRange: 30
   roundDamage: 1
-  aimAssist: 0
+  aimAssist: 0.2
   aimAssistFidelity: 3
   penetratesTargets: 0
   layerMask:
