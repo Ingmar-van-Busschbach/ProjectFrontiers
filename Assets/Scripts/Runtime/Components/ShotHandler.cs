@@ -21,7 +21,7 @@ public abstract class ShotHandler : MonoBehaviour
     private float timeOfNextShot;
     private int currentMagazine;
     private bool isReloading;
-    private int barrelSelected;
+    private int barrelIndex;
     private AudioSource audioSource;
     private void Start()
     {
@@ -115,9 +115,9 @@ public abstract class ShotHandler : MonoBehaviour
     }
     private void SelectCurrentBarrel()
     {
-        barrelSelected++;
-        barrelSelected = barrelSelected % availableBarrels.Count;
-        barrelPoint = availableBarrels[barrelSelected];
+        barrelIndex++;
+        barrelIndex = barrelIndex % availableBarrels.Count;
+        barrelPoint = availableBarrels[barrelIndex];
     }
     protected abstract void HandleShot();
     
