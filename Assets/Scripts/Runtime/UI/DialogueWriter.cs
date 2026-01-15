@@ -12,6 +12,7 @@ public class DialogueWriter : MonoBehaviour
     private InputAction interact;
     private DialogueData currentDialogue;
     private int currentDialogueIndex;
+    Coroutine routine;
 
     private void Awake()
     {
@@ -58,8 +59,9 @@ public class DialogueWriter : MonoBehaviour
         if (interact.WasPressedThisFrame())
         {
             currentDialogueIndex++;
-            if (currentDialogueIndex > currentDialogue.dialogue.Length)
+            if (currentDialogueIndex >= currentDialogue.dialogue.Length)
             {
+                StopCoroutine(routine);
                 nameText.text = "";
                 dialogueText.text = "";
                 return;
@@ -71,7 +73,11 @@ public class DialogueWriter : MonoBehaviour
     private void WriteDialogue(StructLibrary.Struct_DialogueEntry dialogueEntry)
     {
         nameText.text = dialogueEntry.speakerName;
-        StartCoroutine(PrintText(dialogueEntry));
+        if(routine != null)
+        {
+            StopCoroutine(routine);
+        }
+        routine = StartCoroutine(PrintText(dialogueEntry));
     }
 
     private IEnumerator PrintText(StructLibrary.Struct_DialogueEntry dialogueEntry)
