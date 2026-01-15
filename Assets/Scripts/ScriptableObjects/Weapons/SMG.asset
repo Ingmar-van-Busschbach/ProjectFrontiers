@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponName: SMG
   weaponObject: {fileID: 7242832404652215190, guid: 53113481a08c0f045a8ac800b0cf6b63, type: 3}
+  weaponBarrelIndexes: 0000000001000000
   weaponType: 0
   damageData:
   - maxDamage: 3
