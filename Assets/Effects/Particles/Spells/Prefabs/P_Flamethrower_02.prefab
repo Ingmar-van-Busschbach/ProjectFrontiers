@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3274650730473703709}
   - component: {fileID: 82465397278485010}
   m_Layer: 0
-  m_Name: vfx_Flamethrower_02
+  m_Name: P_Flamethrower_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
