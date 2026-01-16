@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 9213110781552053305}
   - component: {fileID: 2572183445736385688}
   - component: {fileID: 7449630406094103859}
+  - component: {fileID: 4472488429850889335}
   m_Layer: 0
   m_Name: P_Tracer
   m_TagString: Untagged
@@ -4891,3 +4892,15 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &4472488429850889335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4816148849270499086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eabc33a4cb2c7764294e2c0bcb3dcd62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
