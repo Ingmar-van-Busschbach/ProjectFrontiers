@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
-public class Teleporter : MonoBehaviour
+public class TeleportHandler : MonoBehaviour
 {
     [Tooltip("Should be the player camera.")]
     [SerializeField] private Transform targetingOrigin;

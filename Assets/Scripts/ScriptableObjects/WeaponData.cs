@@ -45,6 +45,11 @@ public class WeaponData : ScriptableObject
     public AudioClip reloadAudio;
 
 
+    [Header("Aiming")]
+    public float aimDownSightsFieldOfView = 25f;
+    [Tooltip("Should generally left at 100f")]
+    public float aimDownSightsSpeed = 100f;
+
     [Header("Accuracy")]
     [Tooltip("Minimum dispersion in degrees for the weapon. X is horizontal and Y is vertical")]
     public Vector2 minDispersion;

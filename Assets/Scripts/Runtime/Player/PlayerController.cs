@@ -7,8 +7,9 @@ using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(Controller3D))]
 [RequireComponent(typeof(Weapon))]
-[RequireComponent(typeof(Teleporter))]
-[RequireComponent(typeof(Healer))]
+[RequireComponent(typeof(TeleportHandler))]
+[RequireComponent(typeof(HealHandler))]
+[RequireComponent(typeof(AimHandler))]
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private CameraController cameraController;
@@ -16,13 +17,15 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Vector2 lookAngle;
     private Controller3D controller;
     private Weapon weapon;
-    private Teleporter teleporter;
-    private Healer healer;
+    private TeleportHandler teleportHandler;
+    private HealHandler healHandler;
+    private AimHandler aimHandler;
     private PlayerInputs playerInputs;
     private InputAction move;
     private InputAction sprint;
     private InputAction look;
     private InputAction attack;
+    private InputAction aim;
     private InputAction reload;
     private InputAction teleport;
     private InputAction heal;
@@ -30,8 +33,9 @@ public class PlayerController : MonoBehaviour
     {
         controller = GetComponent<Controller3D>();
         weapon = GetComponent<Weapon>();
-        teleporter = GetComponent<Teleporter>();
-        healer = GetComponent<Healer>();
+        teleportHandler = GetComponent<TeleportHandler>();
+        healHandler = GetComponent<HealHandler>();
+        aimHandler = GetComponent<AimHandler>();
         playerInputs = new PlayerInputs();
     }
     private void OnEnable()
@@ -44,6 +48,8 @@ public class PlayerController : MonoBehaviour
         look.Enable();
         attack = playerInputs.Player.Attack;
         attack.Enable();
+        aim = playerInputs.Player.Aim;
+        aim.Enable();
         reload = playerInputs.Player.Reload;
         reload.Enable();
         teleport = playerInputs.Player.Teleport;
@@ -57,6 +63,7 @@ public class PlayerController : MonoBehaviour
         sprint.Disable();
         look.Disable();
         attack.Disable();
+        aim.Disable();
         reload.Disable();
         teleport.Disable();
         heal.Disable();
@@ -73,12 +80,13 @@ public class PlayerController : MonoBehaviour
         }
         if (teleport.WasPressedThisFrame())
         {
-            teleporter.AttemptTeleport();
+            teleportHandler.AttemptTeleport();
         }
         if (heal.WasPressedThisFrame())
         {
-            healer.AttemptHeal();
+            healHandler.AttemptHeal();
         }
+        aimHandler.HandleAim(aim.IsPressed());
         controller.isSprinting = sprint.IsPressed();
         controller.HandleHorizontalLook(look.ReadValue<Vector2>().x, lookSensitivity);
         cameraController.HandleVerticalLook(-look.ReadValue<Vector2>().y, lookSensitivity, lookAngle);
