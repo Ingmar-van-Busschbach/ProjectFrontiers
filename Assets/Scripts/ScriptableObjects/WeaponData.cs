@@ -47,6 +47,7 @@ public class WeaponData : ScriptableObject
 
     [Header("Aiming")]
     public float aimDownSightsFieldOfView = 25f;
+    [Tooltip("Should generally left at 100f")]
     public float aimDownSightsSpeed = 100f;
 
     [Header("Accuracy")]
