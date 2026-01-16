@@ -1225,8 +1225,9 @@ MonoBehaviour:
   isSprinting: 0
   moveSpeed: 5
   sprintSpeed: 7
-  gravityStrength: 2
-  maxFallSpeed: 10
+  acceleration: 3
+  gravityStrength: 5
+  maxFallSpeed: 20
   groundMask:
     serializedVersion: 2
     m_Bits: 4294967295
