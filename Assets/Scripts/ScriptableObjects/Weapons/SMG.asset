@@ -30,6 +30,8 @@ MonoBehaviour:
   reloadDuration: 2
   firingAudio: {fileID: 8300000, guid: 646b7492b6784574292c5934716a99bd, type: 3}
   reloadAudio: {fileID: 8300000, guid: d2852a0fa0c75434fb1e47657d6f0897, type: 3}
+  aimDownSightsFieldOfView: 40
+  aimDownSightsSpeed: 100
   minDispersion: {x: 1, y: 1}
   maxDispersion: {x: 5, y: 5}
   dispersionPerShot: {x: 1.5, y: 1.5}

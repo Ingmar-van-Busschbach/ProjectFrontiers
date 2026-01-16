@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(PlayerHealth))]
-public class Healer : MonoBehaviour
+public class HealHandler : MonoBehaviour
 {
     [Tooltip("Uses negative damage to heal. The value should be positive as it gets inverted.")]
     [SerializeField] private float amountHealed;
