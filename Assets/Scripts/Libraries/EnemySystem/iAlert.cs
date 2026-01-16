@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public interface iAlert
+public interface IAlert
 {
     public void HandleAlert(Transform target);
 }

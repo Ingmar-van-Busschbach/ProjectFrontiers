@@ -4,7 +4,7 @@ using UnityEditor.Rendering;
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
-public class EnemyMove : MonoBehaviour, iAlert
+public class EnemyMove : MonoBehaviour, IAlert
 {
     [SerializeField] private LayerMask PlayerLayer;
     [SerializeField] private LayerMask enemyLayer;
