@@ -4,7 +4,7 @@ using UnityEditor.Rendering;
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
-public class EnemyMove : MonoBehaviour
+public class EnemyMove : MonoBehaviour, iAlert
 {
     [SerializeField] private LayerMask PlayerLayer;
     [SerializeField] private LayerMask enemyLayer;
@@ -149,6 +149,7 @@ public class EnemyMove : MonoBehaviour
 
     private void EnemyAlarm()
     {
+        
         Collider[] alarmCollider = Physics.OverlapSphere(transform.position, alarmRadius, enemyLayer, QueryTriggerInteraction.Ignore);
         foreach (Collider col in alarmCollider)
         {
@@ -163,10 +164,11 @@ public class EnemyMove : MonoBehaviour
         }
     }
 
-    public void HandleAlert(Transform newTarget)
+    public void HandleAlert(Transform target)
     {
-        target = newTarget;
-        Debug.Log(target);
+        // handles target change
+        this.target = target;
+        Debug.Log(this.target);
         isFollowing = true;
         currentTimeBeforeReturnPatrol = timeBeforeReturnPatrol;
     }
