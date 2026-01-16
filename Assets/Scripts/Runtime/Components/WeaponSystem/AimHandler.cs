@@ -3,10 +3,13 @@ using UnityEngine;
 [RequireComponent(typeof(Weapon))]
 public class AimHandler : MonoBehaviour
 {
+    [HideInInspector] public AimDownSightHandler weaponObject;
+    [SerializeField] private CrosshairBloom crossHair;
     [SerializeField] private Camera camera;
     private Weapon weapon;
     private float normalFieldOfView;
     private float currentFieldOfView;
+    private Vector3 targetPosition;
     
     private void Start()
     {
@@ -22,11 +25,26 @@ public class AimHandler : MonoBehaviour
             return;
         }
         float cameraZoomDirection = currentFieldOfView - camera.fieldOfView;
-        cameraZoomDirection = Mathf.Clamp(cameraZoomDirection, -weapon.weaponData.aimDownSightsSpeed * Time.deltaTime, weapon.weaponData.aimDownSightsSpeed * Time.deltaTime);
+        cameraZoomDirection = Mathf.Clamp(cameraZoomDirection, -weapon.weaponData.aimDownSightFieldOfViewSpeed * Time.deltaTime, weapon.weaponData.aimDownSightFieldOfViewSpeed * Time.deltaTime);
         camera.fieldOfView = camera.fieldOfView + cameraZoomDirection;
+        if (weaponObject == null)
+        {
+            Debug.LogWarning("Aim Handler does not have a weaponObject applied!");
+            return;
+        }
+        Vector3 moveDirection = targetPosition - weaponObject.transform.localPosition;
+        moveDirection = Vector3.ClampMagnitude(moveDirection, weapon.weaponData.aimDownSightLerpSpeed * Time.deltaTime);
+        weaponObject.transform.localPosition = weaponObject.transform.localPosition + moveDirection;
     }
     public void HandleAim(bool aiming)
     {
-        currentFieldOfView = aiming ? weapon.weaponData.aimDownSightsFieldOfView : normalFieldOfView;
+        if (camera == null)
+        {
+            Debug.LogWarning("Aim Handler does not have a camera applied!");
+            return;
+        }
+        currentFieldOfView = aiming ? weapon.weaponData.aimDownSightFieldOfView : normalFieldOfView;
+        targetPosition = aiming ? (camera.transform.localPosition - weaponObject.transform.parent.localPosition - weaponObject.sightTransform.localPosition) : Vector3.zero ;
+        crossHair.gameObject.SetActive(!aiming);
     }
 }

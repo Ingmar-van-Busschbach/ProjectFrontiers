@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Pistol
   m_EditorClassIdentifier: 
   weaponName: Pistol
-  weaponObject: {fileID: 5337594909560648352, guid: ee571d7b6cda953469cc2ad1a6f8ec02, type: 3}
+  weaponObject: {fileID: 347661705652046597, guid: ee571d7b6cda953469cc2ad1a6f8ec02, type: 3}
   weaponBarrelIndexes: 
   tracer: {fileID: 4816148849270499086, guid: 8b229ff8d3ba7c24b8d80dc097e38ec7, type: 3}
   muzzleFlash: {fileID: 8078720523478869859, guid: 4f5fc4bbd01b03a4499a6ed77f175fc7, type: 3}
@@ -30,8 +30,9 @@ MonoBehaviour:
   reloadDuration: 0.5
   firingAudio: {fileID: 8300000, guid: a359acac00101f2468577657fb37d557, type: 3}
   reloadAudio: {fileID: 8300000, guid: d2852a0fa0c75434fb1e47657d6f0897, type: 3}
-  aimDownSightsFieldOfView: 35
-  aimDownSightsSpeed: 100
+  aimDownSightFieldOfView: 25
+  aimDownSightFieldOfViewSpeed: 100
+  aimDownSightLerpSpeed: 5
   minDispersion: {x: 0, y: 0}
   maxDispersion: {x: 10, y: 10}
   dispersionPerShot: {x: 10, y: 10}
