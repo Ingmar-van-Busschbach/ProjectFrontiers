@@ -236,14 +236,14 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   eyeTransform: {fileID: 5433533397875916073}
-  timeBeforeReturnPatrol: 3
-  speed: 5
+  timeBeforeReturnPatrol: 15
+  speed: 15
   drawDebug: 0
   Locations: []
-  fieldOfView: 15
-  viewDistance: 25
+  fieldOfView: 80
+  viewDistance: 70
   minDistanceToPlayer: 5
-  alarmRadius: 0
+  alarmRadius: 50
   gravityStrength: 2
   maxFallSpeed: 10
   currentTimeBeforeReturnPatrol: 0
