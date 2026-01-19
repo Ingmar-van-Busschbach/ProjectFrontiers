@@ -6,10 +6,10 @@ using UnityEngine.UI;
 public abstract class Health : MonoBehaviour, IDamageAble
 {
     [SerializeField] private StructLibrary.Struct_ResistanceEntry[] resistanceEntries;
-    [SerializeField] private float maxHealth = 100;
+    [SerializeField] protected float maxHealth = 100;
     [SerializeField] private Slider healthSlider;
 
-    private float currentHealth;
+    protected float currentHealth;
 
     private void Start()
     {
@@ -38,7 +38,7 @@ public abstract class Health : MonoBehaviour, IDamageAble
 
     }
 
-    private void UpdateHealthSlider()
+    protected void UpdateHealthSlider()
     {
         if (healthSlider != null)
         {
