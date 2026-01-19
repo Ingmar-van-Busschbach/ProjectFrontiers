@@ -1377,7 +1377,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e78a20417f42834a99681e0d0a17f4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 8078602070079154223}
+  cam: {fileID: 8078602070079154223}
   barrelEnds:
   - {fileID: 6306851479144602756}
   - {fileID: 8402529297004719633}
@@ -1398,7 +1398,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponObject: {fileID: 0}
   crossHair: {fileID: 6192796075550322522}
-  camera: {fileID: 8078602070079154223}
+  cam: {fileID: 8078602070079154223}
 --- !u!1 &6048942305803076536
 GameObject:
   m_ObjectHideFlags: 0
