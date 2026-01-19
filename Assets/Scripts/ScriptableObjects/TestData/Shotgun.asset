@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Shotgun
   m_EditorClassIdentifier: 
   weaponName: Shotgun
-  weaponMesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  weaponObject: {fileID: 0}
+  weaponBarrelIndexes: 
   weaponType: 0
   damageData:
   - maxDamage: 25
@@ -26,6 +27,16 @@ MonoBehaviour:
   magazineSize: 5
   reloadDuration: 0.5
   firingAudio: {fileID: 8300000, guid: e5a9937bc2cae8a44b894f427518e92f, type: 3}
+  reloadAudio: {fileID: 0}
+  tracer: {fileID: 0}
+  muzzleFlash: {fileID: 0}
+  enemyAlertMask:
+    serializedVersion: 2
+    m_Bits: 64
+  alertRadius: 100
+  aimDownSightFieldOfView: 25
+  aimDownSightFieldOfViewSpeed: 100
+  aimDownSightLerpSpeed: 10
   minDispersion: {x: 2, y: 2}
   maxDispersion: {x: 15, y: 10}
   dispersionPerShot: {x: 5, y: 2}

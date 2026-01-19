@@ -47,7 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeToDamage: 3
   damageRadius: 1
-  damage: 100
+  damage: 20
   layerToHit:
     serializedVersion: 2
     m_Bits: 8

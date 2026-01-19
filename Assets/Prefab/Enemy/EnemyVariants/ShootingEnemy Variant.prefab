@@ -307,7 +307,7 @@ MonoBehaviour:
   weapon: {fileID: 9129246402663398803}
   attackType: 0
   AreaAttackPrefab: {fileID: 0}
-  attackCooldown: 10
+  attackCooldown: 6
 --- !u!114 &9129246402663398803
 MonoBehaviour:
   m_ObjectHideFlags: 0
