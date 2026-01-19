@@ -12,4 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2759be2ffdb47645b3cf8b2e32470f6, type: 3}
   m_Name: MidDialogue
   m_EditorClassIdentifier: 
-  dialogue: []
+  dialogue:
+  - speakerName: Duck
+    dialogue: SIR PLEASE-
+    printDuration: 0.05
+  - speakerName: Wizard
+    dialogue: As I said, whatever it is you want can wait until we have made it to
+      the well.
+    printDuration: 0.05

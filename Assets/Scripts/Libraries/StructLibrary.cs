@@ -28,7 +28,7 @@ public class StructLibrary : MonoBehaviour
         public string speakerName;
         [Tooltip("What are they saying?")]
         public string dialogue;
-        [Tooltip("How long does it take for the dialogue to print onto the screen?")]
+        [Tooltip("How long does it take for the each individal leter to print onto the screen?")]
         public float printDuration;
     }
 }

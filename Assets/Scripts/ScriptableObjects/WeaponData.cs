@@ -9,7 +9,10 @@ public class WeaponData : ScriptableObject
 {
     [Header("Weapon Statistics")]
     public string weaponName = "DefaultWeapon";
-    public GameObject weaponObject;
+    public AimDownSightHandler weaponObject;
+    public int[] weaponBarrelIndexes;
+    public GameObject tracer;
+    public GameObject muzzleFlash;
     public EnumLibrary.EWeaponType weaponType;
 
     [Space]
@@ -41,6 +44,13 @@ public class WeaponData : ScriptableObject
     public AudioClip firingAudio;
     public AudioClip reloadAudio;
 
+
+    [Header("Aiming")]
+    public float aimDownSightFieldOfView = 25f;
+    [Tooltip("Should generally left at 100f")]
+    public float aimDownSightFieldOfViewSpeed = 100f;
+    [Tooltip("Lerp speed for how fast the gun model should snap to and away from the camera")]
+    public float aimDownSightLerpSpeed = 10f;
 
     [Header("Accuracy")]
     [Tooltip("Minimum dispersion in degrees for the weapon. X is horizontal and Y is vertical")]

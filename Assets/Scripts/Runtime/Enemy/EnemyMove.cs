@@ -1,31 +1,47 @@
+using System;
 using System.Collections.Generic;
+using UnityEditor.Rendering;
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
-public class EnemyMove : MonoBehaviour
+public class EnemyMove : MonoBehaviour, IAlert
 {
-    [SerializeField] List<Transform> Locations;
+    [SerializeField] private LayerMask PlayerLayer;
+    [SerializeField] private LayerMask enemyLayer;
+    [SerializeField] private Transform eyeTransform;
+    public float timeBeforeReturnPatrol = 3;
     [Tooltip("m/s")]
     [SerializeField] private float speed = 2;
-    [Tooltip("Angle in degrees")]  
+    [SerializeField] private bool drawDebug;
+
+
+    [Header("Patrol")]
+    [SerializeField] List<Transform> Locations;
+    
+    [Header("Line of sight")]
+    [Tooltip("Angle in degrees")]
     [SerializeField] private float fieldOfView;
     [Tooltip("Length of field of view")]
     [SerializeField] private float viewDistance;
     [Tooltip("enemy doesn't go closer to player then this")]
     [SerializeField] private float minDistanceToPlayer;
+
+
+    [Header("Alert")]
+    [Tooltip("Radius of the EnemyAlarm")]
+    [SerializeField] private float alarmRadius;
+
+    [Header("Gravity")]
     [Tooltip("m/s^2")]
     [SerializeField] private float gravityStrength = 2f;
     [Tooltip("m/s")]
     [SerializeField] private float maxFallSpeed = 10f;
-    [SerializeField] private bool drawDebug;
-
-    [SerializeField] private Transform eyeTransform;
-    [SerializeField] private LayerMask PlayerLayer;
 
     private int currentLocation;
     private int nextLocation;
     private float acceptanceRadius = 0.7f;
     private float verticalVelocity;
+    [HideInInspector] public float currentTimeBeforeReturnPatrol;
 
     private CharacterController controller;
 
@@ -34,18 +50,20 @@ public class EnemyMove : MonoBehaviour
 
     
 
-    void Start()
+    private void Start()
     {
         controller = GetComponent<CharacterController>();
     }
 
 
-    void FixedUpdate()
+    private void FixedUpdate()
     {
         CheckLineOfSight();
 
         if (isFollowing) 
         {
+            Debug.Log(gameObject.name);
+            EnemyAlarm();
             float distance = Vector3.Distance(transform.position, target.position);
             transform.LookAt(new Vector3(target.position.x, transform.position.y, target.position.z));
             HandleGravity();
@@ -55,6 +73,7 @@ public class EnemyMove : MonoBehaviour
                 Vector3 direction = (target.position - transform.position);
                 direction.y = 0;
                 controller.Move(direction.normalized * Time.deltaTime * speed);
+
             }
         }
         else
@@ -65,7 +84,7 @@ public class EnemyMove : MonoBehaviour
             }
             if (currentLocation < Locations.Count)
             {
-                FollowInstuctions();
+                GoToLocation();
             }
             else
             {
@@ -74,7 +93,7 @@ public class EnemyMove : MonoBehaviour
         }
     }
 
-    void FollowInstuctions()
+    private void GoToLocation()
     {
         if (Vector3.Distance(new Vector3(transform.position.x, 0, transform.position.z), new Vector3(Locations[nextLocation].position.x, 0, Locations[nextLocation].position.z)) < acceptanceRadius)
         {
@@ -95,17 +114,25 @@ public class EnemyMove : MonoBehaviour
 
         controller.Move(moveDirection);
     }
-    public void CheckLineOfSight()
+    private void CheckLineOfSight()
     {
         if (ConePhysics.ConeCast(out RaycastHit hit, eyeTransform.position, eyeTransform.forward, fieldOfView, 3, 0.5f, viewDistance, PlayerLayer, false, 0.1f, QueryTriggerInteraction.Ignore, drawDebug, Color.cyan))
         {
-            target = hit.collider.transform;
             isFollowing = true;
+            target = hit.collider.transform;
+            currentTimeBeforeReturnPatrol = timeBeforeReturnPatrol;
         }
 
-        else { isFollowing = false; }
+        else 
+        {
+            currentTimeBeforeReturnPatrol -= Time.fixedDeltaTime;
+            if (currentTimeBeforeReturnPatrol < 0)
+            {
+                isFollowing = false;
+            }
+        }
     }
-    public void HandleGravity()
+    private void HandleGravity()
     {
         if (controller.isGrounded)
         {
@@ -118,5 +145,31 @@ public class EnemyMove : MonoBehaviour
                 verticalVelocity -= gravityStrength * Time.fixedDeltaTime;
             }
         }
+    }
+
+    private void EnemyAlarm()
+    {
+        
+        Collider[] alarmCollider = Physics.OverlapSphere(transform.position, alarmRadius, enemyLayer, QueryTriggerInteraction.Ignore);
+        foreach (Collider col in alarmCollider)
+        {
+            if (col.gameObject != gameObject)
+            {
+                if (col.gameObject.TryGetComponent<EnemyMove>(out EnemyMove enemyMove))
+                {
+                    Debug.Log(gameObject.name + " is triggering alarm of " + col.gameObject.name);
+                    enemyMove.HandleAlert(target);
+                }
+            }
+        }
+    }
+
+    public void HandleAlert(Transform target)
+    {
+        // handles target change
+        this.target = target;
+        Debug.Log(this.target);
+        isFollowing = true;
+        currentTimeBeforeReturnPatrol = timeBeforeReturnPatrol;
     }
 }

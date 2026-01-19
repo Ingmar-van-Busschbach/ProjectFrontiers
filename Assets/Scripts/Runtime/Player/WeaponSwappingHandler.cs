@@ -1,19 +1,21 @@
+using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.XR;
-using static UnityEngine.InputSystem.LowLevel.InputStateHistory;
 
 [RequireComponent(typeof(Weapon))]
+[RequireComponent(typeof(AimHandler))]
 public class WeaponSwappingHandler : MonoBehaviour
 {
     [SerializeField] private Animator weaponAnimator;
     [SerializeField] private Transform weaponLocation;
-    [SerializeField] private WeaponData weapon1;
-    [SerializeField] private WeaponData weapon2;
-    [SerializeField] private WeaponData weapon3;
+    [SerializeField] private Transform[] barrelPoints;
+    [SerializeField] private List<WeaponData> weapons = new List<WeaponData>();
+    private int weaponsUnlocked;
     private Weapon weapon;
-    private GameObject weaponObject;
+    private AimHandler aimHandler;
+    private AimDownSightHandler weaponObject;
     private PlayerInputs playerInputs;
     private InputAction swapWeapon1;
     private InputAction swapWeapon2;
@@ -23,7 +25,9 @@ public class WeaponSwappingHandler : MonoBehaviour
     {
         playerInputs = new PlayerInputs();
         weapon = GetComponent<Weapon>();
-        StartCoroutine(HandleSwapWeapon(weapon1));
+        aimHandler = GetComponent<AimHandler>();
+        weaponsUnlocked = weapons.Count;
+        StartCoroutine(HandleSwapWeapon(weapons[0]));
     }
     private void OnEnable()
     {
@@ -44,17 +48,17 @@ public class WeaponSwappingHandler : MonoBehaviour
 
     private void Update()
     {
-        if (swapWeapon1.WasPressedThisFrame())
+        if (swapWeapon1.WasPressedThisFrame() && weaponsUnlocked >= 1)
         {
-            StartCoroutine(HandleSwapWeapon(weapon1));
+            StartCoroutine(HandleSwapWeapon(weapons[0]));
         }
-        if (swapWeapon2.WasPressedThisFrame())
+        if (swapWeapon2.WasPressedThisFrame() && weaponsUnlocked >= 2)
         {
-            StartCoroutine(HandleSwapWeapon(weapon2));
+            StartCoroutine(HandleSwapWeapon(weapons[1]));
         }
-        if (swapWeapon3.WasPressedThisFrame())
+        if (swapWeapon3.WasPressedThisFrame() && weaponsUnlocked >= 3)
         {
-            StartCoroutine(HandleSwapWeapon(weapon3));
+            StartCoroutine(HandleSwapWeapon(weapons[2]));
         }
     }
 
@@ -68,10 +72,53 @@ public class WeaponSwappingHandler : MonoBehaviour
         weaponAnimator.SetTrigger("WeaponSwap");
         yield return new WaitForSeconds(0.25f);
         weapon.SwapWeapon(newWeapon);
-        Destroy(weaponObject);
+        foreach(Transform barrelPoint in barrelPoints)
+        {
+            barrelPoint.SetParent(weaponLocation);
+        }
+        if(weaponObject != null)
+        {
+            Destroy(weaponObject.gameObject);
+        }
         weaponObject = Instantiate(newWeapon.weaponObject, weaponLocation);
-        weaponObject.transform.SetParent(weaponLocation);
+        weaponObject.gameObject.transform.SetParent(weaponLocation);
+        aimHandler.weaponObject = weaponObject;
+        foreach (Transform barrelPoint in barrelPoints)
+        {
+            barrelPoint.SetParent(weaponObject.transform);
+        }
         yield return new WaitForSeconds(0.25f);
         weapon.canShoot = true;
+    }
+
+    public void UnlockWeapon(WeaponData weaponToUnlock, WeaponData replaceWeapon = null)
+    {
+        if (replaceWeapon != null)
+        {
+            for (int i = 0; i < weapons.Count; i++)
+            {
+                if (weapons[i] == replaceWeapon)
+                {
+                    weapons[i] = weaponToUnlock;
+                    StartCoroutine(HandleSwapWeapon(weapons[i]));
+                    return;
+                }
+            }
+        }
+        bool weaponAlreadyUnlocked = false;
+        foreach (WeaponData weapon in weapons)
+        {
+            if(weapon == weaponToUnlock)
+            {
+                weaponAlreadyUnlocked = true;
+                break;
+            }
+        }
+        if (!weaponAlreadyUnlocked)
+        {
+            weapons.Insert(weaponsUnlocked, weaponToUnlock);
+            StartCoroutine(HandleSwapWeapon(weapons[weaponsUnlocked]));
+            weaponsUnlocked++;
+        }
     }
 }

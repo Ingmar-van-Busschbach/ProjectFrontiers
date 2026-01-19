@@ -13,7 +13,10 @@ MonoBehaviour:
   m_Name: Rifle
   m_EditorClassIdentifier: 
   weaponName: Rifle
-  weaponObject: {fileID: 1742676961064738901, guid: 11a84c55670aec843bc63721bfc2ab79, type: 3}
+  weaponObject: {fileID: 2096757532442422489, guid: 11a84c55670aec843bc63721bfc2ab79, type: 3}
+  weaponBarrelIndexes: 
+  tracer: {fileID: 4816148849270499086, guid: 8b229ff8d3ba7c24b8d80dc097e38ec7, type: 3}
+  muzzleFlash: {fileID: 8078720523478869859, guid: 4f5fc4bbd01b03a4499a6ed77f175fc7, type: 3}
   weaponType: 0
   damageData:
   - maxDamage: 50
@@ -23,27 +26,30 @@ MonoBehaviour:
   multishot: 1
   shotsPerBurst: 1
   timePerShotInBurst: 0.03
-  magazineSize: 12
+  magazineSize: 6
   reloadDuration: 1
   firingAudio: {fileID: 8300000, guid: b535415ed5b34874aae7c43513c3055a, type: 3}
   reloadAudio: {fileID: 8300000, guid: d2852a0fa0c75434fb1e47657d6f0897, type: 3}
-  minDispersion: {x: 0.1, y: 0.1}
+  aimDownSightFieldOfView: 25
+  aimDownSightFieldOfViewSpeed: 100
+  aimDownSightLerpSpeed: 5
+  minDispersion: {x: 0, y: 0}
   maxDispersion: {x: 30, y: 30}
   dispersionPerShot: {x: 15, y: 15}
   dispersionBloomSpeed: 10
-  dispersionRecoverySpeed: 5
-  recoilAmount: {x: 8, y: 8}
-  recoilOffset: {x: 0.1, y: -4}
-  maxRecoilAngle: {x: 30, y: 30}
-  recoilSnappiness: 8
+  dispersionRecoverySpeed: 2
+  recoilAmount: {x: 8, y: 25}
+  recoilOffset: {x: 0.5, y: -1}
+  maxRecoilAngle: {x: 25, y: 25}
+  recoilSnappiness: 20
   recoilRecoverySpeed: 3
   minRange: 0.5
   optimalRange: 75
   maxRange: 150
   roundDamage: 0
-  aimAssist: 0
+  aimAssist: 0.2
   aimAssistFidelity: 3
-  penetratesTargets: 0
+  penetratesTargets: 1
   layerMask:
     serializedVersion: 2
     m_Bits: 4294967295

@@ -16,18 +16,18 @@ MonoBehaviour:
   - speakerName: Wizard
     dialogue: The druids here are protecting a well of mana. Which we can use to
       turn you back into a human.
-    printDuration: 4
+    printDuration: 0.05
   - speakerName: Duck
     dialogue: But sir we do-
-    printDuration: 0.75
+    printDuration: 0.05
   - speakerName: Wizard
     dialogue: "Silence we don\u2019t have time for your babbling, we need to find
       the well of mana. "
-    printDuration: 3
+    printDuration: 0.05
   - speakerName: Duck
     dialogue: But sir-
-    printDuration: 0.5
+    printDuration: 0.05
   - speakerName: Wizard
     dialogue: We must move onwards for now. Whatever it is you want to tell me can
       wait.
-    printDuration: 4
+    printDuration: 0.05
