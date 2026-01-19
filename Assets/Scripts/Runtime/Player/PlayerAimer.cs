@@ -15,5 +15,12 @@ public class PlayerAimer : MonoBehaviour
                 barrelEnd.rotation = Quaternion.LookRotation(hit.point - barrelEnd.position, Vector3.up);
             }
         }
+        else
+        {
+            foreach (Transform barrelEnd in barrelEnds)
+            {
+                barrelEnd.rotation = Quaternion.identity;
+            }
+        }
     }
 }
