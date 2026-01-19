@@ -8,22 +8,10 @@ public class Weapon : ShotHandler
 {
     protected override void HandleShot()
     {
-        switch (weaponData.weaponType)
-        {
-            case EnumLibrary.EWeaponType.hitscan:
-                HandleHitscanShot();
-                break;
-            case EnumLibrary.EWeaponType.projectile:
-                HandleProjectileShot();
-                break;
-        }
-    }
-
-    private void HandleHitscanShot()
-    {
-        //Handle accuracy of the weapon.
         Quaternion dispersion = HandleDispersion();
-        if(weaponData.muzzleFlash != null)
+
+        //Handle weapon firing particles
+        if (weaponData.muzzleFlash != null)
         {
             GameObject muzzleFlash = Instantiate(weaponData.muzzleFlash, barrelPoint.position, Quaternion.LookRotation(dispersion * barrelPoint.forward));
             muzzleFlash.transform.parent = barrelPoint;
@@ -32,6 +20,32 @@ public class Weapon : ShotHandler
         {
             Instantiate(weaponData.tracer, barrelPoint.position, Quaternion.LookRotation(dispersion * barrelPoint.forward));
         }
+
+        //Alert nearby enemies when shooting
+        if (weaponData.enemyAlertMask != 0)
+        {
+            Collider[] colliders = Physics.OverlapSphere(barrelPoint.position, weaponData.alertRadius, weaponData.enemyAlertMask, QueryTriggerInteraction.Ignore);
+            foreach (Collider collider in colliders)
+            {
+                if(collider.TryGetComponent<IAlert>(out IAlert alertAble))
+                {
+                    alertAble.HandleAlert(gameObject.transform);
+                }
+            }
+        }
+        switch (weaponData.weaponType)
+        {
+            case EnumLibrary.EWeaponType.hitscan:
+                HandleHitscanShot(dispersion);
+                break;
+            case EnumLibrary.EWeaponType.projectile:
+                HandleProjectileShot(dispersion);
+                break;
+        }
+    }
+
+    private void HandleHitscanShot(Quaternion dispersion)
+    {
         // We use a cone cast if we are using aim assist. Otherwise we use a simple raycast.
         RaycastHit[] hitResults = null;
         if (weaponData.aimAssist > 0)
@@ -83,17 +97,8 @@ public class Weapon : ShotHandler
         }
     }
 
-    private void HandleProjectileShot()
+    private void HandleProjectileShot(Quaternion dispersion)
     {
-        Quaternion dispersion = HandleDispersion();
-        if (weaponData.muzzleFlash != null)
-        {
-            Instantiate(weaponData.muzzleFlash, barrelPoint.position, Quaternion.LookRotation(dispersion * barrelPoint.forward));
-        }
-        if (weaponData.tracer != null)
-        {
-            Instantiate(weaponData.tracer, barrelPoint.position, Quaternion.LookRotation(dispersion * barrelPoint.forward));
-        }
         Bullet bullet = Instantiate(weaponData.bullet, barrelPoint.position, barrelPoint.rotation * dispersion);
         bullet.Constructor(weaponData, objectsToIgnore);
     }

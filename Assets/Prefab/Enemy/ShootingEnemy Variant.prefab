@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 384026497907033552}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BarrelEnd
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,6 +39,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 129948914279931229, guid: e8434424552a8704494c428834fa4800, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1020551996406129963, guid: e8434424552a8704494c428834fa4800, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -47,9 +51,57 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 29fd0faf5ce7a0349b257092512a5012, type: 2}
+    - target: {fileID: 2494296693572926661, guid: e8434424552a8704494c428834fa4800, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2800121421426173937, guid: e8434424552a8704494c428834fa4800, type: 3}
       propertyPath: m_Name
       value: ShootingEnemy Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 2800121421426173937, guid: e8434424552a8704494c428834fa4800, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3011459498283586696, guid: e8434424552a8704494c428834fa4800, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3264592058007281119, guid: e8434424552a8704494c428834fa4800, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3304050712587865521, guid: e8434424552a8704494c428834fa4800, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3647367204119807462, guid: e8434424552a8704494c428834fa4800, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4044136868694464080, guid: e8434424552a8704494c428834fa4800, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4233667603682456022, guid: e8434424552a8704494c428834fa4800, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5651789458523309998, guid: e8434424552a8704494c428834fa4800, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6223462521288731581, guid: e8434424552a8704494c428834fa4800, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6235556709207786438, guid: e8434424552a8704494c428834fa4800, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6751155543288479399, guid: e8434424552a8704494c428834fa4800, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7092278297017488662, guid: e8434424552a8704494c428834fa4800, type: 3}
       propertyPath: Locations.Array.size
@@ -94,6 +146,22 @@ PrefabInstance:
     - target: {fileID: 7903817954157877558, guid: e8434424552a8704494c428834fa4800, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8644461314003158675, guid: e8434424552a8704494c428834fa4800, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8675289921502615856, guid: e8434424552a8704494c428834fa4800, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8678526516797327341, guid: e8434424552a8704494c428834fa4800, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8829990894598010710, guid: e8434424552a8704494c428834fa4800, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

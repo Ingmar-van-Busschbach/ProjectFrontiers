@@ -11,8 +11,6 @@ public class WeaponData : ScriptableObject
     public string weaponName = "DefaultWeapon";
     public AimDownSightHandler weaponObject;
     public int[] weaponBarrelIndexes;
-    public GameObject tracer;
-    public GameObject muzzleFlash;
     public EnumLibrary.EWeaponType weaponType;
 
     [Space]
@@ -39,11 +37,17 @@ public class WeaponData : ScriptableObject
     public int magazineSize;
     public float reloadDuration;
 
-
     [Header("Audio")]
     public AudioClip firingAudio;
     public AudioClip reloadAudio;
+    
+    [Header("Particles")]
+    public GameObject tracer;
+    public GameObject muzzleFlash;
 
+    [Header("Enemy Alert")]
+    public LayerMask enemyAlertMask;
+    public float alertRadius;
 
     [Header("Aiming")]
     public float aimDownSightFieldOfView = 25f;
