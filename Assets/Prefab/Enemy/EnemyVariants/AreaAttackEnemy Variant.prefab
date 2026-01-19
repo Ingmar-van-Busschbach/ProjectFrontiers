@@ -92,4 +92,4 @@ MonoBehaviour:
   weapon: {fileID: 0}
   attackType: 1
   AreaAttackPrefab: {fileID: -7064600563462912462, guid: 900fbe421461aa445ba77534ba323fd7, type: 3}
-  attackCooldown: 10
+  attackCooldown: 6

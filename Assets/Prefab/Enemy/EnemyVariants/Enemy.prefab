@@ -237,11 +237,11 @@ MonoBehaviour:
     m_Bits: 0
   eyeTransform: {fileID: 5433533397875916073}
   timeBeforeReturnPatrol: 15
-  speed: 15
+  speed: 10
   drawDebug: 0
   Locations: []
-  fieldOfView: 80
-  viewDistance: 70
+  fieldOfView: 90
+  viewDistance: 80
   minDistanceToPlayer: 5
   alarmRadius: 50
   gravityStrength: 2
