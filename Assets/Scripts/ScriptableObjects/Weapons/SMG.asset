@@ -33,7 +33,7 @@ MonoBehaviour:
   enemyAlertMask:
     serializedVersion: 2
     m_Bits: 64
-  alertRadius: 40
+  alertRadius: 25
   aimDownSightFieldOfView: 25
   aimDownSightFieldOfViewSpeed: 100
   aimDownSightLerpSpeed: 5

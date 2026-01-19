@@ -10,11 +10,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5133369057244049864, guid: 7a969e412d6c0b949b4fe63ae5805e13, type: 3}
       propertyPath: damage
-      value: 30
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 5499576558339536665, guid: 7a969e412d6c0b949b4fe63ae5805e13, type: 3}
       propertyPath: m_Name
-      value: EnemyAreaAttack MidDMG Variant Variant
+      value: EnemyAreaAttack HighDMG Variant Variant
       objectReference: {fileID: 0}
     - target: {fileID: 5781851267914202721, guid: 7a969e412d6c0b949b4fe63ae5805e13, type: 3}
       propertyPath: m_LocalPosition.x
