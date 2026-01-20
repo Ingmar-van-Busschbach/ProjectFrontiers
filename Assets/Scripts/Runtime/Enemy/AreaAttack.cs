@@ -8,7 +8,8 @@ public class AreaAttack : MonoBehaviour
     [Tooltip("Time between casting and damage")]
     [SerializeField] private float timeToDamage;
     [SerializeField] private float damageRadius;
-    [SerializeField] private float damage;
+    [SerializeField] private float damagePerSecond;
+    [SerializeField] private float damageDuration;
     
     [SerializeField] LayerMask layerToHit;
     [SerializeField] EnumLibrary.EDamageType damageType;
@@ -29,7 +30,7 @@ public class AreaAttack : MonoBehaviour
         {
             if (col.gameObject.TryGetComponent<IDamageAble>(out IDamageAble target))
             {
-                target.ApplyDamage(damage, damageType, new RaycastHit());
+                target.ApplyDamage(damagePerSecond, damageType, new RaycastHit());
             }
         }
 
