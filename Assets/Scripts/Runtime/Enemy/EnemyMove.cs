@@ -119,10 +119,11 @@ public class EnemyMove : MonoBehaviour, IAlert
             if (!isFollowing)
             {
                 GameManager.instance.UpdateFollowing(1);
+                isFollowing = true;
+                Debug.Log("LOS");
+                target = hit.collider.transform;
+                currentTimeBeforeReturnPatrol = timeBeforeReturnPatrol;
             }
-            isFollowing = true;
-            target = hit.collider.transform;
-            currentTimeBeforeReturnPatrol = timeBeforeReturnPatrol;
         }
 
         else 
@@ -133,8 +134,8 @@ public class EnemyMove : MonoBehaviour, IAlert
                 if (isFollowing)
                 {
                     GameManager.instance.UpdateFollowing(-1);
+                    isFollowing = false;
                 }
-                isFollowing = false;
             }
         }
     }
@@ -172,8 +173,15 @@ public class EnemyMove : MonoBehaviour, IAlert
     public void HandleAlert(Transform target)
     {
         // handles target change
-        this.target = target;
-        isFollowing = true;
-        currentTimeBeforeReturnPatrol = timeBeforeReturnPatrol;
+        
+        if (!isFollowing)
+        {
+            this.target = target;
+            GameManager.instance.UpdateFollowing(1);
+            isFollowing = true;
+            Debug.Log("Alert");
+            currentTimeBeforeReturnPatrol = timeBeforeReturnPatrol;
+        }
+
     }
 }
