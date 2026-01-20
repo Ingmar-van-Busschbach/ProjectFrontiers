@@ -5,14 +5,17 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(Weapon))]
+[RequireComponent(typeof(AimHandler))]
 public class WeaponSwappingHandler : MonoBehaviour
 {
     [SerializeField] private Animator weaponAnimator;
     [SerializeField] private Transform weaponLocation;
+    [SerializeField] private Transform[] barrelPoints;
     [SerializeField] private List<WeaponData> weapons = new List<WeaponData>();
     private int weaponsUnlocked;
     private Weapon weapon;
-    private GameObject weaponObject;
+    private AimHandler aimHandler;
+    private AimDownSightHandler weaponObject;
     private PlayerInputs playerInputs;
     private InputAction swapWeapon1;
     private InputAction swapWeapon2;
@@ -22,6 +25,7 @@ public class WeaponSwappingHandler : MonoBehaviour
     {
         playerInputs = new PlayerInputs();
         weapon = GetComponent<Weapon>();
+        aimHandler = GetComponent<AimHandler>();
         weaponsUnlocked = weapons.Count;
         StartCoroutine(HandleSwapWeapon(weapons[0]));
     }
@@ -68,9 +72,21 @@ public class WeaponSwappingHandler : MonoBehaviour
         weaponAnimator.SetTrigger("WeaponSwap");
         yield return new WaitForSeconds(0.25f);
         weapon.SwapWeapon(newWeapon);
-        Destroy(weaponObject);
+        foreach(Transform barrelPoint in barrelPoints)
+        {
+            barrelPoint.SetParent(weaponLocation);
+        }
+        if(weaponObject != null)
+        {
+            Destroy(weaponObject.gameObject);
+        }
         weaponObject = Instantiate(newWeapon.weaponObject, weaponLocation);
-        weaponObject.transform.SetParent(weaponLocation);
+        weaponObject.gameObject.transform.SetParent(weaponLocation);
+        aimHandler.weaponObject = weaponObject;
+        foreach (Transform barrelPoint in barrelPoints)
+        {
+            barrelPoint.SetParent(weaponObject.transform);
+        }
         yield return new WaitForSeconds(0.25f);
         weapon.canShoot = true;
     }
