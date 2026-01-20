@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: AssaultRifle
   m_EditorClassIdentifier: 
   weaponName: Assault Rifle
-  weaponObject: {fileID: 1742676961064738901, guid: 11a84c55670aec843bc63721bfc2ab79, type: 3}
+  weaponObject: {fileID: 2096757532442422489, guid: 11a84c55670aec843bc63721bfc2ab79, type: 3}
   weaponBarrelIndexes: 
+  tracer: {fileID: 0}
+  muzzleFlash: {fileID: 0}
   weaponType: 0
   damageData:
   - maxDamage: 10
@@ -28,6 +30,8 @@ MonoBehaviour:
   reloadDuration: 0.5
   firingAudio: {fileID: 8300000, guid: e5a9937bc2cae8a44b894f427518e92f, type: 3}
   reloadAudio: {fileID: 0}
+  aimDownSightsFieldOfView: 25
+  aimDownSightsSpeed: 100
   minDispersion: {x: 0.5, y: 0.5}
   maxDispersion: {x: 5, y: 5}
   dispersionPerShot: {x: 1, y: 1}
