@@ -22,27 +22,31 @@ public class EnemyTank : MonoBehaviour
     [SerializeField] private Transform verticalRotationTarget;
     [Tooltip("to rotate Vertically")]
     [Range(-180f, 180f)]
-    [SerializeField] private float minRotationX = 0;
+    [SerializeField] private float minRotationX = 0f;
     [Tooltip("to rotate Vertically")]
     [Range(-180f, 180f)]
-    [SerializeField] private float maxRotationX = 90;
+    [SerializeField] private float maxRotationX = 0f;
     [Tooltip("To rotate horizontally")]
     [Range(-180f, 180f)]
-    [SerializeField] private float minRotationY = 0;
+    [SerializeField] private float minRotationY = 0f;
     [Tooltip("To rotate horizontally")]
     [Range(-180f, 180f)]
-    [SerializeField] private float maxRotationY = 90;
-    [SerializeField] private float rotationSpeedX = 5;
-    [SerializeField] private float rotationSpeedY = 5;
+    [SerializeField] private float maxRotationY = 0f;
+    [SerializeField] private float rotationSpeedX = 5f;
+    [SerializeField] private float rotationSpeedY = 0.1f;
+    [SerializeField] private float patrolAngle = 45f;
+    [SerializeField] private float patrolTime = 2f;
 
     private Weapon weapon;
     private Transform target;
     private Quaternion defaultRotation;
+    private float patrolOffset;
 
     private void Awake()
     {
         weapon = GetComponent<Weapon>();
         defaultRotation = gameObject.transform.localRotation;
+        patrolOffset = UnityEngine.Random.Range(0f, 10f);
     }
 
     private void Update()
@@ -59,7 +63,6 @@ public class EnemyTank : MonoBehaviour
         if (ConePhysics.ConeCast(out RaycastHit hit, barrel.position, barrel.forward, fieldOfView, 3, 0.5f, viewDistance, PlayerLayer, false, 0.1f, QueryTriggerInteraction.Ignore, drawDebug, Color.cyan))
         {
             target = hit.collider.transform;
-            //HandleLookAt();
             weapon.Shoot();
         }
 
@@ -81,7 +84,7 @@ public class EnemyTank : MonoBehaviour
         }
         else
         {
-            intendedRotation = defaultRotation;
+            intendedRotation = defaultRotation * Quaternion.Euler(0, Mathf.Sin((Time.time + patrolOffset) * 2 * Mathf.PI * (1/patrolTime)) * patrolAngle, 0);
         }
             float rotationX = intendedRotation.eulerAngles.x;
 
