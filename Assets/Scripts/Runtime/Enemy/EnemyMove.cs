@@ -1,6 +1,4 @@
-using System;
 using System.Collections.Generic;
-using UnityEditor.Rendering;
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
@@ -62,7 +60,6 @@ public class EnemyMove : MonoBehaviour, IAlert
 
         if (isFollowing) 
         {
-            Debug.Log(gameObject.name);
             EnemyAlarm();
             float distance = Vector3.Distance(transform.position, target.position);
             transform.LookAt(new Vector3(target.position.x, transform.position.y, target.position.z));
@@ -157,7 +154,6 @@ public class EnemyMove : MonoBehaviour, IAlert
             {
                 if (col.gameObject.TryGetComponent<EnemyMove>(out EnemyMove enemyMove))
                 {
-                    Debug.Log(gameObject.name + " is triggering alarm of " + col.gameObject.name);
                     enemyMove.HandleAlert(target);
                 }
             }
@@ -168,7 +164,6 @@ public class EnemyMove : MonoBehaviour, IAlert
     {
         // handles target change
         this.target = target;
-        Debug.Log(this.target);
         isFollowing = true;
         currentTimeBeforeReturnPatrol = timeBeforeReturnPatrol;
     }
