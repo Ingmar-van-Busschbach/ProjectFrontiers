@@ -1300,7 +1300,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 743418d1dc313cb47aaba08752b9ed5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetingOrigin: {fileID: 2108394454284556744}
+  targetingOrigin: {fileID: 8078602070079154223}
   teleportRange: 25
   teleportLayerMask:
     serializedVersion: 2
@@ -1338,6 +1338,11 @@ MonoBehaviour:
   resistanceEntries: []
   maxHealth: 100
   healthSlider: {fileID: 1859278501677894891}
+  respawnPoint: {fileID: 0}
+  disableRadius: 0
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!114 &7903287771677606296
 MonoBehaviour:
   m_ObjectHideFlags: 0

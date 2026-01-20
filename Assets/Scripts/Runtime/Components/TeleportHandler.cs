@@ -4,7 +4,7 @@ using UnityEngine;
 public class TeleportHandler : MonoBehaviour
 {
     [Tooltip("Should be the player camera.")]
-    [SerializeField] private Transform targetingOrigin;
+    [SerializeField] private Camera targetingOrigin;
     [Tooltip("Range of the raycast that the telporter uses to determine where to teleport to.")]
     [SerializeField] private float teleportRange;
     [Tooltip("Layers to test for when making the raycast.")]
@@ -23,11 +23,24 @@ public class TeleportHandler : MonoBehaviour
             return;
         }
         timeOfNextTeleport = Time.time + teleportCooldown;
-        if (Physics.Raycast(targetingOrigin.position, targetingOrigin.forward, out RaycastHit hit, teleportRange, teleportLayerMask, QueryTriggerInteraction.Ignore))
+
+        //Teleport to the point the mouse aims at
+        if (Physics.Raycast(targetingOrigin.transform.position, targetingOrigin.transform.forward, out RaycastHit hit, teleportRange, teleportLayerMask, QueryTriggerInteraction.Ignore))
         {
             if (ManaManager.Instance.TryUseMana(manaUsage))
             {
                 HandleTeleport(hit);
+            }
+        }
+        else
+        {
+            //Else teleport to the floor underneath where the mouse aims at
+            if (Physics.Raycast(targetingOrigin.transform.position + targetingOrigin.transform.forward * teleportRange, Vector3.down, out RaycastHit groundHit, Mathf.Infinity, teleportLayerMask, QueryTriggerInteraction.Ignore))
+            {
+                if (ManaManager.Instance.TryUseMana(manaUsage))
+                {
+                    HandleTeleport(groundHit);
+                }
             }
         }
     }
