@@ -37,10 +37,12 @@ public class EnemyTank : MonoBehaviour
 
     private Weapon weapon;
     private Transform target;
+    private Quaternion defaultRotation;
 
     private void Awake()
     {
         weapon = GetComponent<Weapon>();
+        defaultRotation = gameObject.transform.localRotation;
     }
 
     private void Update()
@@ -77,7 +79,11 @@ public class EnemyTank : MonoBehaviour
             intendedRotation = Quaternion.LookRotation(target.position - transform.position);
             intendedRotation = intendedRotation * Quaternion.Inverse(parentTransform.rotation);
         }
-        float rotationX = intendedRotation.eulerAngles.x;
+        else
+        {
+            intendedRotation = defaultRotation;
+        }
+            float rotationX = intendedRotation.eulerAngles.x;
 
         //Map rotationX from (0, 360) to (-180, 180)
         rotationX = ((rotationX + 180) % 360) - 180;
