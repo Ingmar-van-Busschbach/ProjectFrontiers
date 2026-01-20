@@ -60,7 +60,7 @@ public class Bullet : MonoBehaviour
 
         if (weaponData.explosionMaxRadius > 0)
         {
-            Collider[] hitColliders = Physics.OverlapSphere(transform.position, weaponData.explosionMaxRadius);
+            Collider[] hitColliders = Physics.OverlapSphere(transform.position, weaponData.explosionMaxRadius, weaponData.layerMask, QueryTriggerInteraction.Ignore);
             foreach (Collider hit in hitColliders)
             {
                 bool shouldIgnore = false;
