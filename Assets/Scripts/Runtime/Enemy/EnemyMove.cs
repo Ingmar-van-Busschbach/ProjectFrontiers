@@ -50,7 +50,7 @@ public class EnemyMove : MonoBehaviour, IAlert
 
     
 
-    private void Start()
+    private void Awake()
     {
         controller = GetComponent<CharacterController>();
     }
@@ -72,7 +72,6 @@ public class EnemyMove : MonoBehaviour, IAlert
                 Vector3 direction = (target.position - transform.position);
                 direction.y = 0;
                 controller.Move(direction.normalized * Time.deltaTime * speed);
-
             }
         }
         else
@@ -117,6 +116,10 @@ public class EnemyMove : MonoBehaviour, IAlert
     {
         if (ConePhysics.ConeCast(out RaycastHit hit, eyeTransform.position, eyeTransform.forward, fieldOfView, 3, 0.5f, viewDistance, PlayerLayer, false, 0.1f, QueryTriggerInteraction.Ignore, drawDebug, Color.cyan))
         {
+            if (!isFollowing)
+            {
+                GameManager.instance.UpdateFollowing(1);
+            }
             isFollowing = true;
             target = hit.collider.transform;
             currentTimeBeforeReturnPatrol = timeBeforeReturnPatrol;
@@ -127,6 +130,10 @@ public class EnemyMove : MonoBehaviour, IAlert
             currentTimeBeforeReturnPatrol -= Time.fixedDeltaTime;
             if (currentTimeBeforeReturnPatrol < 0)
             {
+                if (isFollowing)
+                {
+                    GameManager.instance.UpdateFollowing(-1);
+                }
                 isFollowing = false;
             }
         }
