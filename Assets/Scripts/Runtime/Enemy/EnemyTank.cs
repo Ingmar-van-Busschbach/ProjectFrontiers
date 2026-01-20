@@ -1,8 +1,3 @@
-using System;
-using System.Net.Sockets;
-using System.Runtime.InteropServices;
-using Unity.Mathematics;
-using Unity.VisualScripting;
 using UnityEngine;
 
 [RequireComponent (typeof(Weapon))]
@@ -46,7 +41,7 @@ public class EnemyTank : MonoBehaviour
     {
         weapon = GetComponent<Weapon>();
         defaultRotation = gameObject.transform.localRotation;
-        patrolOffset = UnityEngine.Random.Range(0f, 10f);
+        patrolOffset = Random.Range(0f, 10f);
     }
 
     private void Update()
@@ -58,17 +53,12 @@ public class EnemyTank : MonoBehaviour
     {
         CheckLineOfSight();
     }
-        private void CheckLineOfSight()
+    private void CheckLineOfSight()
     {
         if (ConePhysics.ConeCast(out RaycastHit hit, barrel.position, barrel.forward, fieldOfView, 3, 0.5f, viewDistance, PlayerLayer, false, 0.1f, QueryTriggerInteraction.Ignore, drawDebug, Color.cyan))
         {
             target = hit.collider.transform;
             weapon.Shoot();
-        }
-
-        else
-        {
-           return;
         }
     }
 
@@ -78,15 +68,23 @@ public class EnemyTank : MonoBehaviour
         if (target != null)
         {
             Vector3 intendedDirection = target.position - transform.position;
+            //Move vector to local space
             intendedDirection = parentTransform.InverseTransformDirection(intendedDirection);
+
             intendedRotation = Quaternion.LookRotation(target.position - transform.position);
+
+            //Apply parent rotation
             intendedRotation = intendedRotation * Quaternion.Inverse(parentTransform.rotation);
         }
         else
         {
+            //Simple sine wave movement
             intendedRotation = defaultRotation * Quaternion.Euler(0, Mathf.Sin((Time.time + patrolOffset) * 2 * Mathf.PI * (1/patrolTime)) * patrolAngle, 0);
         }
-            float rotationX = intendedRotation.eulerAngles.x;
+
+        //Clamp turret angles section
+
+        float rotationX = intendedRotation.eulerAngles.x;
 
         //Map rotationX from (0, 360) to (-180, 180)
         rotationX = ((rotationX + 180) % 360) - 180;
@@ -125,7 +123,6 @@ public class EnemyTank : MonoBehaviour
             currentAngles = new Vector3(((currentAngles.x + 180) % 360) - 180, ((currentAngles.y + 180) % 360) - 180, 0);
         }    
         Vector3 moveAngles = intendedAngles - currentAngles;
-        Debug.Log(moveAngles);
 
         moveAngles = new Vector3(Mathf.Clamp(moveAngles.x, -rotationSpeedX, rotationSpeedX), Mathf.Clamp(moveAngles.y, -rotationSpeedY, rotationSpeedY), 0);
 
