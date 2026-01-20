@@ -31,6 +31,8 @@ public class GameManager : MonoBehaviour
         {
             if (NeutralAudioSource.isPlaying == true)
             {
+                // instead of stopping neutral should be lowered
+                // couroutine slowely lowers the neutral sound and ups the combat sounds 
                 NeutralAudioSource.Stop();
                 Debug.Log("PlayingAudio " + enemiesFollowing);
                 CombatAudioSource.Play();

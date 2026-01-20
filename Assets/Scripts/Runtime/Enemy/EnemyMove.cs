@@ -118,7 +118,7 @@ public class EnemyMove : MonoBehaviour, IAlert
             {
                 GameManager.instance.UpdateFollowing(1);
                 isFollowing = true;
-                Debug.Log("LOS");
+                Debug.Log("LOS" + gameObject.name);
                 target = hit.collider.transform;
                 currentTimeBeforeReturnPatrol = timeBeforeReturnPatrol;
             }

@@ -27,7 +27,7 @@ public class PlayerHealth : Health
     protected override void OnDeath()
     {
         CharacterController controller = GetComponent<CharacterController>();
-        DisableTrigger();
+        
 
         controller.enabled = false;
         transform.position = respawnPoint.position;
@@ -36,7 +36,7 @@ public class PlayerHealth : Health
         currentHealth = maxHealth;
         UpdateHealthSlider();
 
-        
+        DisableTrigger();
 
     }
     protected override void OnDamaged(float damage)
