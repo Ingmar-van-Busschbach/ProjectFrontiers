@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponName: Rocket Launcher
   weaponObject: {fileID: 0}
+  weaponBarrelIndexes: 
   weaponType: 1
   damageData:
   - maxDamage: 25
@@ -27,6 +28,15 @@ MonoBehaviour:
   reloadDuration: 0.5
   firingAudio: {fileID: 8300000, guid: e5a9937bc2cae8a44b894f427518e92f, type: 3}
   reloadAudio: {fileID: 0}
+  tracer: {fileID: 0}
+  muzzleFlash: {fileID: 0}
+  enemyAlertMask:
+    serializedVersion: 2
+    m_Bits: 0
+  alertRadius: 0
+  aimDownSightFieldOfView: 25
+  aimDownSightFieldOfViewSpeed: 100
+  aimDownSightLerpSpeed: 10
   minDispersion: {x: 0, y: 0}
   maxDispersion: {x: 0, y: 0}
   dispersionPerShot: {x: 0, y: 0}
@@ -47,7 +57,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 1
-  bullet: {fileID: 7726416138810722538, guid: 7d2b97016597a4c42a5fc1c0b9061e12, type: 3}
+  bullet: {fileID: 7726416138810722538, guid: c357d4701203dd64ba298291e2650b5d, type: 3}
   velocity: 15
   bulletDrop: 0
   explosionMaxRadius: 5
