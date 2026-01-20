@@ -4,6 +4,7 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private AudioSource CombatAudioSource;
     [SerializeField] private AudioSource NeutralAudioSource;
+    [SerializeField] private float blendDuration = 2;
     public static GameManager instance;
     public int enemiesFollowing;
     private void Awake()
@@ -23,29 +24,39 @@ public class GameManager : MonoBehaviour
         Destroy(this);
     }
 
+    private void Update()
+    {
+        if(enemiesFollowing >= 1)
+        {
+            if (!CombatAudioSource.isPlaying)
+            {
+                CombatAudioSource.Play();
+            }
+            CombatAudioSource.volume = Mathf.Clamp01(CombatAudioSource.volume + Time.deltaTime / blendDuration);
+            NeutralAudioSource.volume = Mathf.Clamp01(NeutralAudioSource.volume - Time.deltaTime / blendDuration);
+            if(NeutralAudioSource.volume <= 0)
+            {
+                NeutralAudioSource.Stop();
+            }
+        }
+        else
+        {
+            if (!NeutralAudioSource.isPlaying)
+            {
+                NeutralAudioSource.Play();
+            }
+            NeutralAudioSource.volume = Mathf.Clamp01(NeutralAudioSource.volume + Time.deltaTime / blendDuration);
+            CombatAudioSource.volume = Mathf.Clamp01(CombatAudioSource.volume - Time.deltaTime / blendDuration);
+            if (NeutralAudioSource.volume <= 0)
+            {
+                CombatAudioSource.Stop();
+            }
+        }
+    }
+
     public void UpdateFollowing(int add)
     {
         enemiesFollowing += add;
-        enemiesFollowing = Mathf.Clamp(enemiesFollowing, 0, 7);
-        if (enemiesFollowing >= 1)
-        {
-            if (NeutralAudioSource.isPlaying == true)
-            {
-                // instead of stopping neutral should be lowered
-                // couroutine slowely lowers the neutral sound and ups the combat sounds 
-                NeutralAudioSource.Stop();
-                Debug.Log("PlayingAudio " + enemiesFollowing);
-                CombatAudioSource.Play();
-            }
-        }
-        else if (enemiesFollowing == 0)
-        {
-            if (CombatAudioSource.isPlaying == true)
-            {
-                CombatAudioSource.Stop();
-                Debug.Log("disabling audio");
-                NeutralAudioSource.Play();
-            }
-        }
+        enemiesFollowing = Mathf.Clamp(enemiesFollowing, 0, 5);
     }
 }
