@@ -2,12 +2,6 @@ using UnityEngine;
 
 public class EnemyHealth : Health
 {
-    private EnemyMove enemyMove;
-
-    private void Awake()
-    {
-        enemyMove = GetComponent<EnemyMove>();
-    }
     protected override void OnDeath()
     {
         Destroy(gameObject);

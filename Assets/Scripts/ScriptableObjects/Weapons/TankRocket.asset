@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74027454f8a669b46be2fc2c10fccded, type: 3}
+  m_Name: TankRocket
+  m_EditorClassIdentifier: 
+  weaponName: TankRocket
+  weaponObject: {fileID: 0}
+  weaponBarrelIndexes: 
+  tracer: {fileID: 0}
+  muzzleFlash: {fileID: 0}
+  weaponType: 1
+  damageData:
+  - maxDamage: 60
+    minDamage: 30
+    damageType: 0
+  rateOfFire: 10
+  multishot: 1
+  shotsPerBurst: 1
+  timePerShotInBurst: 0.03
+  magazineSize: 99999999
+  reloadDuration: 0
+  firingAudio: {fileID: 0}
+  reloadAudio: {fileID: 0}
+  aimDownSightsFieldOfView: 25
+  aimDownSightsSpeed: 100
+  minDispersion: {x: 0, y: 0}
+  maxDispersion: {x: 0, y: 0}
+  dispersionPerShot: {x: 0, y: 0}
+  dispersionBloomSpeed: 0
+  dispersionRecoverySpeed: 0
+  recoilAmount: {x: 0, y: 0}
+  recoilOffset: {x: 0, y: 0}
+  maxRecoilAngle: {x: 0, y: 0}
+  recoilSnappiness: 0
+  recoilRecoverySpeed: 0
+  minRange: 0.1
+  optimalRange: 25
+  maxRange: 50
+  roundDamage: 0
+  aimAssist: 0
+  aimAssistFidelity: 2
+  penetratesTargets: 0
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  bullet: {fileID: 7726416138810722538, guid: 7d2b97016597a4c42a5fc1c0b9061e12, type: 3}
+  velocity: 40
+  bulletDrop: 0
+  explosionMaxRadius: 5
+  explosionOptimalRadius: 3
+  isHoming: 0
+  targetCenterOfMass: 0
+  homingSpeed: 0
+  homingConeAngle: 0
+  homingMaxRange: 0
+  homingLayerMask:
+    serializedVersion: 2
+    m_Bits: 0

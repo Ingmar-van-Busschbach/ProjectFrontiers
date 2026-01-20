@@ -47,7 +47,7 @@ SphereCollider:
     m_Bits: 8
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 55
+    m_Bits: 119
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
@@ -100,4 +100,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e871aadb16dfa8249bd86deb1b2adbff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponPickup: 0
+  weaponToUnlock: {fileID: 0}
+  replaceWeapon: {fileID: 0}

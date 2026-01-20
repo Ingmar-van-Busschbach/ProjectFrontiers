@@ -30772,6 +30772,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3942344222385171422, guid: f41222e90b835d74ca65dbce80056a9b, type: 3}
+      propertyPath: weaponData
+      value: 
+      objectReference: {fileID: 11400000, guid: ec75bd7fd5c758847b1e592c2a208936, type: 2}
     - target: {fileID: 4443201308179138839, guid: f41222e90b835d74ca65dbce80056a9b, type: 3}
       propertyPath: moveSpeed
       value: 20
@@ -30784,6 +30788,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4794944979234320835, guid: f41222e90b835d74ca65dbce80056a9b, type: 3}
+      propertyPath: 'weapons.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: d6eee71de038d2d4dbafe99ba80c1d1c, type: 2}
     - target: {fileID: 5737278089945899384, guid: f41222e90b835d74ca65dbce80056a9b, type: 3}
       propertyPath: m_Name
       value: Player
