@@ -30,6 +30,16 @@ public class TeleportHandler : MonoBehaviour
                 HandleTeleport(hit);
             }
         }
+        else
+        {
+            if (Physics.Raycast(targetingOrigin.position + targetingOrigin.forward * teleportRange, Vector3.down, out RaycastHit groundHit, Mathf.Infinity, teleportLayerMask, QueryTriggerInteraction.Ignore))
+            {
+                if (ManaManager.Instance.TryUseMana(manaUsage))
+                {
+                    HandleTeleport(groundHit);
+                }
+            }
+        }
     }
 
     private void HandleTeleport(RaycastHit hit)
