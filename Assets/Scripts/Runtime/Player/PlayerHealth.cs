@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 [RequireComponent(typeof(CharacterController))]
 public class PlayerHealth : Health
@@ -16,6 +17,12 @@ public class PlayerHealth : Health
         {
             respawnPoint = Instantiate(new GameObject(), gameObject.transform).transform;
         }
+        //StartCoroutine(die());
+    }
+    private IEnumerator die()
+    {
+        yield return new WaitForSeconds(5);
+        this.ApplyDamage(100, EnumLibrary.EDamageType.impact, new RaycastHit());
     }
     protected override void OnDeath()
     {

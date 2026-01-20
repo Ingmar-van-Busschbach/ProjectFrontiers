@@ -10,14 +10,16 @@ public class EnemyHealth : Health
 
     protected override void OnDamaged(float damage)
     {
-        if (enemyMove.isFollowing == false)
+        if(gameObject.TryGetComponent<EnemyMove>(out EnemyMove enemyMove))
         {
-            enemyMove.isFollowing = true;
-            Debug.Log("ondamaged");
-            GameManager.instance.UpdateFollowing(1);
-            enemyMove.target = PlayerIdentifier.Instance.gameObject.transform;
-            enemyMove.currentTimeBeforeReturnPatrol = enemyMove.timeBeforeReturnPatrol;
+            if (enemyMove.isFollowing == false)
+            {
+                enemyMove.isFollowing = true;
+                Debug.Log("ondamaged");
+                GameManager.instance.UpdateFollowing(1);
+                enemyMove.target = PlayerIdentifier.Instance.gameObject.transform;
+                enemyMove.currentTimeBeforeReturnPatrol = enemyMove.timeBeforeReturnPatrol;
+            }
         }
-
     }
 }

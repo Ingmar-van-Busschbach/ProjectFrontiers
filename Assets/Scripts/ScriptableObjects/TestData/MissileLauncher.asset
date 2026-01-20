@@ -56,7 +56,7 @@ MonoBehaviour:
   penetratesTargets: 1
   layerMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 9
   bullet: {fileID: 7726416138810722538, guid: c357d4701203dd64ba298291e2650b5d, type: 3}
   velocity: 15
   bulletDrop: 0
@@ -69,4 +69,4 @@ MonoBehaviour:
   homingMaxRange: 25
   homingLayerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 63
