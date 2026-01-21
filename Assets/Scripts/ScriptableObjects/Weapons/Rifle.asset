@@ -15,9 +15,12 @@ MonoBehaviour:
   weaponName: Rifle
   weaponObject: {fileID: 2096757532442422489, guid: 11a84c55670aec843bc63721bfc2ab79, type: 3}
   weaponBarrelIndexes: 
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
   weaponType: 0
   damageData:
-  - maxDamage: 50
+  - maxDamage: 120
     minDamage: 10
     damageType: 1
   rateOfFire: 25
@@ -33,7 +36,7 @@ MonoBehaviour:
   enemyAlertMask:
     serializedVersion: 2
     m_Bits: 64
-  alertRadius: 10
+  alertRadius: 50
   aimDownSightFieldOfView: 25
   aimDownSightFieldOfViewSpeed: 100
   aimDownSightLerpSpeed: 5
@@ -54,9 +57,6 @@ MonoBehaviour:
   aimAssist: 0.2
   aimAssistFidelity: 3
   penetratesTargets: 1
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
   bullet: {fileID: 0}
   velocity: 0
   bulletDrop: 0

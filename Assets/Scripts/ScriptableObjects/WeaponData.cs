@@ -11,6 +11,8 @@ public class WeaponData : ScriptableObject
     public string weaponName = "DefaultWeapon";
     public AimDownSightHandler weaponObject;
     public int[] weaponBarrelIndexes;
+    [Tooltip("What layers should be tested with the raycasts")]
+    public LayerMask layerMask;
     public EnumLibrary.EWeaponType weaponType;
 
     [Space]
@@ -67,7 +69,6 @@ public class WeaponData : ScriptableObject
     public float dispersionBloomSpeed;
     [Tooltip("The rate at which the current dispersion is lerped towards the minimum dispersion each second")]
     public float dispersionRecoverySpeed;
-    
 
     [Header("Recoil")]
     [Tooltip("Max amount of recoil, randomly calculated per shot.")]
@@ -83,7 +84,6 @@ public class WeaponData : ScriptableObject
     [Tooltip("The rate at which the current recoil is lerped towards zero recoil each second")]
     public float recoilRecoverySpeed;
 
-
     [Header("Range")]
     [Tooltip("Minimum range in meters")]
     public float minRange = 0.5f;
@@ -93,7 +93,6 @@ public class WeaponData : ScriptableObject
     public float maxRange = 15f;
     [Tooltip("Whether to round the damage after falloff to a whole number")]
     public bool roundDamage;
-
 
     [Header("RayCast Statistics")]
     [Range(0, 90)]
@@ -106,9 +105,6 @@ public class WeaponData : ScriptableObject
     [Space]
     [Tooltip("Whether the target hits all damageable targets within the raycast, rather than only the closest target")]
     public bool penetratesTargets;
-    [Tooltip("What layers should be tested with the raycasts")]
-    public LayerMask layerMask;
-
 
     [Header("Projectile Statistics")]
     [Tooltip("What bullet prefab to use")]

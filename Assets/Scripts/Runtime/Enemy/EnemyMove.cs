@@ -1,6 +1,4 @@
-using System;
 using System.Collections.Generic;
-using UnityEditor.Rendering;
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
@@ -42,15 +40,15 @@ public class EnemyMove : MonoBehaviour, IAlert
     private float acceptanceRadius = 0.7f;
     private float verticalVelocity;
     [HideInInspector] public float currentTimeBeforeReturnPatrol;
+    [HideInInspector] public float currentTimeBeforeLOSCheck = 0;
 
     private CharacterController controller;
 
     [HideInInspector] public Transform target;
     [HideInInspector] public bool isFollowing = false;
 
-    
 
-    private void Start()
+    private void Awake()
     {
         controller = GetComponent<CharacterController>();
     }
@@ -58,9 +56,18 @@ public class EnemyMove : MonoBehaviour, IAlert
 
     private void FixedUpdate()
     {
-        CheckLineOfSight();
+        currentTimeBeforeLOSCheck -= Time.fixedDeltaTime;
+        if (currentTimeBeforeLOSCheck <= 0)
+        {
+            CheckLineOfSight();
+        }
+        else
+        {
+            FailedLineOfSight();
 
-        if (isFollowing) 
+        }
+
+        if (isFollowing)
         {
             EnemyAlarm();
             float distance = Vector3.Distance(transform.position, target.position);
@@ -72,7 +79,6 @@ public class EnemyMove : MonoBehaviour, IAlert
                 Vector3 direction = (target.position - transform.position);
                 direction.y = 0;
                 controller.Move(direction.normalized * Time.deltaTime * speed);
-
             }
         }
         else
@@ -117,18 +123,19 @@ public class EnemyMove : MonoBehaviour, IAlert
     {
         if (ConePhysics.ConeCast(out RaycastHit hit, eyeTransform.position, eyeTransform.forward, fieldOfView, 3, 0.5f, viewDistance, PlayerLayer, false, 0.1f, QueryTriggerInteraction.Ignore, drawDebug, Color.cyan))
         {
-            isFollowing = true;
-            target = hit.collider.transform;
-            currentTimeBeforeReturnPatrol = timeBeforeReturnPatrol;
+            if (!isFollowing)
+            {
+                GameManager.instance.UpdateFollowing(1);
+                isFollowing = true;
+                Debug.Log("LOS" + gameObject.name);
+                target = hit.collider.transform;
+                currentTimeBeforeReturnPatrol = timeBeforeReturnPatrol;
+            }
         }
 
         else 
         {
-            currentTimeBeforeReturnPatrol -= Time.fixedDeltaTime;
-            if (currentTimeBeforeReturnPatrol < 0)
-            {
-                isFollowing = false;
-            }
+            FailedLineOfSight();
         }
     }
     private void HandleGravity()
@@ -148,7 +155,6 @@ public class EnemyMove : MonoBehaviour, IAlert
 
     private void EnemyAlarm()
     {
-        
         Collider[] alarmCollider = Physics.OverlapSphere(transform.position, alarmRadius, enemyLayer, QueryTriggerInteraction.Ignore);
         foreach (Collider col in alarmCollider)
         {
@@ -156,7 +162,7 @@ public class EnemyMove : MonoBehaviour, IAlert
             {
                 if (col.gameObject.TryGetComponent<EnemyMove>(out EnemyMove enemyMove))
                 {
-                    enemyMove.HandleAlert(target);
+                    HandleAlert(target);
                 }
             }
         }
@@ -165,8 +171,29 @@ public class EnemyMove : MonoBehaviour, IAlert
     public void HandleAlert(Transform target)
     {
         // handles target change
-        this.target = target;
-        isFollowing = true;
-        currentTimeBeforeReturnPatrol = timeBeforeReturnPatrol;
+        
+        if (!isFollowing)
+        {
+            this.target = target;
+            GameManager.instance.UpdateFollowing(1);
+            isFollowing = true;
+            Debug.Log("Alert");
+            currentTimeBeforeReturnPatrol = timeBeforeReturnPatrol;
+        }
+
     }
+
+    private void FailedLineOfSight()
+    {
+        currentTimeBeforeReturnPatrol -= Time.fixedDeltaTime;
+        if (currentTimeBeforeReturnPatrol < 0)
+        {
+            if (isFollowing)
+            {
+                GameManager.instance.UpdateFollowing(-1);
+                isFollowing = false;
+            }
+        }
+    }
+
 }
