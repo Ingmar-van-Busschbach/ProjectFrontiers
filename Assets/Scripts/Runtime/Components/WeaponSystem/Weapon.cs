@@ -20,6 +20,10 @@ public class Weapon : ShotHandler
         {
             Instantiate(weaponData.tracer, barrelPoint.position, Quaternion.LookRotation(dispersion * barrelPoint.forward));
         }
+        if(weaponObject != null)
+        {
+            weaponObject.PlayFiringAnimation();
+        }
 
         //Alert nearby enemies when shooting
         if (weaponData.enemyAlertMask != 0)
