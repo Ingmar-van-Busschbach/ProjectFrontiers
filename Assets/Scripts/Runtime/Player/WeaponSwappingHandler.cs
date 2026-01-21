@@ -15,7 +15,7 @@ public class WeaponSwappingHandler : MonoBehaviour
     private int weaponsUnlocked;
     private Weapon weapon;
     private AimHandler aimHandler;
-    private AimDownSightHandler weaponObject;
+    private WeaponObject weaponObject;
     private PlayerInputs playerInputs;
     private InputAction swapWeapon1;
     private InputAction swapWeapon2;
@@ -83,6 +83,7 @@ public class WeaponSwappingHandler : MonoBehaviour
         weaponObject = Instantiate(newWeapon.weaponObject, weaponLocation);
         weaponObject.gameObject.transform.SetParent(weaponLocation);
         aimHandler.weaponObject = weaponObject;
+        weapon.weaponObject = weaponObject;
         foreach (Transform barrelPoint in barrelPoints)
         {
             barrelPoint.SetParent(weaponObject.transform);
