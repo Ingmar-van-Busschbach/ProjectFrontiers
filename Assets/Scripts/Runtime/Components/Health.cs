@@ -11,7 +11,7 @@ public abstract class Health : MonoBehaviour, IDamageAble
 
     protected float currentHealth;
 
-    private void Start()
+    protected void Start()
     {
         currentHealth = maxHealth;
         UpdateHealthSlider();
