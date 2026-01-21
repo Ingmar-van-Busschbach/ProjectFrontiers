@@ -9,6 +9,7 @@ public class Weapon : ShotHandler
     protected override void HandleShot()
     {
         Quaternion dispersion = HandleDispersion();
+        Quaternion aim = dispersion;
 
         //Handle weapon firing particles
         if (weaponData.muzzleFlash != null)
@@ -40,10 +41,10 @@ public class Weapon : ShotHandler
         switch (weaponData.weaponType)
         {
             case EnumLibrary.EWeaponType.hitscan:
-                HandleHitscanShot(dispersion);
+                HandleHitscanShot(aim);
                 break;
             case EnumLibrary.EWeaponType.projectile:
-                HandleProjectileShot(dispersion);
+                HandleProjectileShot(aim);
                 break;
         }
     }

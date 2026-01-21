@@ -9,4 +9,8 @@ public class WeaponObject : MonoBehaviour
     {
         animator.SetTrigger("Shoot");
     }
+    public void PlayReloadAnimation()
+    {
+        animator.SetTrigger("Reload");
+    }
 }
