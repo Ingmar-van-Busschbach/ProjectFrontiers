@@ -40,13 +40,13 @@ public class EnemyMove : MonoBehaviour, IAlert
     private float acceptanceRadius = 0.7f;
     private float verticalVelocity;
     [HideInInspector] public float currentTimeBeforeReturnPatrol;
+    [HideInInspector] public float currentTimeBeforeLOSCheck = 0;
 
     private CharacterController controller;
 
     [HideInInspector] public Transform target;
     [HideInInspector] public bool isFollowing = false;
 
-    
 
     private void Awake()
     {
@@ -56,9 +56,18 @@ public class EnemyMove : MonoBehaviour, IAlert
 
     private void FixedUpdate()
     {
-        CheckLineOfSight();
+        currentTimeBeforeLOSCheck -= Time.fixedDeltaTime;
+        if (currentTimeBeforeLOSCheck <= 0)
+        {
+            CheckLineOfSight();
+        }
+        else
+        {
+            FailedLineOfSight();
 
-        if (isFollowing) 
+        }
+
+        if (isFollowing)
         {
             EnemyAlarm();
             float distance = Vector3.Distance(transform.position, target.position);
@@ -126,15 +135,7 @@ public class EnemyMove : MonoBehaviour, IAlert
 
         else 
         {
-            currentTimeBeforeReturnPatrol -= Time.fixedDeltaTime;
-            if (currentTimeBeforeReturnPatrol < 0)
-            {
-                if (isFollowing)
-                {
-                    GameManager.instance.UpdateFollowing(-1);
-                    isFollowing = false;
-                }
-            }
+            FailedLineOfSight();
         }
     }
     private void HandleGravity()
@@ -154,7 +155,6 @@ public class EnemyMove : MonoBehaviour, IAlert
 
     private void EnemyAlarm()
     {
-        
         Collider[] alarmCollider = Physics.OverlapSphere(transform.position, alarmRadius, enemyLayer, QueryTriggerInteraction.Ignore);
         foreach (Collider col in alarmCollider)
         {
@@ -162,7 +162,7 @@ public class EnemyMove : MonoBehaviour, IAlert
             {
                 if (col.gameObject.TryGetComponent<EnemyMove>(out EnemyMove enemyMove))
                 {
-                    enemyMove.HandleAlert(target);
+                    HandleAlert(target);
                 }
             }
         }
@@ -182,4 +182,18 @@ public class EnemyMove : MonoBehaviour, IAlert
         }
 
     }
+
+    private void FailedLineOfSight()
+    {
+        currentTimeBeforeReturnPatrol -= Time.fixedDeltaTime;
+        if (currentTimeBeforeReturnPatrol < 0)
+        {
+            if (isFollowing)
+            {
+                GameManager.instance.UpdateFollowing(-1);
+                isFollowing = false;
+            }
+        }
+    }
+
 }
