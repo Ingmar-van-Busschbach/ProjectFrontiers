@@ -50,18 +50,40 @@ public class Weapon : ShotHandler
         RaycastHit[] hitResults = null;
         if (weaponData.aimAssist > 0)
         {
-            hitResults = ConePhysics.ConeCastAll(barrelPoint.position, dispersion * barrelPoint.forward, weaponData.aimAssist, weaponData.aimAssistFidelity, weaponData.minRange, weaponData.maxRange, weaponData.layerMask, true, 0.1f, QueryTriggerInteraction.Ignore, true, Color.white);
-
+            if (weaponData.penetratesTargets)
+            {
+                hitResults = ConePhysics.ConeCastAll(barrelPoint.position, dispersion * barrelPoint.forward, weaponData.aimAssist, weaponData.aimAssistFidelity, weaponData.minRange, weaponData.maxRange, weaponData.layerMask, true, 0.1f, QueryTriggerInteraction.Ignore, debugEnabled, Color.white);
+            }
+            else
+            {
+                if(ConePhysics.ConeCast(out RaycastHit hit, barrelPoint.position, dispersion * barrelPoint.forward, weaponData.aimAssist, weaponData.aimAssistFidelity, weaponData.minRange, weaponData.maxRange, weaponData.layerMask, true, 0.1f, QueryTriggerInteraction.Ignore, debugEnabled, Color.white))
+                {
+                    hitResults = new RaycastHit[1];
+                    hitResults[0] = hit;
+                }
+            }
         }
         else
         {
-            hitResults = Physics.RaycastAll(barrelPoint.position + dispersion * barrelPoint.forward * weaponData.minRange, dispersion * barrelPoint.forward, weaponData.maxRange, weaponData.layerMask, QueryTriggerInteraction.Ignore);
+            if (weaponData.penetratesTargets)
+            {
+                hitResults = Physics.RaycastAll(barrelPoint.position + dispersion * barrelPoint.forward * weaponData.minRange, dispersion * barrelPoint.forward, weaponData.maxRange, weaponData.layerMask, QueryTriggerInteraction.Ignore);
+            }
+            else
+            {
+                if (Physics.Raycast(barrelPoint.position + dispersion * barrelPoint.forward * weaponData.minRange, dispersion * barrelPoint.forward, out RaycastHit hit, weaponData.maxRange, weaponData.layerMask, QueryTriggerInteraction.Ignore))
+                {
+                    hitResults = new RaycastHit[1];
+                    hitResults[0] = hit;
+                }
+            }
+            if (debugEnabled)
+            {
+                Debug.DrawLine(barrelPoint.position + dispersion * barrelPoint.forward * weaponData.minRange, barrelPoint.position + dispersion * barrelPoint.forward * weaponData.maxRange, Color.white, 0.1f);
+            }
         }
 
-        if (debugEnabled)
-        {
-            Debug.DrawLine(barrelPoint.position + dispersion * barrelPoint.forward * weaponData.minRange, barrelPoint.position + dispersion * barrelPoint.forward * weaponData.maxRange, Color.white, 0.1f);
-        }
+        
 
         //Abort if there are no hits.
         if (hitResults.Length <= 0)
