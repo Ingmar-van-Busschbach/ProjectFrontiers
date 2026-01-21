@@ -19,7 +19,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: -40, y: 0, z: 0}
+        value: {x: -35, y: 0, z: 0}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -46,7 +46,7 @@ AnimationClip:
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 0.5
-        value: {x: -40, y: 0, z: 0}
+        value: {x: -35, y: 0, z: 0}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -56,7 +56,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Hammer
+    path: Finished Rifle/Body/Hammer
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -90,7 +90,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Revolver_Cylinder
+    path: Finished Rifle/Body/Cylinder
   m_PositionCurves: []
   m_ScaleCurves: []
   m_FloatCurves: []
@@ -103,7 +103,7 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 3646525184
+      path: 934261537
       attribute: 4
       script: {fileID: 0}
       typeID: 4
@@ -112,7 +112,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 3431577855
+      path: 3246571054
       attribute: 4
       script: {fileID: 0}
       typeID: 4
@@ -148,7 +148,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -40
+        value: -35
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -175,7 +175,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.5
-        value: -40
+        value: -35
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -186,7 +186,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.x
-    path: Hammer
+    path: Finished Rifle/Body/Hammer
     classID: 4
     script: {fileID: 0}
     flags: 16
@@ -234,7 +234,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.y
-    path: Hammer
+    path: Finished Rifle/Body/Hammer
     classID: 4
     script: {fileID: 0}
     flags: 16
@@ -282,7 +282,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.z
-    path: Hammer
+    path: Finished Rifle/Body/Hammer
     classID: 4
     script: {fileID: 0}
     flags: 16
@@ -321,7 +321,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.x
-    path: Revolver_Cylinder
+    path: Finished Rifle/Body/Cylinder
     classID: 4
     script: {fileID: 0}
     flags: 16
@@ -360,7 +360,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.y
-    path: Revolver_Cylinder
+    path: Finished Rifle/Body/Cylinder
     classID: 4
     script: {fileID: 0}
     flags: 16
@@ -399,7 +399,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.z
-    path: Revolver_Cylinder
+    path: Finished Rifle/Body/Cylinder
     classID: 4
     script: {fileID: 0}
     flags: 16
@@ -412,7 +412,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Hammer
+    path: Finished Rifle/Body/Hammer
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -424,7 +424,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Hammer
+    path: Finished Rifle/Body/Hammer
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -436,31 +436,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Hammer
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.x
-    path: Revolver_Cylinder
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.y
-    path: Revolver_Cylinder
+    path: Finished Rifle/Body/Hammer
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -472,7 +448,31 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Revolver_Cylinder
+    path: Finished Rifle/Body/Cylinder
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: Finished Rifle/Body/Cylinder
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: Finished Rifle/Body/Cylinder
     classID: 4
     script: {fileID: 0}
     flags: 0
