@@ -15,9 +15,12 @@ MonoBehaviour:
   weaponName: Rocket Launcher
   weaponObject: {fileID: 0}
   weaponBarrelIndexes: 
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 9
   weaponType: 1
   damageData:
-  - maxDamage: 25
+  - maxDamage: 12.5
     minDamage: 5
     damageType: 1
   rateOfFire: 12
@@ -54,14 +57,11 @@ MonoBehaviour:
   aimAssist: 0
   aimAssistFidelity: 2
   penetratesTargets: 1
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 9
   bullet: {fileID: 7726416138810722538, guid: c357d4701203dd64ba298291e2650b5d, type: 3}
   velocity: 15
   bulletDrop: 0
-  explosionMaxRadius: 5
-  explosionOptimalRadius: 3
+  explosionMaxRadius: 0
+  explosionOptimalRadius: 0
   isHoming: 1
   targetCenterOfMass: 0
   homingSpeed: 5
