@@ -55,6 +55,7 @@ public class PlayerHealth : Health
                 {
                     enemyMove.isFollowing = false;
                     enemyMove.currentTimeBeforeReturnPatrol = 0;
+                    enemyMove.currentTimeBeforeLOSCheck = 2;
                     GameManager.instance.UpdateFollowing(-1);
                 }
                 
