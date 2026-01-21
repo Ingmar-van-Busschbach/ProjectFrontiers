@@ -20,8 +20,8 @@ MonoBehaviour:
     m_Bits: 1
   weaponType: 1
   damageData:
-  - maxDamage: 1
-    minDamage: 0.5
+  - maxDamage: 2
+    minDamage: 1
     damageType: 0
   rateOfFire: 120
   multishot: 1
