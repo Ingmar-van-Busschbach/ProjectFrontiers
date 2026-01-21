@@ -2,11 +2,13 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private AudioSource CombatAudioSource;
-    [SerializeField] private AudioSource NeutralAudioSource;
+    [SerializeField] private AudioSource combatAudioSource;
+    [SerializeField] private AudioSource neutralAudioSource;
     [SerializeField] private float blendDuration = 2;
     public static GameManager instance;
     public int enemiesFollowing;
+    private float combatAudioVolume;
+    private float neutralAudioVolume;
     private void Awake()
     {
         if (instance  != null)
@@ -17,6 +19,8 @@ public class GameManager : MonoBehaviour
         {
             instance = this;
         }
+        combatAudioVolume = combatAudioSource.volume;
+        neutralAudioVolume = neutralAudioSource.volume;
     }
 
     private void OnDestroy()
@@ -28,28 +32,28 @@ public class GameManager : MonoBehaviour
     {
         if(enemiesFollowing >= 1)
         {
-            if (!CombatAudioSource.isPlaying)
+            if (!combatAudioSource.isPlaying)
             {
-                CombatAudioSource.Play();
+                combatAudioSource.Play();
             }
-            CombatAudioSource.volume = Mathf.Clamp01(CombatAudioSource.volume + Time.deltaTime / blendDuration);
-            NeutralAudioSource.volume = Mathf.Clamp01(NeutralAudioSource.volume - Time.deltaTime / blendDuration);
-            if(NeutralAudioSource.volume <= 0)
+            combatAudioSource.volume = Mathf.Clamp(combatAudioSource.volume + Time.deltaTime * combatAudioVolume / blendDuration, 0, combatAudioVolume);
+            neutralAudioSource.volume = Mathf.Clamp(neutralAudioSource.volume - Time.deltaTime * neutralAudioVolume / blendDuration, 0, neutralAudioVolume);
+            if(neutralAudioSource.volume <= 0)
             {
-                NeutralAudioSource.Stop();
+                neutralAudioSource.Stop();
             }
         }
         else
         {
-            if (!NeutralAudioSource.isPlaying)
+            if (!neutralAudioSource.isPlaying)
             {
-                NeutralAudioSource.Play();
+                neutralAudioSource.Play();
             }
-            NeutralAudioSource.volume = Mathf.Clamp01(NeutralAudioSource.volume + Time.deltaTime / blendDuration);
-            CombatAudioSource.volume = Mathf.Clamp01(CombatAudioSource.volume - Time.deltaTime / blendDuration);
-            if (NeutralAudioSource.volume <= 0)
+            neutralAudioSource.volume = Mathf.Clamp(neutralAudioSource.volume + Time.deltaTime * neutralAudioVolume / blendDuration, 0, neutralAudioVolume);
+            combatAudioSource.volume = Mathf.Clamp(combatAudioSource.volume - Time.deltaTime * combatAudioVolume / blendDuration, 0, combatAudioVolume);
+            if (neutralAudioSource.volume <= 0)
             {
-                CombatAudioSource.Stop();
+                combatAudioSource.Stop();
             }
         }
     }
