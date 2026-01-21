@@ -328,7 +328,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: d2852a0fa0c75434fb1e47657d6f0897, type: 3}
+  m_Resource: {fileID: 8300000, guid: 5a02bf8fec8170a4597046295f648246, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0
   m_Pitch: 1
@@ -665,8 +665,20 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
+      propertyPath: drawDebug
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
+      propertyPath: alarmRadius
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
+      propertyPath: fieldOfView
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
       propertyPath: viewDistance
-      value: 20
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
       propertyPath: enemyLayer.m_Bits
@@ -806,6 +818,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CombatAudioSource: {fileID: 1040843667}
   NeutralAudioSource: {fileID: 276459438}
+  blendDuration: 2
   enemiesFollowing: 0
 --- !u!4 &1024568804
 Transform:
@@ -852,7 +865,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: a359acac00101f2468577657fb37d557, type: 3}
+  m_Resource: {fileID: 8300000, guid: 6d3be9260e4dc6948abcea1cd9f813e1, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0
   m_Pitch: 1
@@ -1183,11 +1196,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7092278297017488662, guid: e8434424552a8704494c428834fa4800, type: 3}
       propertyPath: alarmRadius
-      value: 100
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 7092278297017488662, guid: e8434424552a8704494c428834fa4800, type: 3}
+      propertyPath: fieldOfView
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 7092278297017488662, guid: e8434424552a8704494c428834fa4800, type: 3}
       propertyPath: viewDistance
-      value: 50
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 7092278297017488662, guid: e8434424552a8704494c428834fa4800, type: 3}
       propertyPath: enemyLayer.m_Bits
@@ -1794,8 +1811,20 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
+      propertyPath: drawDebug
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
+      propertyPath: alarmRadius
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
+      propertyPath: fieldOfView
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
       propertyPath: viewDistance
-      value: 50
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
       propertyPath: enemyLayer.m_Bits
