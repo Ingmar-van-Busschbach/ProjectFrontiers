@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SMG
   m_EditorClassIdentifier: 
   weaponName: SMG
-  weaponObject: {fileID: 248120189387136290, guid: 9c4f02b4367c5534c86b745f1db4bfc0, type: 3}
+  weaponObject: {fileID: 8913749737840584748, guid: 53113481a08c0f045a8ac800b0cf6b63, type: 3}
   weaponBarrelIndexes: 0000000001000000
   layerMask:
     serializedVersion: 2

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Rifle
   m_EditorClassIdentifier: 
   weaponName: Rifle
-  weaponObject: {fileID: 4976124010136487752, guid: 0e07334d0c0070e4da75fd3128ec2305, type: 3}
+  weaponObject: {fileID: 2096757532442422489, guid: 11a84c55670aec843bc63721bfc2ab79, type: 3}
   weaponBarrelIndexes: 
   layerMask:
     serializedVersion: 2
