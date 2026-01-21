@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74027454f8a669b46be2fc2c10fccded, type: 3}
   m_Name: MissileLauncher
   m_EditorClassIdentifier: 
-  weaponName: Rocket Launcher
+  weaponName: Missile Launcher
   weaponObject: {fileID: 0}
   weaponBarrelIndexes: 
   layerMask:
@@ -20,8 +20,8 @@ MonoBehaviour:
     m_Bits: 9
   weaponType: 1
   damageData:
-  - maxDamage: 12.5
-    minDamage: 5
+  - maxDamage: 25
+    minDamage: 25
     damageType: 1
   rateOfFire: 12
   multishot: 1
@@ -51,22 +51,22 @@ MonoBehaviour:
   recoilSnappiness: 10
   recoilRecoverySpeed: 2
   minRange: 0.1
-  optimalRange: 5
-  maxRange: 15
+  optimalRange: 40
+  maxRange: 80
   roundDamage: 0
   aimAssist: 0
   aimAssistFidelity: 2
   penetratesTargets: 1
   bullet: {fileID: 7726416138810722538, guid: c357d4701203dd64ba298291e2650b5d, type: 3}
-  velocity: 15
+  velocity: 60
   bulletDrop: 0
   explosionMaxRadius: 0
   explosionOptimalRadius: 0
   isHoming: 1
   targetCenterOfMass: 0
-  homingSpeed: 5
-  homingConeAngle: 15
-  homingMaxRange: 25
+  homingSpeed: 10
+  homingConeAngle: 30
+  homingMaxRange: 30
   homingLayerMask:
     serializedVersion: 2
-    m_Bits: 63
+    m_Bits: 8
