@@ -9,7 +9,7 @@ public class WeaponData : ScriptableObject
 {
     [Header("Weapon Statistics")]
     public string weaponName = "DefaultWeapon";
-    public WeaponObject weaponObject;
+    public AimDownSightHandler weaponObject;
     public int[] weaponBarrelIndexes;
     [Tooltip("What layers should be tested with the raycasts")]
     public LayerMask layerMask;

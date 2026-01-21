@@ -7,7 +7,6 @@ public abstract class ShotHandler : MonoBehaviour
 {
     public WeaponData weaponData;
     [HideInInspector] public bool canShoot = true;
-    [HideInInspector] public WeaponObject weaponObject;
     [SerializeField] protected Transform[] barrelPoints;
     [SerializeField] protected CrosshairBloom crosshairHandler;
     [SerializeField] protected CameraRecoil cameraRecoilHandler;
