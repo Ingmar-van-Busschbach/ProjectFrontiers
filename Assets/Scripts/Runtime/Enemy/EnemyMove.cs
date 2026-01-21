@@ -48,7 +48,7 @@ public class EnemyMove : MonoBehaviour, IAlert
 
     
 
-    private void Start()
+    private void Awake()
     {
         controller = GetComponent<CharacterController>();
     }
@@ -70,7 +70,6 @@ public class EnemyMove : MonoBehaviour, IAlert
                 Vector3 direction = (target.position - transform.position);
                 direction.y = 0;
                 controller.Move(direction.normalized * Time.deltaTime * speed);
-
             }
         }
         else
@@ -115,9 +114,14 @@ public class EnemyMove : MonoBehaviour, IAlert
     {
         if (ConePhysics.ConeCast(out RaycastHit hit, eyeTransform.position, eyeTransform.forward, fieldOfView, 3, 0.5f, viewDistance, PlayerLayer, false, 0.1f, QueryTriggerInteraction.Ignore, drawDebug, Color.cyan))
         {
-            isFollowing = true;
-            target = hit.collider.transform;
-            currentTimeBeforeReturnPatrol = timeBeforeReturnPatrol;
+            if (!isFollowing)
+            {
+                GameManager.instance.UpdateFollowing(1);
+                isFollowing = true;
+                Debug.Log("LOS" + gameObject.name);
+                target = hit.collider.transform;
+                currentTimeBeforeReturnPatrol = timeBeforeReturnPatrol;
+            }
         }
 
         else 
@@ -125,7 +129,11 @@ public class EnemyMove : MonoBehaviour, IAlert
             currentTimeBeforeReturnPatrol -= Time.fixedDeltaTime;
             if (currentTimeBeforeReturnPatrol < 0)
             {
-                isFollowing = false;
+                if (isFollowing)
+                {
+                    GameManager.instance.UpdateFollowing(-1);
+                    isFollowing = false;
+                }
             }
         }
     }
@@ -163,8 +171,15 @@ public class EnemyMove : MonoBehaviour, IAlert
     public void HandleAlert(Transform target)
     {
         // handles target change
-        this.target = target;
-        isFollowing = true;
-        currentTimeBeforeReturnPatrol = timeBeforeReturnPatrol;
+        
+        if (!isFollowing)
+        {
+            this.target = target;
+            GameManager.instance.UpdateFollowing(1);
+            isFollowing = true;
+            Debug.Log("Alert");
+            currentTimeBeforeReturnPatrol = timeBeforeReturnPatrol;
+        }
+
     }
 }
