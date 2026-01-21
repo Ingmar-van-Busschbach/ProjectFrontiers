@@ -26360,7 +26360,7 @@ Transform:
   m_GameObject: {fileID: 997047774}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1233.3, y: 0.6, z: -210}
+  m_LocalPosition: {x: 1233.3, y: 3.8, z: -210}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -35516,6 +35516,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spawn
       objectReference: {fileID: 0}
+    - target: {fileID: 6864958160364114452, guid: 59095e38e68a4ec458b4a49f34c70ec6, type: 3}
+      propertyPath: onTriggerEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2071057099}
+    - target: {fileID: 6864958160364114452, guid: 59095e38e68a4ec458b4a49f34c70ec6, type: 3}
+      propertyPath: onTriggerEnter.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeRespawnPoint
+      objectReference: {fileID: 0}
     - target: {fileID: 6943105561341935741, guid: 59095e38e68a4ec458b4a49f34c70ec6, type: 3}
       propertyPath: m_Size.x
       value: 15.913322
@@ -36714,6 +36722,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: StartLevel2
       objectReference: {fileID: 0}
+    - target: {fileID: 6864958160364114452, guid: 59095e38e68a4ec458b4a49f34c70ec6, type: 3}
+      propertyPath: onTriggerEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2071057099}
+    - target: {fileID: 6864958160364114452, guid: 59095e38e68a4ec458b4a49f34c70ec6, type: 3}
+      propertyPath: onTriggerEnter.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeRespawnPoint
+      objectReference: {fileID: 0}
     - target: {fileID: 6943105561341935741, guid: 59095e38e68a4ec458b4a49f34c70ec6, type: 3}
       propertyPath: m_Size.x
       value: 20.31835
@@ -37571,6 +37587,14 @@ PrefabInstance:
     - target: {fileID: 4725621168802139408, guid: 59095e38e68a4ec458b4a49f34c70ec6, type: 3}
       propertyPath: m_Name
       value: SecondBuilding
+      objectReference: {fileID: 0}
+    - target: {fileID: 6864958160364114452, guid: 59095e38e68a4ec458b4a49f34c70ec6, type: 3}
+      propertyPath: onTriggerEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2071057099}
+    - target: {fileID: 6864958160364114452, guid: 59095e38e68a4ec458b4a49f34c70ec6, type: 3}
+      propertyPath: onTriggerEnter.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeRespawnPoint
       objectReference: {fileID: 0}
     - target: {fileID: 6943105561341935741, guid: 59095e38e68a4ec458b4a49f34c70ec6, type: 3}
       propertyPath: m_Size.x
@@ -55132,6 +55156,17 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!114 &2071057099 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8001554155166120642, guid: f41222e90b835d74ca65dbce80056a9b, type: 3}
+  m_PrefabInstance: {fileID: 1345867733}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29c470b7a8be24f4f9e706bc6340386f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2074862183
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -56479,6 +56514,14 @@ PrefabInstance:
     - target: {fileID: 4725621168802139408, guid: 59095e38e68a4ec458b4a49f34c70ec6, type: 3}
       propertyPath: m_Name
       value: FirstBuilding
+      objectReference: {fileID: 0}
+    - target: {fileID: 6864958160364114452, guid: 59095e38e68a4ec458b4a49f34c70ec6, type: 3}
+      propertyPath: onTriggerEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2071057099}
+    - target: {fileID: 6864958160364114452, guid: 59095e38e68a4ec458b4a49f34c70ec6, type: 3}
+      propertyPath: onTriggerEnter.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeRespawnPoint
       objectReference: {fileID: 0}
     - target: {fileID: 6943105561341935741, guid: 59095e38e68a4ec458b4a49f34c70ec6, type: 3}
       propertyPath: m_Size.x
