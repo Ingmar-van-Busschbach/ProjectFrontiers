@@ -60,6 +60,6 @@ public class Controller3D : MonoBehaviour
 
     public void HandleHorizontalLook(float lookInput, float lookSensitivity)
     {
-        transform.rotation = Quaternion.Euler(0, transform.rotation.eulerAngles.y + lookSensitivity * Time.fixedDeltaTime * lookInput, 0);
+        transform.rotation = Quaternion.Euler(0, transform.rotation.eulerAngles.y + lookInput * lookSensitivity * Time.fixedDeltaTime, 0);
     }
 }
