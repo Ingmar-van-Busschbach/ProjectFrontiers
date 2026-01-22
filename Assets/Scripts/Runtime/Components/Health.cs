@@ -15,6 +15,7 @@ public abstract class Health : MonoBehaviour, IDamageAble
     {
         currentHealth = maxHealth;
         UpdateHealthSlider();
+        BeginPlay();
     }
 
     public void ApplyDamage(float damage, EnumLibrary.EDamageType damageType, RaycastHit hitData)
@@ -30,7 +31,7 @@ public abstract class Health : MonoBehaviour, IDamageAble
         currentHealth -= currentDamage;
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
         UpdateHealthSlider();
-            OnDamaged(damage);
+            OnDamaged(damage, hitData);
         if (currentHealth <= 0)
         {
             OnDeath();
@@ -49,6 +50,8 @@ public abstract class Health : MonoBehaviour, IDamageAble
             Debug.LogWarning(gameObject.name + "'s health component does not have its display slider assigned!");
         }
     }
-    protected abstract void OnDamaged(float damage);
+    protected abstract void OnDamaged(float damage, RaycastHit hitData);
     protected abstract void OnDeath();
+
+    protected abstract void BeginPlay();
 }

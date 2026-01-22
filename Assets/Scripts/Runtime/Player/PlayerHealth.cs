@@ -1,5 +1,4 @@
 using UnityEngine;
-using System.Collections;
 
 [RequireComponent(typeof(CharacterController))]
 public class PlayerHealth : Health
@@ -9,20 +8,12 @@ public class PlayerHealth : Health
     [Tooltip("sphere that disables enemy aggro, in meters")]
     [SerializeField] private float disableRadius;
     [SerializeField] private LayerMask enemyLayer;
-
-    private void Start()
+    protected override void BeginPlay()
     {
-        base.Start();
         if (respawnPoint == null)
         {
             respawnPoint = Instantiate(new GameObject(), gameObject.transform).transform;
         }
-        //StartCoroutine(die());
-    }
-    private IEnumerator die()
-    {
-        yield return new WaitForSeconds(5);
-        this.ApplyDamage(100, EnumLibrary.EDamageType.impact, new RaycastHit());
     }
     protected override void OnDeath()
     {
@@ -39,7 +30,7 @@ public class PlayerHealth : Health
         DisableTrigger();
 
     }
-    protected override void OnDamaged(float damage)
+    protected override void OnDamaged(float damage, RaycastHit hitData)
     {
         
     }
