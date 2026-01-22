@@ -181,6 +181,7 @@ MonoBehaviour:
   resistanceEntries: []
   maxHealth: 100
   healthSlider: {fileID: 5971632654850912392}
+  damageNumber: {fileID: 7013049676103824009, guid: 158a223c11bbd6942840240cb179c076, type: 3}
 --- !u!114 &4176280680810829337
 MonoBehaviour:
   m_ObjectHideFlags: 0

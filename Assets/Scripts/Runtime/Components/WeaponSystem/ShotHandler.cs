@@ -7,6 +7,7 @@ public abstract class ShotHandler : MonoBehaviour
 {
     public WeaponData weaponData;
     [HideInInspector] public bool canShoot = true;
+    [HideInInspector] public WeaponObject weaponObject;
     [SerializeField] protected Transform[] barrelPoints;
     [SerializeField] protected CrosshairBloom crosshairHandler;
     [SerializeField] protected CameraRecoil cameraRecoilHandler;
@@ -93,6 +94,7 @@ public abstract class ShotHandler : MonoBehaviour
     private IEnumerator HandleReload()
     {
         audioSource.PlayOneShot(weaponData.reloadAudio);
+        weaponObject.PlayReloadAnimation();
         isReloading = true;
         yield return new WaitForSeconds(weaponData.reloadDuration);
         currentMagazine = weaponData.magazineSize;

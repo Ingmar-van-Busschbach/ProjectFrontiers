@@ -186,7 +186,7 @@ PrefabInstance:
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 5550739181620652861, guid: 77c8e6436e33a074287551b6b9df19da, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 9105236274725541779}
+      addedObject: {fileID: 7240548791078903509}
     - targetCorrespondingSourceObject: {fileID: 5550739181620652861, guid: 77c8e6436e33a074287551b6b9df19da, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6702332748482593879}
@@ -197,7 +197,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5550739181620652861, guid: 77c8e6436e33a074287551b6b9df19da, type: 3}
   m_PrefabInstance: {fileID: 897705069928229846}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &8779474294959321208
+--- !u!1001 &7201574379364890942
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -205,57 +205,57 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4719040003063464171}
     m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: 8247eb145dba60148b06a341ac483bcf, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 763ecf0166200cf46b1612e40d50bbeb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 8247eb145dba60148b06a341ac483bcf, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 763ecf0166200cf46b1612e40d50bbeb, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 8247eb145dba60148b06a341ac483bcf, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 763ecf0166200cf46b1612e40d50bbeb, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.627
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 8247eb145dba60148b06a341ac483bcf, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 763ecf0166200cf46b1612e40d50bbeb, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 8247eb145dba60148b06a341ac483bcf, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 763ecf0166200cf46b1612e40d50bbeb, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 8247eb145dba60148b06a341ac483bcf, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 763ecf0166200cf46b1612e40d50bbeb, type: 3}
       propertyPath: m_LocalRotation.y
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 8247eb145dba60148b06a341ac483bcf, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 763ecf0166200cf46b1612e40d50bbeb, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 8247eb145dba60148b06a341ac483bcf, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 763ecf0166200cf46b1612e40d50bbeb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 8247eb145dba60148b06a341ac483bcf, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 763ecf0166200cf46b1612e40d50bbeb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 8247eb145dba60148b06a341ac483bcf, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 763ecf0166200cf46b1612e40d50bbeb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 8247eb145dba60148b06a341ac483bcf, type: 3}
+    - target: {fileID: 919132149155446097, guid: 763ecf0166200cf46b1612e40d50bbeb, type: 3}
       propertyPath: m_Name
-      value: Rifle Blockout
+      value: Finished Rifle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 8247eb145dba60148b06a341ac483bcf, type: 3}
---- !u!4 &9105236274725541779 stripped
+  m_SourcePrefab: {fileID: 100100000, guid: 763ecf0166200cf46b1612e40d50bbeb, type: 3}
+--- !u!4 &7240548791078903509 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8247eb145dba60148b06a341ac483bcf, type: 3}
-  m_PrefabInstance: {fileID: 8779474294959321208}
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 763ecf0166200cf46b1612e40d50bbeb, type: 3}
+  m_PrefabInstance: {fileID: 7201574379364890942}
   m_PrefabAsset: {fileID: 0}

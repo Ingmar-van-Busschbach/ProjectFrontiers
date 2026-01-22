@@ -3,7 +3,7 @@ using UnityEngine;
 [RequireComponent(typeof(Weapon))]
 public class AimHandler : MonoBehaviour
 {
-    [HideInInspector] public AimDownSightHandler weaponObject;
+    [HideInInspector] public WeaponObject weaponObject;
     [SerializeField] private CrosshairBloom crossHair;
     [SerializeField] private Camera cam;
     private Weapon weapon;
