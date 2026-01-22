@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2405670141798002904}
   - component: {fileID: 166458128941616752}
   - component: {fileID: 7330171080021628865}
+  - component: {fileID: 968031436844895678}
   m_Layer: 0
   m_Name: P_AncientRuins_Sword
   m_TagString: Untagged
@@ -106,5 +107,26 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.6026353, y: 5.872694, z: 0.81696665}
-  m_Center: {x: -0.0010258555, y: -0.0024238825, z: 0.0000054836273}
+  m_Size: {x: 1.4512326, y: 5.872695, z: 0.36391667}
+  m_Center: {x: 0.002268542, y: -0.002423793, z: -0.0077772695}
+--- !u!65 &968031436844895678
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8285238759245771718}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.0845429, y: 2.7211883, z: 0.7455105}
+  m_Center: {x: 0.07136353, y: -1.5781364, z: 0.035728805}
