@@ -19,7 +19,7 @@ public class PlayerAimer : MonoBehaviour
         {
             foreach (Transform barrelEnd in barrelEnds)
             {
-                barrelEnd.rotation = Quaternion.identity;
+                barrelEnd.localRotation = Quaternion.identity;
             }
         }
     }
