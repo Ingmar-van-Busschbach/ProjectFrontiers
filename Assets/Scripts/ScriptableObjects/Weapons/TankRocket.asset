@@ -29,7 +29,7 @@ MonoBehaviour:
   timePerShotInBurst: 0.03
   magazineSize: 999999999
   reloadDuration: 0
-  firingAudio: {fileID: 0}
+  firingAudio: {fileID: 8300000, guid: b535415ed5b34874aae7c43513c3055a, type: 3}
   firingVolume: 1
   reloadAudio: {fileID: 0}
   reloadVolume: 1
