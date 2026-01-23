@@ -238,7 +238,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   barrel: {fileID: 1340030053881843363}
   fieldOfView: 20
-  viewDistance: 20
+  viewDistance: 30
+  viewFidelity: 3
   PlayerLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -835,7 +836,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   barrel: {fileID: 5445189777518374593}
   fieldOfView: 20
-  viewDistance: 20
+  viewDistance: 30
+  viewFidelity: 3
   PlayerLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -1119,7 +1121,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   barrel: {fileID: 6229708770801304445}
   fieldOfView: 20
-  viewDistance: 20
+  viewDistance: 30
+  viewFidelity: 3
   PlayerLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -1833,7 +1836,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   barrel: {fileID: 1259004891944877495}
   fieldOfView: 20
-  viewDistance: 20
+  viewDistance: 30
+  viewFidelity: 3
   PlayerLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -2257,8 +2261,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   barrel: {fileID: 2020396663547444260}
-  fieldOfView: 20
-  viewDistance: 20
+  fieldOfView: 30
+  viewDistance: 50
+  viewFidelity: 4
   PlayerLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -2628,7 +2633,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   barrel: {fileID: 3180513717536306967}
   fieldOfView: 20
-  viewDistance: 20
+  viewDistance: 30
+  viewFidelity: 3
   PlayerLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -2884,8 +2890,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   barrel: {fileID: 733972504245335370}
-  fieldOfView: 20
-  viewDistance: 20
+  fieldOfView: 30
+  viewDistance: 50
+  viewFidelity: 4
   PlayerLayer:
     serializedVersion: 2
     m_Bits: 8
