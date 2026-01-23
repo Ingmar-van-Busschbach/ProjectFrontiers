@@ -29,8 +29,8 @@ MonoBehaviour:
   timePerShotInBurst: 0.1
   magazineSize: 999999999
   reloadDuration: 1
-  firingAudio: {fileID: 0}
-  firingVolume: 1
+  firingAudio: {fileID: 8300000, guid: 646b7492b6784574292c5934716a99bd, type: 3}
+  firingVolume: 0.2
   reloadAudio: {fileID: 0}
   reloadVolume: 1
   tracer: {fileID: 0}
@@ -42,11 +42,11 @@ MonoBehaviour:
   aimDownSightFieldOfView: 25
   aimDownSightFieldOfViewSpeed: 100
   aimDownSightLerpSpeed: 10
-  minDispersion: {x: 0, y: 0}
-  maxDispersion: {x: 0, y: 0}
-  dispersionPerShot: {x: 0, y: 0}
-  dispersionBloomSpeed: 0
-  dispersionRecoverySpeed: 0
+  minDispersion: {x: 1, y: 1}
+  maxDispersion: {x: 5, y: 5}
+  dispersionPerShot: {x: 1.5, y: 1.5}
+  dispersionBloomSpeed: 15
+  dispersionRecoverySpeed: 5
   recoilAmount: {x: 0, y: 0}
   recoilOffset: {x: 0, y: 0}
   maxRecoilAngle: {x: 0, y: 0}
