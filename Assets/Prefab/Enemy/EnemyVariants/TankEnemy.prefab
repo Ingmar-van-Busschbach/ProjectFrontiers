@@ -201,6 +201,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponData: {fileID: 11400000, guid: 4fa0eb88967ca3d4ba661773c091af05, type: 2}
   canShoot: 1
+  weaponObject: {fileID: 0}
   barrelPoints:
   - {fileID: 1340030053881843363}
   crosshairHandler: {fileID: 0}
@@ -410,6 +411,7 @@ MonoBehaviour:
   resistanceEntries: []
   maxHealth: 250
   healthSlider: {fileID: 1210879009776089614}
+  damageNumber: {fileID: 7013049676103824009, guid: 158a223c11bbd6942840240cb179c076, type: 3}
 --- !u!114 &418962565788195616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -581,6 +583,7 @@ MonoBehaviour:
   resistanceEntries: []
   maxHealth: 250
   healthSlider: {fileID: 7623252476440660537}
+  damageNumber: {fileID: 7013049676103824009, guid: 158a223c11bbd6942840240cb179c076, type: 3}
 --- !u!114 &3949052271048905130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -795,6 +798,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponData: {fileID: 11400000, guid: 4fa0eb88967ca3d4ba661773c091af05, type: 2}
   canShoot: 1
+  weaponObject: {fileID: 0}
   barrelPoints:
   - {fileID: 5445189777518374593}
   crosshairHandler: {fileID: 0}
@@ -1078,6 +1082,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponData: {fileID: 11400000, guid: 4fa0eb88967ca3d4ba661773c091af05, type: 2}
   canShoot: 1
+  weaponObject: {fileID: 0}
   barrelPoints:
   - {fileID: 6229708770801304445}
   crosshairHandler: {fileID: 0}
@@ -1256,6 +1261,7 @@ MonoBehaviour:
   resistanceEntries: []
   maxHealth: 250
   healthSlider: {fileID: 792256536745687771}
+  damageNumber: {fileID: 7013049676103824009, guid: 158a223c11bbd6942840240cb179c076, type: 3}
 --- !u!114 &2093070275795017759
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1278,6 +1284,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8355150217323054439}
+  - component: {fileID: 7489359144768410374}
   m_Layer: 6
   m_Name: TankEnemy
   m_TagString: Untagged
@@ -1301,6 +1308,30 @@ Transform:
   - {fileID: 5151604197504066444}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7489359144768410374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4077119266220644767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61ae9b6cd2188e640bb4de8bb850264e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  partsList:
+  - {fileID: 7022459767797748342}
+  - {fileID: 5347864050108630617}
+  - {fileID: 2797361646088654603}
+  - {fileID: 3937224890251410100}
+  - {fileID: 2085567383218135310}
+  - {fileID: 2085567383218135310}
+  - {fileID: 6583994508028236727}
+  - {fileID: 8127720222193966847}
+  deathEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &5347864050108630617
 GameObject:
   m_ObjectHideFlags: 0
@@ -1428,6 +1459,7 @@ MonoBehaviour:
   resistanceEntries: []
   maxHealth: 250
   healthSlider: {fileID: 721152638182464150}
+  damageNumber: {fileID: 7013049676103824009, guid: 158a223c11bbd6942840240cb179c076, type: 3}
 --- !u!114 &380391946515736404
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1764,6 +1796,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponData: {fileID: 11400000, guid: 913d6ab8bd633f24990af07eec97662f, type: 2}
   canShoot: 1
+  weaponObject: {fileID: 0}
   barrelPoints:
   - {fileID: 1259004891944877495}
   crosshairHandler: {fileID: 0}
@@ -1851,6 +1884,7 @@ MonoBehaviour:
   resistanceEntries: []
   maxHealth: 250
   healthSlider: {fileID: 556698080163628829}
+  damageNumber: {fileID: 7013049676103824009, guid: 158a223c11bbd6942840240cb179c076, type: 3}
 --- !u!114 &5233500818636549291
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2187,6 +2221,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponData: {fileID: 11400000, guid: 7160611f238abfe459dcffd3788b594c, type: 2}
   canShoot: 1
+  weaponObject: {fileID: 0}
   barrelPoints:
   - {fileID: 2020396663547444260}
   crosshairHandler: {fileID: 0}
@@ -2275,6 +2310,7 @@ MonoBehaviour:
   resistanceEntries: []
   maxHealth: 500
   healthSlider: {fileID: 5684071410456513488}
+  damageNumber: {fileID: 7013049676103824009, guid: 158a223c11bbd6942840240cb179c076, type: 3}
 --- !u!114 &6894280552546444581
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2555,6 +2591,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponData: {fileID: 11400000, guid: 4fa0eb88967ca3d4ba661773c091af05, type: 2}
   canShoot: 1
+  weaponObject: {fileID: 0}
   barrelPoints:
   - {fileID: 3180513717536306967}
   crosshairHandler: {fileID: 0}
@@ -2811,6 +2848,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponData: {fileID: 11400000, guid: 7160611f238abfe459dcffd3788b594c, type: 2}
   canShoot: 1
+  weaponObject: {fileID: 0}
   barrelPoints:
   - {fileID: 733972504245335370}
   crosshairHandler: {fileID: 0}
@@ -2899,6 +2937,7 @@ MonoBehaviour:
   resistanceEntries: []
   maxHealth: 500
   healthSlider: {fileID: 8063592939353818513}
+  damageNumber: {fileID: 7013049676103824009, guid: 158a223c11bbd6942840240cb179c076, type: 3}
 --- !u!114 &45703765149879511
 MonoBehaviour:
   m_ObjectHideFlags: 0
