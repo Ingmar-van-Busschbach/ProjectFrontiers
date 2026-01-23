@@ -30,7 +30,7 @@ MonoBehaviour:
   magazineSize: 50
   reloadDuration: 2
   firingAudio: {fileID: 8300000, guid: 646b7492b6784574292c5934716a99bd, type: 3}
-  firingVolume: 0.3
+  firingVolume: 0.2
   reloadAudio: {fileID: 8300000, guid: d2852a0fa0c75434fb1e47657d6f0897, type: 3}
   reloadVolume: 1
   tracer: {fileID: 4816148849270499086, guid: 8b229ff8d3ba7c24b8d80dc097e38ec7, type: 3}

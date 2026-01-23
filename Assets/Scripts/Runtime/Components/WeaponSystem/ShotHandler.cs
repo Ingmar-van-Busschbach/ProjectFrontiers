@@ -168,7 +168,10 @@ public abstract class ShotHandler : MonoBehaviour
 
     protected void HandleAudio()
     {
-        audioSource.PlayOneShot(weaponData.firingAudio, weaponData.firingVolume);
+        if(weaponData.firingAudio != null)
+        {
+            audioSource.PlayOneShot(weaponData.firingAudio, weaponData.firingVolume);
+        }
     }
 
     public void SwapWeapon(WeaponData newWeapon)

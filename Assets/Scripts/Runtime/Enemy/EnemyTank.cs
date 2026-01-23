@@ -9,6 +9,7 @@ public class EnemyTank : MonoBehaviour
     [SerializeField] private float fieldOfView;
     [Tooltip("Length of field of vieuw")]
     [SerializeField] private float viewDistance;
+    [SerializeField] private int viewFidelity = 3;
     [SerializeField] private LayerMask PlayerLayer;
     [SerializeField] private bool drawDebug;
 
@@ -55,7 +56,7 @@ public class EnemyTank : MonoBehaviour
     }
     private void CheckLineOfSight()
     {
-        if (ConePhysics.ConeCast(out RaycastHit hit, barrel.position, barrel.forward, fieldOfView, 3, 0.5f, viewDistance, PlayerLayer, false, 0.1f, QueryTriggerInteraction.Ignore, drawDebug, Color.cyan))
+        if (ConePhysics.ConeCast(out RaycastHit hit, barrel.position, barrel.forward, fieldOfView, viewFidelity, 0.5f, viewDistance, PlayerLayer, false, 0.1f, QueryTriggerInteraction.Ignore, drawDebug, Color.cyan))
         {
             target = hit.collider.transform;
             weapon.Shoot();

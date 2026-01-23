@@ -27,12 +27,14 @@ MonoBehaviour:
   multishot: 1
   shotsPerBurst: 1
   timePerShotInBurst: 0.03
-  magazineSize: 99999999
+  magazineSize: 999999999
   reloadDuration: 0
   firingAudio: {fileID: 0}
+  firingVolume: 1
   reloadAudio: {fileID: 0}
+  reloadVolume: 1
   tracer: {fileID: 0}
-  muzzleFlash: {fileID: 0}
+  muzzleFlash: {fileID: 8078720523478869859, guid: 4f5fc4bbd01b03a4499a6ed77f175fc7, type: 3}
   enemyAlertMask:
     serializedVersion: 2
     m_Bits: 0
@@ -57,7 +59,7 @@ MonoBehaviour:
   aimAssist: 0
   aimAssistFidelity: 2
   penetratesTargets: 0
-  bullet: {fileID: 7726416138810722538, guid: 7d2b97016597a4c42a5fc1c0b9061e12, type: 3}
+  bullet: {fileID: 7726416138810722538, guid: c357d4701203dd64ba298291e2650b5d, type: 3}
   velocity: 50
   bulletDrop: 0
   explosionMaxRadius: 8

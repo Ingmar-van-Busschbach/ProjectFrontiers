@@ -92,7 +92,11 @@ public class Weapon : ShotHandler
         
 
         //Abort if there are no hits.
-        if (hitResults.Length <= 0)
+        if (hitResults == null)
+        {
+            return;
+        }
+        if (hitResults.Length == 0)
         {
             return;
         }
