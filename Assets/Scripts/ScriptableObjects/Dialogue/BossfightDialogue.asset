@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2759be2ffdb47645b3cf8b2e32470f6, type: 3}
+  m_Name: BossfightDialogue
+  m_EditorClassIdentifier: 
+  dialogue:
+  - speakerName: Duck
+    dialogue: CAN YOU JUST LISTEN TO ME?!
+    printDuration: 0.1
+  - speakerName: Wizard
+    dialogue: I'll listen after kicking that tank into the ground
+    printDuration: 0.07
+  - speakerName: Wizard
+    dialogue: Hold on and aim for the turrets!
+    printDuration: 0.01
+  - speakerName: Duck
+    dialogue: You're insufferable
+    printDuration: 0.07
