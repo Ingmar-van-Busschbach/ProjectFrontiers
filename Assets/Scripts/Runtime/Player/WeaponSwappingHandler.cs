@@ -87,6 +87,7 @@ public class WeaponSwappingHandler : MonoBehaviour
         foreach (Transform barrelPoint in barrelPoints)
         {
             barrelPoint.SetParent(weaponObject.transform);
+            barrelPoint.localPosition = Vector3.zero;
         }
         yield return new WaitForSeconds(0.25f);
         weapon.canShoot = true;
