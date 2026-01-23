@@ -93,7 +93,7 @@ public abstract class ShotHandler : MonoBehaviour
     }
     private IEnumerator HandleReload()
     {
-        audioSource.PlayOneShot(weaponData.reloadAudio);
+        audioSource.PlayOneShot(weaponData.reloadAudio, weaponData.reloadVolume);
         weaponObject.PlayReloadAnimation();
         isReloading = true;
         yield return new WaitForSeconds(weaponData.reloadDuration);
@@ -127,8 +127,6 @@ public abstract class ShotHandler : MonoBehaviour
     {
         for(int i = 0; i < weaponData.multishot; i++)
         {
-            HandleRecoil();
-            HandleAudio();
             HandleShot();
         }
     }
@@ -170,7 +168,7 @@ public abstract class ShotHandler : MonoBehaviour
 
     protected void HandleAudio()
     {
-        audioSource.PlayOneShot(weaponData.firingAudio);
+        audioSource.PlayOneShot(weaponData.firingAudio, weaponData.firingVolume);
     }
 
     public void SwapWeapon(WeaponData newWeapon)
