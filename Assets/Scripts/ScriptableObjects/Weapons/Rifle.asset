@@ -20,8 +20,8 @@ MonoBehaviour:
     m_Bits: 4294967295
   weaponType: 0
   damageData:
-  - maxDamage: 120
-    minDamage: 10
+  - maxDamage: 125
+    minDamage: 100
     damageType: 1
   rateOfFire: 25
   multishot: 1
@@ -30,7 +30,9 @@ MonoBehaviour:
   magazineSize: 6
   reloadDuration: 1
   firingAudio: {fileID: 8300000, guid: b535415ed5b34874aae7c43513c3055a, type: 3}
+  firingVolume: 1
   reloadAudio: {fileID: 8300000, guid: d2852a0fa0c75434fb1e47657d6f0897, type: 3}
+  reloadVolume: 1
   tracer: {fileID: 4816148849270499086, guid: 8b229ff8d3ba7c24b8d80dc097e38ec7, type: 3}
   muzzleFlash: {fileID: 8078720523478869859, guid: 4f5fc4bbd01b03a4499a6ed77f175fc7, type: 3}
   enemyAlertMask:
@@ -51,7 +53,7 @@ MonoBehaviour:
   recoilSnappiness: 20
   recoilRecoverySpeed: 3
   minRange: 0.5
-  optimalRange: 75
+  optimalRange: 50
   maxRange: 150
   roundDamage: 0
   aimAssist: 0.2
