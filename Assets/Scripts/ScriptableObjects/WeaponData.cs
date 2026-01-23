@@ -41,7 +41,9 @@ public class WeaponData : ScriptableObject
 
     [Header("Audio")]
     public AudioClip firingAudio;
+    public float firingVolume = 1;
     public AudioClip reloadAudio;
+    public float reloadVolume = 1;
     
     [Header("Particles")]
     public GameObject tracer;

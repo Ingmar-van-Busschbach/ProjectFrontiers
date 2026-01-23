@@ -8,6 +8,8 @@ public class Weapon : ShotHandler
 {
     protected override void HandleShot()
     {
+        HandleRecoil();
+        HandleAudio();
         Quaternion dispersion = HandleDispersion();
 
         //Handle weapon firing particles
