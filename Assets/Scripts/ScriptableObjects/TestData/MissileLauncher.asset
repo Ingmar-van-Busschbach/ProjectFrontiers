@@ -30,7 +30,9 @@ MonoBehaviour:
   magazineSize: 999999
   reloadDuration: 0.5
   firingAudio: {fileID: 8300000, guid: e5a9937bc2cae8a44b894f427518e92f, type: 3}
+  firingVolume: 1
   reloadAudio: {fileID: 0}
+  reloadVolume: 1
   tracer: {fileID: 0}
   muzzleFlash: {fileID: 0}
   enemyAlertMask:
@@ -58,7 +60,7 @@ MonoBehaviour:
   aimAssistFidelity: 2
   penetratesTargets: 1
   bullet: {fileID: 7726416138810722538, guid: c357d4701203dd64ba298291e2650b5d, type: 3}
-  velocity: 60
+  velocity: 45
   bulletDrop: 0
   explosionMaxRadius: 0
   explosionOptimalRadius: 0

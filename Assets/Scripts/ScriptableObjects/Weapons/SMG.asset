@@ -31,7 +31,7 @@ MonoBehaviour:
   reloadDuration: 2
   firingAudio: {fileID: 8300000, guid: 646b7492b6784574292c5934716a99bd, type: 3}
   firingVolume: 0.2
-  reloadAudio: {fileID: 8300000, guid: d2852a0fa0c75434fb1e47657d6f0897, type: 3}
+  reloadAudio: {fileID: 8300000, guid: b60ec967b1838ed4b935d59296086582, type: 3}
   reloadVolume: 1
   tracer: {fileID: 4816148849270499086, guid: 8b229ff8d3ba7c24b8d80dc097e38ec7, type: 3}
   muzzleFlash: {fileID: 8078720523478869859, guid: 4f5fc4bbd01b03a4499a6ed77f175fc7, type: 3}
