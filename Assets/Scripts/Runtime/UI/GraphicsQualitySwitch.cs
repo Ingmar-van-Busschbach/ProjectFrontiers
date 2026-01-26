@@ -6,12 +6,6 @@ using TMPro;
 public class GraphicsQualitySwitch : MonoBehaviour
 {
     [SerializeField] private bool expensiveChanges;
-    private TMP_Dropdown graphicsDropdown;
-
-    private void Start()
-    {
-        graphicsDropdown = GetComponent<TMP_Dropdown>();
-    }
 
     public void GraphicsSettingChange(int index)
     {
