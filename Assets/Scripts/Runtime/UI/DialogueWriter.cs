@@ -3,19 +3,16 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[RequireComponent(typeof(AudioSource))]
 public class DialogueWriter : MonoBehaviour
 {
     public static DialogueWriter Instance { get; private set; }
     [SerializeField] private TMP_Text nameText;
     [SerializeField] private TMP_Text dialogueText;
-    [SerializeField] private float waitTillAutoNextDialogue = 3;
     private PlayerInputs playerInputs;
     private InputAction interact;
     private DialogueData currentDialogue;
-    private AudioSource audioSource;
     private int currentDialogueIndex;
-    private Coroutine routine;
+    Coroutine routine;
 
     private void Awake()
     {
@@ -30,7 +27,6 @@ public class DialogueWriter : MonoBehaviour
             Instance = this;
         }
         playerInputs = new PlayerInputs();
-        audioSource = GetComponent<AudioSource>();
     }
 
     private void OnDestroy()
@@ -62,33 +58,26 @@ public class DialogueWriter : MonoBehaviour
         }
         if (interact.WasPressedThisFrame())
         {
-            NextDialogue();
+            currentDialogueIndex++;
+            if (currentDialogueIndex >= currentDialogue.dialogue.Length)
+            {
+                StopCoroutine(routine);
+                nameText.text = "";
+                dialogueText.text = "";
+                return;
+            }
+            WriteDialogue(currentDialogue.dialogue[currentDialogueIndex]);
         }
     }
 
     private void WriteDialogue(StructLibrary.Struct_DialogueEntry dialogueEntry)
     {
         nameText.text = dialogueEntry.speakerName;
-        audioSource.clip = dialogueEntry.dialogueVoice;
-        audioSource.Play();
-        if (routine != null)
+        if(routine != null)
         {
             StopCoroutine(routine);
         }
         routine = StartCoroutine(PrintText(dialogueEntry));
-    }
-
-    private void NextDialogue()
-    {
-        currentDialogueIndex++;
-        if (currentDialogueIndex >= currentDialogue.dialogue.Length)
-        {
-            StopCoroutine(routine);
-            nameText.text = "";
-            dialogueText.text = "";
-            return;
-        }
-        WriteDialogue(currentDialogue.dialogue[currentDialogueIndex]);
     }
 
     private IEnumerator PrintText(StructLibrary.Struct_DialogueEntry dialogueEntry)
@@ -101,7 +90,6 @@ public class DialogueWriter : MonoBehaviour
             displayText += letter;
             dialogueText.text = displayText;
         }
-        yield return new WaitForSeconds(waitTillAutoNextDialogue);
-        NextDialogue();
+        yield return null;
     }
 }
