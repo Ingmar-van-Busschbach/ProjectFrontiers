@@ -30,5 +30,6 @@ public class StructLibrary : MonoBehaviour
         public string dialogue;
         [Tooltip("How long does it take for the each individal leter to print onto the screen?")]
         public float printDuration;
+        public AudioClip dialogueVoice;
     }
 }
