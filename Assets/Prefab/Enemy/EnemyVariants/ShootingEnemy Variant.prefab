@@ -200,7 +200,7 @@ AudioSource:
   m_GameObject: {fileID: 5317676265657318928}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -5895598044409804124, guid: 766402131c1038944a161ca7e29dbc90, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
@@ -318,6 +318,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponData: {fileID: 11400000, guid: d6eee71de038d2d4dbafe99ba80c1d1c, type: 2}
   canShoot: 1
+  weaponObject: {fileID: 0}
   barrelPoints:
   - {fileID: 384026497907033552}
   crosshairHandler: {fileID: 0}
