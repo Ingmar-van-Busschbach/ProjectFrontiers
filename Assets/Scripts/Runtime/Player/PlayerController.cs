@@ -101,8 +101,8 @@ public class PlayerController : MonoBehaviour
         }
         aimHandler.HandleAim(aim.IsPressed());
         controller.isSprinting = sprint.IsPressed();
-        controller.HandleHorizontalLook(look.ReadValue<Vector2>().x, lookSensitivity);
-        cameraController.HandleVerticalLook(-look.ReadValue<Vector2>().y, lookSensitivity, lookAngle);
+        controller.HandleHorizontalLook(look.ReadValue<Vector2>().x, lookSensitivity * (menuIsOpen ? 0 : 1));
+        cameraController.HandleVerticalLook(-look.ReadValue<Vector2>().y, lookSensitivity * (menuIsOpen ? 0 : 1), lookAngle);
     }
     private void FixedUpdate()
     {
@@ -118,7 +118,7 @@ public class PlayerController : MonoBehaviour
             controller.enabled = true;
             aimHandler.enabled = true;
             Time.timeScale = 1;
-            CursorManager.Instance.ChangeMouseLock(false, true, true);
+            CursorManager.Instance.ChangeMouseLock(false, true, false);
         }
         else
         {
@@ -127,7 +127,7 @@ public class PlayerController : MonoBehaviour
             controller.enabled = false;
             aimHandler.enabled = false;
             Time.timeScale = 0;
-            CursorManager.Instance.ChangeMouseLock(true, false, true);
+            CursorManager.Instance.ChangeMouseLock(true, false, false);
         }
     }
 }
