@@ -1,8 +1,9 @@
 using UnityEngine;
 using System.Collections;
+using System.Runtime.CompilerServices;
 
 
-[RequireComponent (typeof(EnemyMove))]
+[RequireComponent(typeof(EnemyMove))]
 
 public class EnemyAttack: MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class EnemyAttack: MonoBehaviour
     [SerializeField] private AreaAttack AreaAttackPrefab;
     [SerializeField] private Animator animator;
     [SerializeField] private float attackCooldown = 10;
+    [SerializeField] private RandomAudioContainer randomAttackAudio;
 
     private float timeOfNextAttack;
     private EnemyMove enemyMove;
@@ -49,6 +51,7 @@ public class EnemyAttack: MonoBehaviour
             return;
         }
         timeOfNextAttack = Time.time + attackCooldown;
+        AttackAudio();
         Instantiate(AreaAttackPrefab, enemyMove.target.position, Quaternion.identity);
         animator.SetTrigger("Attack02");
     }
@@ -68,7 +71,27 @@ public class EnemyAttack: MonoBehaviour
     private IEnumerator DelayShot()
     {
         yield return new WaitForSeconds(0.3f);
+        AttackAudio();
         weapon.Shoot();
+    }
+
+    private void AttackAudio()
+    {
+        float totalWeight = 0;
+        for(int i = 0; i < randomAttackAudio.randomAudio.Length; i++)
+        {
+            totalWeight += randomAttackAudio.randomAudio[i].weight;
+        }
+        float randomWeight = Random.Range(0, totalWeight);
+        totalWeight = 0;
+        for (int i = 0; i < randomAttackAudio.randomAudio.Length; i++)
+        {
+            totalWeight += randomAttackAudio.randomAudio[i].weight;
+            if(randomWeight < totalWeight)
+            {
+                AttackAudioManager.instance.PlayAudio(randomAttackAudio.randomAudio[i].audioClip, randomAttackAudio.randomAudio[i].volume, transform.position);
+            }
+        }
     }
 }
 

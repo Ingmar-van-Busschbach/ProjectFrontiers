@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
 
     private void OnDestroy()
     {
-        Destroy(this);
+        instance = null;
     }
 
     private void Update()
