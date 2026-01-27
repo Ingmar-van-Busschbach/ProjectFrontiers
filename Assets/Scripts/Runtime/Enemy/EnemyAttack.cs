@@ -90,6 +90,7 @@ public class EnemyAttack: MonoBehaviour
             if(randomWeight < totalWeight)
             {
                 AttackAudioManager.instance.PlayAudio(randomAttackAudio.randomAudio[i].audioClip, randomAttackAudio.randomAudio[i].volume, transform.position);
+                return;
             }
         }
     }
