@@ -60,6 +60,8 @@ MonoBehaviour:
   aimAssistFidelity: 3
   penetratesTargets: 0
   bullet: {fileID: 7726416138810722538, guid: c357d4701203dd64ba298291e2650b5d, type: 3}
+  impactSound: {fileID: 0}
+  impactVolume: 1
   velocity: 60
   bulletDrop: 1
   explosionMaxRadius: 0
