@@ -111,6 +111,8 @@ public class WeaponData : ScriptableObject
     [Header("Projectile Statistics")]
     [Tooltip("What bullet prefab to use")]
     public Bullet bullet;
+    public AudioClip impactSound;
+    public float impactVolume;
     [Tooltip("The velocity of the bullet in meters per second")]
     public float velocity;
     [Tooltip("Whether the bullet is affected by gravity")]
