@@ -237,6 +237,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   eyeTransform: {fileID: 5433533397875916073}
+  animator: {fileID: 194892698940956350}
   timeBeforeReturnPatrol: 15
   speed: 10
   drawDebug: 0
@@ -626,6 +627,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2524840b77f8c9c419c13284c97e4aea, type: 3}
+--- !u!95 &194892698940956350 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 803344977995221056, guid: 2524840b77f8c9c419c13284c97e4aea, type: 3}
+  m_PrefabInstance: {fileID: 689732306059826942}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6076562285131498692 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6757126588199998010, guid: 2524840b77f8c9c419c13284c97e4aea, type: 3}

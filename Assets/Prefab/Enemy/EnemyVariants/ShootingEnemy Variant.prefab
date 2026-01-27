@@ -307,7 +307,8 @@ MonoBehaviour:
   weapon: {fileID: 9129246402663398803}
   attackType: 0
   AreaAttackPrefab: {fileID: 0}
-  attackCooldown: 6
+  animator: {fileID: 7900523329334232927}
+  attackCooldown: 5
 --- !u!114 &9129246402663398803
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -331,3 +332,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 5317676265657318928}
   debugEnabled: 0
+--- !u!95 &7900523329334232927 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 194892698940956350, guid: e8434424552a8704494c428834fa4800, type: 3}
+  m_PrefabInstance: {fileID: 8002942697748175329}
+  m_PrefabAsset: {fileID: 0}
