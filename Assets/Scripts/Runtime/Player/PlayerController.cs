@@ -1,5 +1,8 @@
+using Unity.VisualScripting;
+using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.XR;
 
 /// <summary>
 /// Player Controller that handles weapon inputs, movement inputs and look inputs. Uses the Weapon, Controller3D script.
@@ -13,8 +16,10 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private CameraController cameraController;
+    [SerializeField] private GameObject menuObject;
     [SerializeField] private float lookSensitivity;
     [SerializeField] private Vector2 lookAngle;
+    private bool menuIsOpen;
     private Controller3D controller;
     private Weapon weapon;
     private TeleportHandler teleportHandler;
@@ -29,6 +34,7 @@ public class PlayerController : MonoBehaviour
     private InputAction reload;
     private InputAction teleport;
     private InputAction heal;
+    private InputAction menu;
     void Awake()
     {
         controller = GetComponent<Controller3D>();
@@ -56,6 +62,8 @@ public class PlayerController : MonoBehaviour
         teleport.Enable();
         heal = playerInputs.Player.Heal;
         heal.Enable();
+        menu = playerInputs.Player.Menu;
+        menu.Enable();
     }
     private void OnDisable()
     {
@@ -67,32 +75,59 @@ public class PlayerController : MonoBehaviour
         reload.Disable();
         teleport.Disable();
         heal.Disable();
+        menu.Disable();
     }
     void Update()
     {
-        if (attack.IsPressed())
+        if (attack.IsPressed() && !menuIsOpen)
         {
             weapon.Shoot();
         }
-        if (reload.WasPressedThisFrame())
+        if (reload.WasPressedThisFrame() && !menuIsOpen)
         {
             weapon.Reload();
         }
-        if (teleport.WasPressedThisFrame())
+        if (teleport.WasPressedThisFrame() && !menuIsOpen)
         {
             teleportHandler.AttemptTeleport();
         }
-        if (heal.WasPressedThisFrame())
+        if (heal.WasPressedThisFrame() && !menuIsOpen)
         {
             healHandler.AttemptHeal();
         }
+        if (menu.WasPressedThisFrame())
+        {
+            OpenCloseMenu();
+        }
         aimHandler.HandleAim(aim.IsPressed());
         controller.isSprinting = sprint.IsPressed();
-        controller.HandleHorizontalLook(look.ReadValue<Vector2>().x, lookSensitivity);
-        cameraController.HandleVerticalLook(-look.ReadValue<Vector2>().y, lookSensitivity, lookAngle);
+        controller.HandleHorizontalLook(look.ReadValue<Vector2>().x, lookSensitivity * (menuIsOpen ? 0 : 1));
+        cameraController.HandleVerticalLook(-look.ReadValue<Vector2>().y, lookSensitivity * (menuIsOpen ? 0 : 1), lookAngle);
     }
     private void FixedUpdate()
     {
         controller.HandleMove(move.ReadValue<Vector2>());
+    }
+
+    public void OpenCloseMenu()
+    {
+        if (menuIsOpen)
+        {
+            menuIsOpen = false;
+            menuObject.SetActive(false);
+            controller.enabled = true;
+            aimHandler.enabled = true;
+            Time.timeScale = 1;
+            CursorManager.Instance.ChangeMouseLock(false, true, false);
+        }
+        else
+        {
+            menuIsOpen = true;
+            menuObject.SetActive(true);
+            controller.enabled = false;
+            aimHandler.enabled = false;
+            Time.timeScale = 0;
+            CursorManager.Instance.ChangeMouseLock(true, false, false);
+        }
     }
 }
