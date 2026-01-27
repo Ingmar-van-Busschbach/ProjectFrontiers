@@ -7,6 +7,7 @@ public class EnemyMove : MonoBehaviour, IAlert
     [SerializeField] private LayerMask PlayerLayer;
     [SerializeField] private LayerMask enemyLayer;
     [SerializeField] private Transform eyeTransform;
+    [SerializeField] private Animator animator;
     public float timeBeforeReturnPatrol = 3;
     [Tooltip("m/s")]
     [SerializeField] private float speed = 2;
@@ -78,7 +79,16 @@ public class EnemyMove : MonoBehaviour, IAlert
             {
                 Vector3 direction = (target.position - transform.position);
                 direction.y = 0;
-                controller.Move(direction.normalized * Time.deltaTime * speed);
+                if(direction.magnitude > 1)
+                {
+                    direction.Normalize();
+                }
+                animator.SetFloat("Velocity", direction.magnitude);
+                controller.Move(direction * Time.deltaTime * speed);
+            }
+            else
+            {
+                animator.SetFloat("Velocity", 0);
             }
         }
         else
@@ -116,7 +126,7 @@ public class EnemyMove : MonoBehaviour, IAlert
         {
             moveDirection = Locations[nextLocation].position - transform.position;
         }
-
+        animator.SetFloat("Velocity", (lookDirection.magnitude));
         controller.Move(moveDirection);
     }
     private void CheckLineOfSight()

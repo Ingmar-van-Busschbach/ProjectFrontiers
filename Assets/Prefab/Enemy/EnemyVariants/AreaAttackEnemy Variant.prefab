@@ -73,6 +73,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 3666457012529128681}
   m_SourcePrefab: {fileID: 100100000, guid: e8434424552a8704494c428834fa4800, type: 3}
+--- !u!95 &2240113372539203022 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 194892698940956350, guid: e8434424552a8704494c428834fa4800, type: 3}
+  m_PrefabInstance: {fileID: 2135303116109411184}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &4286891684671640705 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2800121421426173937, guid: e8434424552a8704494c428834fa4800, type: 3}
@@ -93,4 +98,5 @@ MonoBehaviour:
   weapon: {fileID: 0}
   attackType: 1
   AreaAttackPrefab: {fileID: -7064600563462912462, guid: 900fbe421461aa445ba77534ba323fd7, type: 3}
+  animator: {fileID: 2240113372539203022}
   attackCooldown: 6
