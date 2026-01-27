@@ -23,8 +23,6 @@ public class Bullet : MonoBehaviour
         rigidBody = GetComponent<Rigidbody>();
         rigidBody.linearVelocity = transform.forward * weaponData.velocity;
         rigidBody.useGravity = weaponData.bulletDrop;
-        audioSource.clip = weaponData.impactSound;
-        audioSource.volume = weaponData.impactVolume;
     }
 
     private void Update()
@@ -85,7 +83,6 @@ public class Bullet : MonoBehaviour
         {
             ApplyHit(other, startLocation, weaponData.maxRange, weaponData.optimalRange);
         }
-        audioSource.PlayOneShot(audioSource.clip);
         Destroy(gameObject);
     }
 
