@@ -4,4 +4,5 @@ using UnityEngine;
 public class DialogueData : ScriptableObject
 {
     public StructLibrary.Struct_DialogueEntry[] dialogue;
+    public bool endScene;
 }
