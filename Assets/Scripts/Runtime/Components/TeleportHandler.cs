@@ -1,6 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
+[RequireComponent(typeof(AudioSource))]
 public class TeleportHandler : MonoBehaviour
 {
     [Tooltip("Should be the player camera.")]
@@ -15,7 +16,15 @@ public class TeleportHandler : MonoBehaviour
     [SerializeField] private float teleportCooldown;
     [Tooltip("The amount of mana the teleport uses")]
     [SerializeField] private float manaUsage;
+    [SerializeField] private AudioClip teleportAudio;
+    [SerializeField] private float audioVolume;
     private float timeOfNextTeleport;
+    private AudioSource teleportAudioSource;
+
+    private void Start()
+    {
+        teleportAudioSource = GetComponent<AudioSource>();
+    }
     public void AttemptTeleport()
     {
         if (Time.time < timeOfNextTeleport)
@@ -47,6 +56,7 @@ public class TeleportHandler : MonoBehaviour
 
     private void HandleTeleport(RaycastHit hit)
     {
+        teleportAudioSource.PlayOneShot(teleportAudio, audioVolume);
         Vector3 teleportLocation = hit.point;
         teleportLocation += hit.normal * teleportNormalOffset;
         CharacterController controller = GetComponent<CharacterController>();
