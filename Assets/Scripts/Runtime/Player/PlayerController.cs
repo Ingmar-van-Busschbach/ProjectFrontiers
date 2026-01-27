@@ -109,7 +109,7 @@ public class PlayerController : MonoBehaviour
         controller.HandleMove(move.ReadValue<Vector2>());
     }
 
-    private void OpenCloseMenu()
+    public void OpenCloseMenu()
     {
         if (menuIsOpen)
         {
