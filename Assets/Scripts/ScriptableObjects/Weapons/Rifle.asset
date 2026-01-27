@@ -60,6 +60,8 @@ MonoBehaviour:
   aimAssistFidelity: 3
   penetratesTargets: 1
   bullet: {fileID: 0}
+  impactSound: {fileID: 0}
+  impactVolume: 1
   velocity: 0
   bulletDrop: 0
   explosionMaxRadius: 0
