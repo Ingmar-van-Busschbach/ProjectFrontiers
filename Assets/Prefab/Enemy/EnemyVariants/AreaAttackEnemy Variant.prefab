@@ -100,3 +100,4 @@ MonoBehaviour:
   AreaAttackPrefab: {fileID: -7064600563462912462, guid: 900fbe421461aa445ba77534ba323fd7, type: 3}
   animator: {fileID: 2240113372539203022}
   attackCooldown: 6
+  randomAttackAudio: {fileID: 11400000, guid: 555b6423df00e8441903e36d5dd0cdb6, type: 2}

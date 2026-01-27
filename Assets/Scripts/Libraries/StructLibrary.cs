@@ -32,4 +32,13 @@ public class StructLibrary : MonoBehaviour
         public float printDuration;
         public AudioClip dialogueVoice;
     }
+
+    [System.Serializable]
+
+    public struct Struct_RandomAudioEntry
+    {
+        public AudioClip audioClip;
+        public float volume;
+        public float weight;
+    }
 }
