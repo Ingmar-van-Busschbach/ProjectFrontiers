@@ -1,6 +1,7 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(AudioSource))]
@@ -10,6 +11,7 @@ public class DialogueWriter : MonoBehaviour
     [SerializeField] private TMP_Text nameText;
     [SerializeField] private TMP_Text dialogueText;
     [SerializeField] private float waitTillAutoNextDialogue = 3;
+    [SerializeField] private UnityEvent endScene;
     private PlayerInputs playerInputs;
     private InputAction interact;
     private DialogueData currentDialogue;
@@ -86,10 +88,16 @@ public class DialogueWriter : MonoBehaviour
             StopCoroutine(routine);
             nameText.text = "";
             dialogueText.text = "";
+            if (currentDialogue.endScene)
+            {
+                endScene?.Invoke();
+            }
             return;
         }
         WriteDialogue(currentDialogue.dialogue[currentDialogueIndex]);
     }
+
+
 
     private IEnumerator PrintText(StructLibrary.Struct_DialogueEntry dialogueEntry)
     {
