@@ -1,4 +1,6 @@
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(PlayerHealth))]
 [RequireComponent(typeof(AudioSource))]
@@ -12,7 +14,9 @@ public class HealHandler : MonoBehaviour
     [SerializeField] private float manaUsage;
     [SerializeField] private AudioClip healAudio;
     [SerializeField] private float audioVolume;
+    [SerializeField] private Slider healSlider;
     private float timeOfNextHeal;
+    private float timeOfLastHeal;
     private PlayerHealth playerHealth;
     private AudioSource healAudioSource;
 
@@ -21,15 +25,20 @@ public class HealHandler : MonoBehaviour
         playerHealth = GetComponent<PlayerHealth>();
         healAudioSource = GetComponent<AudioSource>();
     }
+
+    private void Update()
+    {
+        healSlider.value = Mathf.Clamp01((Time.time - timeOfLastHeal) / healCooldown);
+    }
     public void AttemptHeal()
     {
         if (Time.time < timeOfNextHeal)
         {
             return;
         }
-        timeOfNextHeal = Time.time + healCooldown;
         if (ManaManager.Instance.TryUseMana(manaUsage))
         {
+            HandleCooldown();
             HandleHeal();
         }
     }
@@ -38,5 +47,11 @@ public class HealHandler : MonoBehaviour
     {
         playerHealth.ApplyDamage(-amountHealed, EnumLibrary.EDamageType.healing, new RaycastHit());
         healAudioSource.PlayOneShot(healAudio, audioVolume);
+    }
+
+    private void HandleCooldown()
+    {
+        timeOfNextHeal = Time.time + healCooldown;
+        timeOfLastHeal = Time.time;
     }
 }
