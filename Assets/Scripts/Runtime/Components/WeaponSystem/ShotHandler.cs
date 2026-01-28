@@ -93,13 +93,16 @@ public abstract class ShotHandler : MonoBehaviour
     }
     public void Reload()
     {
-        StartCoroutine(HandleReload());
+        if (!isReloading)
+        {
+            StartCoroutine(HandleReload());
+        }
     }
     private IEnumerator HandleReload()
     {
+        isReloading = true;
         audioSource.PlayOneShot(weaponData.reloadAudio, weaponData.reloadVolume);
         weaponObject.PlayReloadAnimation();
-        isReloading = true;
         yield return new WaitForSeconds(weaponData.reloadDuration);
         currentMagazine = weaponData.magazineSize;
         HandleAmmoCount();
