@@ -1718,7 +1718,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   barrel: {fileID: 6229708770801304445}
   fieldOfView: 20
-  viewDistance: 30
+  viewDistance: 50
   viewFidelity: 3
   PlayerLayer:
     serializedVersion: 2
@@ -1895,7 +1895,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   barrel: {fileID: 1259004891944877495}
   fieldOfView: 20
-  viewDistance: 30
+  viewDistance: 80
   viewFidelity: 3
   PlayerLayer:
     serializedVersion: 2
@@ -2144,8 +2144,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   barrel: {fileID: 733972504245335370}
-  fieldOfView: 30
-  viewDistance: 50
+  fieldOfView: 50
+  viewDistance: 80
   viewFidelity: 4
   PlayerLayer:
     serializedVersion: 2
@@ -2157,7 +2157,7 @@ MonoBehaviour:
   maxRotationX: 10
   minRotationY: -130
   maxRotationY: 130
-  rotationSpeedX: 5
+  rotationSpeedX: 10
   rotationSpeedY: 0.1
   patrolAngle: 45
   patrolTime: 7
@@ -2351,7 +2351,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   barrel: {fileID: 5445189777518374593}
   fieldOfView: 20
-  viewDistance: 30
+  viewDistance: 50
   viewFidelity: 3
   PlayerLayer:
     serializedVersion: 2
@@ -2687,7 +2687,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   barrel: {fileID: 3180513717536306967}
   fieldOfView: 20
-  viewDistance: 30
+  viewDistance: 50
   viewFidelity: 3
   PlayerLayer:
     serializedVersion: 2
@@ -2865,7 +2865,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   barrel: {fileID: 2020396663547444260}
   fieldOfView: 30
-  viewDistance: 50
+  viewDistance: 80
   viewFidelity: 4
   PlayerLayer:
     serializedVersion: 2
@@ -3104,7 +3104,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   barrel: {fileID: 1340030053881843363}
   fieldOfView: 20
-  viewDistance: 30
+  viewDistance: 50
   viewFidelity: 3
   PlayerLayer:
     serializedVersion: 2
