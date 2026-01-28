@@ -29,6 +29,7 @@ public class EnemyMove : MonoBehaviour, IAlert
     [Header("Alert")]
     [Tooltip("Radius of the EnemyAlarm")]
     [SerializeField] private float alarmRadius;
+    [SerializeField] private float alarmCooldown = 1f;
 
     [Header("Gravity")]
     [Tooltip("m/s^2")]
@@ -40,6 +41,7 @@ public class EnemyMove : MonoBehaviour, IAlert
     private int nextLocation;
     private float acceptanceRadius = 0.7f;
     private float verticalVelocity;
+    private float timeOfNextAlarm;
     [HideInInspector] public float currentTimeBeforeReturnPatrol;
     [HideInInspector] public float currentTimeBeforeLOSCheck = 0;
 
@@ -70,7 +72,11 @@ public class EnemyMove : MonoBehaviour, IAlert
 
         if (isFollowing)
         {
-            EnemyAlarm();
+            if (Time.time >= timeOfNextAlarm)
+            {
+                timeOfNextAlarm = Time.time + alarmCooldown;
+                EnemyAlarm();
+            }
             float distance = Vector3.Distance(transform.position, target.position);
             transform.LookAt(new Vector3(target.position.x, transform.position.y, target.position.z));
             HandleGravity();
