@@ -21,7 +21,6 @@ public class EnemyHealth : Health
             if (enemyMove.isFollowing == false)
             {
                 enemyMove.isFollowing = true;
-                Debug.Log("ondamaged");
                 GameManager.instance.UpdateFollowing(1);
                 enemyMove.target = PlayerIdentifier.Instance.gameObject.transform;
                 enemyMove.currentTimeBeforeReturnPatrol = enemyMove.timeBeforeReturnPatrol;
