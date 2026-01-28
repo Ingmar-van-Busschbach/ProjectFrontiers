@@ -120,7 +120,7 @@ public class EnemyMove : MonoBehaviour, IAlert
         lookDirection.Normalize();
         Vector3 upDirection = Vector3.up;
 
-        transform.rotation = Quaternion.LookRotation(lookDirection, upDirection);
+        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(lookDirection, upDirection), 0.2f);
         Vector3 moveDirection = lookDirection * Time.deltaTime * speed;
         if ((moveDirection).magnitude > (Locations[nextLocation].position - transform.position).magnitude)
         {
