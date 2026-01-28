@@ -1798,7 +1798,7 @@ MonoBehaviour:
   maxHealth: 100
   healthSlider: {fileID: 1859278501677894891}
   respawnPoint: {fileID: 0}
-  disableRadius: 0
+  disableRadius: 1000
   enemyLayer:
     serializedVersion: 2
     m_Bits: 64
