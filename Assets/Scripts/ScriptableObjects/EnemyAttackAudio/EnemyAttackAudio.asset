@@ -12,13 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c0f6095674f98438797521b3344376, type: 3}
   m_Name: EnemyAttackAudio
   m_EditorClassIdentifier: 
-  randomAudio:
-  - audioClip: {fileID: 8300000, guid: a359acac00101f2468577657fb37d557, type: 3}
-    volume: 1
-    weight: 1
-  - audioClip: {fileID: 8300000, guid: b535415ed5b34874aae7c43513c3055a, type: 3}
-    volume: 1
-    weight: 1
-  - audioClip: {fileID: 8300000, guid: 646b7492b6784574292c5934716a99bd, type: 3}
-    volume: 1
-    weight: 1
+  randomAudio: []
