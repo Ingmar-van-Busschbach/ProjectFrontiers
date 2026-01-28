@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-
+[RequireComponent(typeof(AudioSource))]
 public class AreaAttack : MonoBehaviour
 {
     [Tooltip("Time between casting and damage")]
@@ -18,6 +18,11 @@ public class AreaAttack : MonoBehaviour
 
     private float timeElapsed;
 
+    private void Start()
+    {
+        AudioSource audioSource = GetComponent<AudioSource>();
+        audioSource.Play();
+    }
     private void Update()
     {
         timeElapsed += Time.deltaTime;
