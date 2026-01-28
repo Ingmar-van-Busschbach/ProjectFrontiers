@@ -239,13 +239,13 @@ MonoBehaviour:
   eyeTransform: {fileID: 5433533397875916073}
   animator: {fileID: 194892698940956350}
   timeBeforeReturnPatrol: 15
-  speed: 10
-  drawDebug: 0
+  speed: 0
+  drawDebug: 1
   Locations: []
-  fieldOfView: 90
+  fieldOfView: 15
   viewDistance: 80
   minDistanceToPlayer: 5
-  alarmRadius: 50
+  alarmRadius: 500
   gravityStrength: 2
   maxFallSpeed: 10
   currentTimeBeforeReturnPatrol: 0
@@ -489,7 +489,7 @@ Transform:
   m_GameObject: {fileID: 8675289921502615856}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.499, z: 0.161}
+  m_LocalPosition: {x: 0, y: -0.016, z: 0.161}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

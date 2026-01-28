@@ -328,18 +328,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
-      propertyPath: alarmRadius
-      value: 80
-      objectReference: {fileID: 0}
-    - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
-      propertyPath: fieldOfView
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
-      propertyPath: viewDistance
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
       propertyPath: Locations.Array.size
       value: 4
       objectReference: {fileID: 0}
@@ -3192,18 +3180,6 @@ PrefabInstance:
     - target: {fileID: 189196775024312535, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
-      propertyPath: alarmRadius
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
-      propertyPath: fieldOfView
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
-      propertyPath: viewDistance
-      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
       propertyPath: Locations.Array.size
@@ -6882,18 +6858,6 @@ PrefabInstance:
     - target: {fileID: 189196775024312535, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
-      propertyPath: alarmRadius
-      value: 80
-      objectReference: {fileID: 0}
-    - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
-      propertyPath: fieldOfView
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
-      propertyPath: viewDistance
-      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
       propertyPath: Locations.Array.size
@@ -11145,18 +11109,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
-      propertyPath: alarmRadius
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
-      propertyPath: fieldOfView
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
-      propertyPath: viewDistance
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
       propertyPath: Locations.Array.size
       value: 4
       objectReference: {fileID: 0}
@@ -11564,18 +11516,6 @@ PrefabInstance:
     - target: {fileID: 8075550425766636102, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
-      propertyPath: alarmRadius
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
-      propertyPath: fieldOfView
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
-      propertyPath: viewDistance
-      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
       propertyPath: Locations.Array.size
@@ -13026,18 +12966,6 @@ PrefabInstance:
     - target: {fileID: 8075550425766636102, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
-      propertyPath: alarmRadius
-      value: 80
-      objectReference: {fileID: 0}
-    - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
-      propertyPath: fieldOfView
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
-      propertyPath: viewDistance
-      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
       propertyPath: Locations.Array.size
@@ -15705,18 +15633,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
-      propertyPath: alarmRadius
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
-      propertyPath: fieldOfView
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
-      propertyPath: viewDistance
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
       propertyPath: Locations.Array.size
       value: 4
       objectReference: {fileID: 0}
@@ -16123,18 +16039,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
-      propertyPath: alarmRadius
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
-      propertyPath: fieldOfView
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
-      propertyPath: viewDistance
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
       propertyPath: Locations.Array.size
       value: 4
       objectReference: {fileID: 0}
@@ -16466,18 +16370,6 @@ PrefabInstance:
     - target: {fileID: 8075550425766636102, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
-      propertyPath: alarmRadius
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
-      propertyPath: fieldOfView
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
-      propertyPath: viewDistance
-      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
       propertyPath: Locations.Array.size
@@ -17399,18 +17291,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
-      propertyPath: alarmRadius
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
-      propertyPath: fieldOfView
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
-      propertyPath: viewDistance
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
       propertyPath: Locations.Array.size
       value: 4
       objectReference: {fileID: 0}
@@ -18180,18 +18060,6 @@ PrefabInstance:
     - target: {fileID: 8075550425766636102, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
-      propertyPath: alarmRadius
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
-      propertyPath: fieldOfView
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
-      propertyPath: viewDistance
-      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
       propertyPath: Locations.Array.size
@@ -20937,18 +20805,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
-      propertyPath: alarmRadius
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
-      propertyPath: fieldOfView
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
-      propertyPath: viewDistance
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
       propertyPath: Locations.Array.size
       value: 4
       objectReference: {fileID: 0}
@@ -21911,18 +21767,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
-      propertyPath: alarmRadius
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
-      propertyPath: fieldOfView
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
-      propertyPath: viewDistance
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
       propertyPath: Locations.Array.size
       value: 4
       objectReference: {fileID: 0}
@@ -22015,18 +21859,6 @@ PrefabInstance:
     - target: {fileID: 189196775024312535, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
-      propertyPath: alarmRadius
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
-      propertyPath: fieldOfView
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
-      propertyPath: viewDistance
-      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
       propertyPath: Locations.Array.size
@@ -27146,18 +26978,6 @@ PrefabInstance:
     - target: {fileID: 8075550425766636102, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
-      propertyPath: alarmRadius
-      value: 80
-      objectReference: {fileID: 0}
-    - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
-      propertyPath: fieldOfView
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
-      propertyPath: viewDistance
-      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
       propertyPath: Locations.Array.size
@@ -34087,18 +33907,6 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
-      propertyPath: alarmRadius
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
-      propertyPath: fieldOfView
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
-      propertyPath: viewDistance
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
       propertyPath: Locations.Array.size
       value: 4
       objectReference: {fileID: 0}
@@ -37333,18 +37141,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
-      propertyPath: alarmRadius
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
-      propertyPath: fieldOfView
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
-      propertyPath: viewDistance
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
       propertyPath: Locations.Array.size
       value: 4
       objectReference: {fileID: 0}
@@ -37812,18 +37608,6 @@ PrefabInstance:
     - target: {fileID: 189196775024312535, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
-      propertyPath: alarmRadius
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
-      propertyPath: fieldOfView
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
-      propertyPath: viewDistance
-      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
       propertyPath: Locations.Array.size
@@ -42577,18 +42361,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
-      propertyPath: alarmRadius
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
-      propertyPath: fieldOfView
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
-      propertyPath: viewDistance
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
       propertyPath: Locations.Array.size
       value: 4
       objectReference: {fileID: 0}
@@ -45402,18 +45174,6 @@ PrefabInstance:
     - target: {fileID: 189196775024312535, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
-      propertyPath: alarmRadius
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
-      propertyPath: fieldOfView
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
-      propertyPath: viewDistance
-      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
       propertyPath: Locations.Array.size
@@ -57149,18 +56909,6 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
-      propertyPath: alarmRadius
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
-      propertyPath: fieldOfView
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
-      propertyPath: viewDistance
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
       propertyPath: Locations.Array.size
       value: 4
       objectReference: {fileID: 0}
@@ -58875,18 +58623,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
-      propertyPath: alarmRadius
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
-      propertyPath: fieldOfView
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
-      propertyPath: viewDistance
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
       propertyPath: Locations.Array.size
       value: 4
       objectReference: {fileID: 0}
@@ -60380,18 +60116,6 @@ PrefabInstance:
     - target: {fileID: 189196775024312535, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
-      propertyPath: alarmRadius
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
-      propertyPath: fieldOfView
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
-      propertyPath: viewDistance
-      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
       propertyPath: Locations.Array.size
@@ -70717,18 +70441,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
-      propertyPath: alarmRadius
-      value: 80
-      objectReference: {fileID: 0}
-    - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
-      propertyPath: fieldOfView
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
-      propertyPath: viewDistance
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
       propertyPath: Locations.Array.size
       value: 4
       objectReference: {fileID: 0}
@@ -71280,18 +70992,6 @@ PrefabInstance:
     - target: {fileID: 8075550425766636102, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
-      propertyPath: alarmRadius
-      value: 80
-      objectReference: {fileID: 0}
-    - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
-      propertyPath: fieldOfView
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
-      propertyPath: viewDistance
-      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
       propertyPath: Locations.Array.size
@@ -75565,18 +75265,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
-      propertyPath: alarmRadius
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
-      propertyPath: fieldOfView
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
-      propertyPath: viewDistance
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
       propertyPath: Locations.Array.size
       value: 4
       objectReference: {fileID: 0}
@@ -76381,18 +76069,6 @@ PrefabInstance:
     - target: {fileID: 189196775024312535, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
-      propertyPath: alarmRadius
-      value: 80
-      objectReference: {fileID: 0}
-    - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
-      propertyPath: fieldOfView
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
-      propertyPath: viewDistance
-      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
       propertyPath: Locations.Array.size
@@ -79342,18 +79018,6 @@ PrefabInstance:
     - target: {fileID: 8075550425766636102, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
-      propertyPath: alarmRadius
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
-      propertyPath: fieldOfView
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
-      propertyPath: viewDistance
-      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
       propertyPath: Locations.Array.size
@@ -87770,18 +87434,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
-      propertyPath: alarmRadius
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
-      propertyPath: fieldOfView
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
-      propertyPath: viewDistance
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
       propertyPath: Locations.Array.size
       value: 4
       objectReference: {fileID: 0}
@@ -90015,18 +89667,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
-      propertyPath: alarmRadius
-      value: 80
-      objectReference: {fileID: 0}
-    - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
-      propertyPath: fieldOfView
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
-      propertyPath: viewDistance
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
       propertyPath: Locations.Array.size
       value: 4
       objectReference: {fileID: 0}
@@ -91360,18 +91000,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
-      propertyPath: alarmRadius
-      value: 80
-      objectReference: {fileID: 0}
-    - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
-      propertyPath: fieldOfView
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
-      propertyPath: viewDistance
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
       propertyPath: Locations.Array.size
       value: 4
       objectReference: {fileID: 0}
@@ -92130,18 +91758,6 @@ PrefabInstance:
     - target: {fileID: 8075550425766636102, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
-      propertyPath: alarmRadius
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
-      propertyPath: fieldOfView
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
-      propertyPath: viewDistance
-      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
       propertyPath: Locations.Array.size
@@ -94270,18 +93886,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
-      propertyPath: alarmRadius
-      value: 80
-      objectReference: {fileID: 0}
-    - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
-      propertyPath: fieldOfView
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
-      propertyPath: viewDistance
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
       propertyPath: Locations.Array.size
       value: 4
       objectReference: {fileID: 0}
@@ -94810,18 +94414,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
-      propertyPath: alarmRadius
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
-      propertyPath: fieldOfView
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
-      propertyPath: viewDistance
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
       propertyPath: Locations.Array.size
       value: 4
       objectReference: {fileID: 0}
@@ -94926,18 +94518,6 @@ PrefabInstance:
     - target: {fileID: 8075550425766636102, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
-      propertyPath: alarmRadius
-      value: 80
-      objectReference: {fileID: 0}
-    - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
-      propertyPath: fieldOfView
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
-      propertyPath: viewDistance
-      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
       propertyPath: Locations.Array.size
@@ -95110,18 +94690,6 @@ PrefabInstance:
     - target: {fileID: 8075550425766636102, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
-      propertyPath: alarmRadius
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
-      propertyPath: fieldOfView
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
-      propertyPath: viewDistance
-      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
       propertyPath: Locations.Array.size
@@ -101497,18 +101065,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
-      propertyPath: alarmRadius
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
-      propertyPath: fieldOfView
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
-      propertyPath: viewDistance
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
       propertyPath: Locations.Array.size
       value: 4
       objectReference: {fileID: 0}
@@ -101692,18 +101248,6 @@ PrefabInstance:
     - target: {fileID: 189196775024312535, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
-      propertyPath: alarmRadius
-      value: 80
-      objectReference: {fileID: 0}
-    - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
-      propertyPath: fieldOfView
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
-      propertyPath: viewDistance
-      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
       propertyPath: Locations.Array.size
@@ -103911,18 +103455,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
-      propertyPath: alarmRadius
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
-      propertyPath: fieldOfView
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
-      propertyPath: viewDistance
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
       propertyPath: Locations.Array.size
       value: 4
       objectReference: {fileID: 0}
@@ -104502,18 +104034,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
-      propertyPath: alarmRadius
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
-      propertyPath: fieldOfView
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
-      propertyPath: viewDistance
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
       propertyPath: Locations.Array.size
       value: 4
       objectReference: {fileID: 0}
@@ -104921,18 +104441,6 @@ PrefabInstance:
     - target: {fileID: 189196775024312535, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
-      propertyPath: alarmRadius
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
-      propertyPath: fieldOfView
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
-      propertyPath: viewDistance
-      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
       propertyPath: Locations.Array.size
@@ -108927,18 +108435,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
-      propertyPath: alarmRadius
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
-      propertyPath: fieldOfView
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
-      propertyPath: viewDistance
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
       propertyPath: Locations.Array.size
       value: 4
       objectReference: {fileID: 0}
@@ -109926,18 +109422,6 @@ PrefabInstance:
     - target: {fileID: 8075550425766636102, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
-      propertyPath: alarmRadius
-      value: 80
-      objectReference: {fileID: 0}
-    - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
-      propertyPath: fieldOfView
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
-      propertyPath: viewDistance
-      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
       propertyPath: Locations.Array.size
@@ -111487,18 +110971,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
-      propertyPath: alarmRadius
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
-      propertyPath: fieldOfView
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
-      propertyPath: viewDistance
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
       propertyPath: Locations.Array.size
       value: 4
       objectReference: {fileID: 0}
@@ -112121,18 +111593,6 @@ PrefabInstance:
     - target: {fileID: 8075550425766636102, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
-      propertyPath: alarmRadius
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
-      propertyPath: fieldOfView
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
-      propertyPath: viewDistance
-      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
       propertyPath: Locations.Array.size
@@ -113963,18 +113423,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
-      propertyPath: alarmRadius
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
-      propertyPath: fieldOfView
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
-      propertyPath: viewDistance
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
       propertyPath: Locations.Array.size
       value: 4
       objectReference: {fileID: 0}
@@ -115672,14 +115120,6 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
-      propertyPath: drawDebug
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
-      propertyPath: fieldOfView
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
       propertyPath: Locations.Array.size
       value: 4
       objectReference: {fileID: 0}
@@ -116281,18 +115721,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
-      propertyPath: alarmRadius
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
-      propertyPath: fieldOfView
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
-      propertyPath: viewDistance
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
       propertyPath: Locations.Array.size
       value: 4
       objectReference: {fileID: 0}
@@ -116385,18 +115813,6 @@ PrefabInstance:
     - target: {fileID: 189196775024312535, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
-      propertyPath: alarmRadius
-      value: 80
-      objectReference: {fileID: 0}
-    - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
-      propertyPath: fieldOfView
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
-      propertyPath: viewDistance
-      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
       propertyPath: Locations.Array.size
@@ -121234,14 +120650,6 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
-      propertyPath: drawDebug
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
-      propertyPath: alarmRadius
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
       propertyPath: Locations.Array.size
       value: 4
       objectReference: {fileID: 0}
@@ -123940,18 +123348,6 @@ PrefabInstance:
     - target: {fileID: 189196775024312535, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
-      propertyPath: alarmRadius
-      value: 80
-      objectReference: {fileID: 0}
-    - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
-      propertyPath: fieldOfView
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
-      propertyPath: viewDistance
-      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 971929193357413623, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
       propertyPath: Locations.Array.size
@@ -131285,18 +130681,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
-      propertyPath: alarmRadius
-      value: 80
-      objectReference: {fileID: 0}
-    - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
-      propertyPath: fieldOfView
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
-      propertyPath: viewDistance
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
       propertyPath: Locations.Array.size
       value: 4
       objectReference: {fileID: 0}
@@ -131405,18 +130789,6 @@ PrefabInstance:
     - target: {fileID: 8075550425766636102, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
-      propertyPath: alarmRadius
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
-      propertyPath: fieldOfView
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
-      propertyPath: viewDistance
-      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 9209521859162072678, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
       propertyPath: Locations.Array.size
