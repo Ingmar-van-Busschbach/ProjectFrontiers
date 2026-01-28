@@ -1,4 +1,7 @@
+using System;
+using System.Runtime.InteropServices;
 using UnityEngine;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(CharacterController))]
 [RequireComponent(typeof(AudioSource))]
@@ -18,12 +21,19 @@ public class TeleportHandler : MonoBehaviour
     [SerializeField] private float manaUsage;
     [SerializeField] private AudioClip teleportAudio;
     [SerializeField] private float audioVolume;
+    [SerializeField] private Slider teleportSlider;
+
     private float timeOfNextTeleport;
     private AudioSource teleportAudioSource;
+    private float timeOfLastTeleport;
 
     private void Start()
     {
         teleportAudioSource = GetComponent<AudioSource>();
+    }
+    private void Update()
+    {
+        teleportSlider.value = Mathf.Clamp01((Time.time - timeOfLastTeleport) / teleportCooldown);
     }
     public void AttemptTeleport()
     {
@@ -31,13 +41,14 @@ public class TeleportHandler : MonoBehaviour
         {
             return;
         }
-        timeOfNextTeleport = Time.time + teleportCooldown;
+        
 
         //Teleport to the point the mouse aims at
         if (Physics.Raycast(targetingOrigin.transform.position, targetingOrigin.transform.forward, out RaycastHit hit, teleportRange, teleportLayerMask, QueryTriggerInteraction.Ignore))
         {
             if (ManaManager.Instance.TryUseMana(manaUsage))
             {
+                HandleTeleportCooldown();
                 HandleTeleport(hit);
             }
         }
@@ -48,6 +59,7 @@ public class TeleportHandler : MonoBehaviour
             {
                 if (ManaManager.Instance.TryUseMana(manaUsage))
                 {
+                    HandleTeleportCooldown();
                     HandleTeleport(groundHit);
                 }
             }
@@ -63,5 +75,11 @@ public class TeleportHandler : MonoBehaviour
         controller.enabled = false;
         transform.position = teleportLocation;
         controller.enabled = true;
+    }
+
+    private void HandleTeleportCooldown()
+    {
+        timeOfNextTeleport = Time.time + teleportCooldown;
+        timeOfLastTeleport = Time.time;
     }
 }
