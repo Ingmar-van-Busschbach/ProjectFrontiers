@@ -84715,13 +84715,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 280775977535741779, guid: f41222e90b835d74ca65dbce80056a9b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 674648493}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8646669793547062461, guid: f41222e90b835d74ca65dbce80056a9b, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
-    - targetCorrespondingSourceObject: {fileID: 3514980748115739008, guid: f41222e90b835d74ca65dbce80056a9b, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f41222e90b835d74ca65dbce80056a9b, type: 3}
 --- !u!4 &1345867734 stripped
 Transform:
@@ -92313,6 +92307,10 @@ PrefabInstance:
       propertyPath: dialogueText
       value: 
       objectReference: {fileID: 916026058}
+    - target: {fileID: 1890467334194063230, guid: 33c4358a8936d0a49af3ad6cf24356e5, type: 3}
+      propertyPath: sceneName
+      value: EndScreen
+      objectReference: {fileID: 0}
     - target: {fileID: 4751560742477252957, guid: 33c4358a8936d0a49af3ad6cf24356e5, type: 3}
       propertyPath: m_Name
       value: DialogueWriter
