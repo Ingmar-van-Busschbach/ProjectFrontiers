@@ -38,7 +38,7 @@ MonoBehaviour:
   enemyAlertMask:
     serializedVersion: 2
     m_Bits: 0
-  alertRadius: 0
+  alertRadius: 10
   aimDownSightFieldOfView: 25
   aimDownSightFieldOfViewSpeed: 100
   aimDownSightLerpSpeed: 10
@@ -53,15 +53,13 @@ MonoBehaviour:
   recoilSnappiness: 0
   recoilRecoverySpeed: 0
   minRange: 0.1
-  optimalRange: 10
-  maxRange: 30
+  optimalRange: 15
+  maxRange: 80
   roundDamage: 0
   aimAssist: 0
   aimAssistFidelity: 3
   penetratesTargets: 0
   bullet: {fileID: 7726416138810722538, guid: c357d4701203dd64ba298291e2650b5d, type: 3}
-  impactSound: {fileID: 0}
-  impactVolume: 1
   velocity: 60
   bulletDrop: 0
   explosionMaxRadius: 0
