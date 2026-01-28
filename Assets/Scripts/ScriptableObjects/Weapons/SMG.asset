@@ -20,10 +20,10 @@ MonoBehaviour:
     m_Bits: 4294967295
   weaponType: 0
   damageData:
-  - maxDamage: 5
-    minDamage: 1
+  - maxDamage: 15
+    minDamage: 5
     damageType: 0
-  rateOfFire: 500
+  rateOfFire: 400
   multishot: 2
   shotsPerBurst: 1
   timePerShotInBurst: 0.03
@@ -54,14 +54,12 @@ MonoBehaviour:
   recoilRecoverySpeed: 3
   minRange: 0.5
   optimalRange: 10
-  maxRange: 30
+  maxRange: 50
   roundDamage: 1
   aimAssist: 0.2
   aimAssistFidelity: 3
   penetratesTargets: 0
   bullet: {fileID: 0}
-  impactSound: {fileID: 0}
-  impactVolume: 1
   velocity: 0
   bulletDrop: 0
   explosionMaxRadius: 0

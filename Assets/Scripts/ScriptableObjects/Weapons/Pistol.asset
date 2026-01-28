@@ -20,15 +20,15 @@ MonoBehaviour:
     m_Bits: 4294967295
   weaponType: 0
   damageData:
-  - maxDamage: 35
-    minDamage: 10
+  - maxDamage: 40
+    minDamage: 25
     damageType: 1
   rateOfFire: 75
   multishot: 1
   shotsPerBurst: 1
   timePerShotInBurst: 0.03
   magazineSize: 8
-  reloadDuration: 0.5
+  reloadDuration: 1
   firingAudio: {fileID: 8300000, guid: a359acac00101f2468577657fb37d557, type: 3}
   firingVolume: 1
   reloadAudio: {fileID: 8300000, guid: d2852a0fa0c75434fb1e47657d6f0897, type: 3}
@@ -60,8 +60,6 @@ MonoBehaviour:
   aimAssistFidelity: 3
   penetratesTargets: 0
   bullet: {fileID: 0}
-  impactSound: {fileID: 0}
-  impactVolume: 1
   velocity: 0
   bulletDrop: 0
   explosionMaxRadius: 0
