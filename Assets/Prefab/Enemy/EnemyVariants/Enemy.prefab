@@ -245,7 +245,7 @@ MonoBehaviour:
   fieldOfView: 15
   viewDistance: 80
   minDistanceToPlayer: 5
-  alarmRadius: 30
+  alarmRadius: 10
   gravityStrength: 5
   maxFallSpeed: 10
   currentTimeBeforeReturnPatrol: 0
