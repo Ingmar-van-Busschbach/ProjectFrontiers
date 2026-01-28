@@ -174,12 +174,9 @@ public class EnemyMove : MonoBehaviour, IAlert
         Collider[] alarmCollider = Physics.OverlapSphere(transform.position, alarmRadius, enemyLayer, QueryTriggerInteraction.Ignore);
         foreach (Collider col in alarmCollider)
         {
-            if (col.gameObject != gameObject)
+            if (col.TryGetComponent<IAlert>(out IAlert alertAble))
             {
-                if (col.gameObject.TryGetComponent<EnemyMove>(out EnemyMove enemyMove))
-                {
-                    HandleAlert(target);
-                }
+                alertAble.HandleAlert(target);
             }
         }
     }
@@ -187,9 +184,9 @@ public class EnemyMove : MonoBehaviour, IAlert
     public void HandleAlert(Transform target)
     {
         // handles target change
-        
+        Debug.Log(gameObject.name);
         if (!isFollowing)
-        {
+        { 
             this.target = target;
             GameManager.instance.UpdateFollowing(1);
             isFollowing = true;
