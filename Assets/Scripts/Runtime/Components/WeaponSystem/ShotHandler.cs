@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 [RequireComponent(typeof(AudioSource))]
 public abstract class ShotHandler : MonoBehaviour
@@ -13,6 +14,7 @@ public abstract class ShotHandler : MonoBehaviour
     [SerializeField] protected CameraRecoil cameraRecoilHandler;
     [SerializeField] protected GameObject[] objectsToIgnore;
     [SerializeField] protected bool debugEnabled;
+    [SerializeField] private TMP_Text ammoCounter;
 
     protected List<Transform> availableBarrels = new List<Transform>();
     protected Transform barrelPoint;
@@ -48,6 +50,7 @@ public abstract class ShotHandler : MonoBehaviour
         currentDispersion = weaponData.minDispersion;
         targetDispersion = weaponData.minDispersion;
         currentMagazine = weaponData.magazineSize;
+        HandleAmmoCount();
         timeOfNextShot = Time.time;
         SelectAvailableBarrels();
     }
@@ -82,6 +85,7 @@ public abstract class ShotHandler : MonoBehaviour
             else
             {
                 currentMagazine--;
+                HandleAmmoCount();
                 SelectCurrentBarrel();
                 HandleMultishot();
             }
@@ -98,6 +102,7 @@ public abstract class ShotHandler : MonoBehaviour
         isReloading = true;
         yield return new WaitForSeconds(weaponData.reloadDuration);
         currentMagazine = weaponData.magazineSize;
+        HandleAmmoCount();
         isReloading = false;
     }
     private void SelectAvailableBarrels()
@@ -138,6 +143,7 @@ public abstract class ShotHandler : MonoBehaviour
             if(currentMagazine > 0)
             {
                 currentMagazine--;
+                HandleAmmoCount();
                 SelectCurrentBarrel();
                 HandleMultishot();
                 yield return new WaitForSeconds(weaponData.timePerShotInBurst);
@@ -178,5 +184,14 @@ public abstract class ShotHandler : MonoBehaviour
     {
         weaponData = newWeapon;
         WeaponSetup();
+    }
+
+    protected void HandleAmmoCount()
+    {
+        if(ammoCounter == null)
+        {
+            return;
+        }
+        ammoCounter.text = currentMagazine.ToString() + "/" + weaponData.magazineSize.ToString();
     }
 }
