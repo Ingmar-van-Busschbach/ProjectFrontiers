@@ -10,16 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f2759be2ffdb47645b3cf8b2e32470f6, type: 3}
-  m_Name: MidDialogue
+  m_Name: WhompWhompDialogue
   m_EditorClassIdentifier: 
   dialogue:
   - speakerName: Duck
-    dialogue: SIR PLEASE-
+    dialogue: Can you stop killing these guys?
     printDuration: 0.05
-    dialogueVoice: {fileID: 8300000, guid: edae781be91dfcf449cd9544373b51ae, type: 3}
+    dialogueVoice: {fileID: 8300000, guid: ab5ad5bddb831174eb56f10981a336a3, type: 3}
   - speakerName: Wizard
-    dialogue: As I said, whatever it is you want can wait until we have made it to
-      the well.
+    dialogue: Oh, whomp whomp shitling
     printDuration: 0.05
-    dialogueVoice: {fileID: 8300000, guid: 018bed662430918488e74e4dca25af4f, type: 3}
+    dialogueVoice: {fileID: 8300000, guid: b14c9f4dadb1076498de876d79d31e3b, type: 3}
   endScene: 0
