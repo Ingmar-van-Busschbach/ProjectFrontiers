@@ -15,7 +15,7 @@ MonoBehaviour:
   dialogue:
   - speakerName: Duck
     dialogue: Can you stop killing these guys?
-    printDuration: 0.05
+    printDuration: 0.08
     dialogueVoice: {fileID: 8300000, guid: ab5ad5bddb831174eb56f10981a336a3, type: 3}
   - speakerName: Wizard
     dialogue: Oh, whomp whomp shitling

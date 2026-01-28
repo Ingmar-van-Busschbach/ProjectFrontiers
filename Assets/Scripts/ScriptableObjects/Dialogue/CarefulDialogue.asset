@@ -15,6 +15,6 @@ MonoBehaviour:
   dialogue:
   - speakerName: Duck
     dialogue: Sir, can you please be careful?
-    printDuration: 0.02
+    printDuration: 0.06
     dialogueVoice: {fileID: 8300000, guid: a08dcaeb224af784ca3dc75a93e9612f, type: 3}
   endScene: 0
