@@ -5,6 +5,7 @@ public class AttackAudioManager : MonoBehaviour
 {
     public static AttackAudioManager instance;
     private AudioSource audioSource;
+    private Transform targetTransform;
 
     private void Awake()
     {
@@ -24,13 +25,21 @@ public class AttackAudioManager : MonoBehaviour
         instance = null;
     }
 
-    public void PlayAudio(AudioClip clip, float volume, Vector3 position)
+    private void Update()
+    {
+        if(transform != null)
+        {
+            transform.position = targetTransform.position;
+        }
+    }
+
+    public void PlayAudio(AudioClip clip, float volume, Transform targetTransform)
     {
         if (audioSource.isPlaying)
         {
             return;
         }
-        transform.position = position;
+        this.targetTransform = targetTransform;
         audioSource.clip = clip;
         audioSource.volume = volume;
         audioSource.Play();

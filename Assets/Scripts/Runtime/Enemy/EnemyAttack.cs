@@ -89,7 +89,7 @@ public class EnemyAttack: MonoBehaviour
             totalWeight += randomAttackAudio.randomAudio[i].weight;
             if(randomWeight < totalWeight)
             {
-                AttackAudioManager.instance.PlayAudio(randomAttackAudio.randomAudio[i].audioClip, randomAttackAudio.randomAudio[i].volume, transform.position);
+                AttackAudioManager.instance.PlayAudio(randomAttackAudio.randomAudio[i].audioClip, randomAttackAudio.randomAudio[i].volume, transform);
                 return;
             }
         }
