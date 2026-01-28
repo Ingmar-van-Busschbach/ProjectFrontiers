@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private CameraController cameraController;
     [SerializeField] private GameObject menuObject;
+    [SerializeField] private GameObject[] hideObjects;
     [SerializeField] private float lookSensitivity;
     [SerializeField] private Vector2 lookAngle;
     private bool menuIsOpen;
@@ -119,6 +120,10 @@ public class PlayerController : MonoBehaviour
             aimHandler.enabled = true;
             Time.timeScale = 1;
             CursorManager.Instance.ChangeMouseLock(false, true, false);
+            foreach(GameObject obj in hideObjects)
+            {
+                obj.SetActive(true);
+            }
         }
         else
         {
@@ -128,6 +133,10 @@ public class PlayerController : MonoBehaviour
             aimHandler.enabled = false;
             Time.timeScale = 0;
             CursorManager.Instance.ChangeMouseLock(true, false, false);
+            foreach (GameObject obj in hideObjects)
+            {
+                obj.SetActive(false);
+            }
         }
     }
 }
