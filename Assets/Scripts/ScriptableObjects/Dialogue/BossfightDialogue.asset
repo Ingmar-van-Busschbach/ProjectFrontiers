@@ -16,12 +16,17 @@ MonoBehaviour:
   - speakerName: Duck
     dialogue: CAN YOU JUST LISTEN TO ME?!
     printDuration: 0.1
+    dialogueVoice: {fileID: 0}
   - speakerName: Wizard
     dialogue: I'll listen after kicking that tank into the ground
     printDuration: 0.07
+    dialogueVoice: {fileID: 8300000, guid: b7c94120d1630fe46887bb4505f4853d, type: 3}
   - speakerName: Wizard
     dialogue: Hold on and aim for the turrets!
     printDuration: 0.01
+    dialogueVoice: {fileID: 0}
   - speakerName: Duck
     dialogue: You're insufferable
     printDuration: 0.07
+    dialogueVoice: {fileID: 0}
+  endScene: 0

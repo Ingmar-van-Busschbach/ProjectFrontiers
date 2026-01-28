@@ -17,17 +17,23 @@ MonoBehaviour:
     dialogue: The druids here are protecting a well of mana. Which we can use to
       turn you back into a human.
     printDuration: 0.05
+    dialogueVoice: {fileID: 8300000, guid: 0f5e04a6830112a41aa973ccb65b45d9, type: 3}
   - speakerName: Duck
     dialogue: But sir we do-
     printDuration: 0.05
+    dialogueVoice: {fileID: 0}
   - speakerName: Wizard
     dialogue: "Silence we don\u2019t have time for your babbling, we need to find
       the well of mana. "
     printDuration: 0.05
+    dialogueVoice: {fileID: 8300000, guid: 4a31f7141a29d98439c17a81ef2842de, type: 3}
   - speakerName: Duck
     dialogue: But sir-
     printDuration: 0.05
+    dialogueVoice: {fileID: 0}
   - speakerName: Wizard
     dialogue: We must move onwards for now. Whatever it is you want to tell me can
       wait.
     printDuration: 0.05
+    dialogueVoice: {fileID: 8300000, guid: 5c388c37c0e403344b5d2fcc22d1d305, type: 3}
+  endScene: 0

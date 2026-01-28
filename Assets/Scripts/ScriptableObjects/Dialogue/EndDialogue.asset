@@ -16,7 +16,7 @@ MonoBehaviour:
   - speakerName: Wizard
     dialogue: So what was it that you wanted to tell me again?
     printDuration: 0.05
-    dialogueVoice: {fileID: 0}
+    dialogueVoice: {fileID: 8300000, guid: ccdff6713ff64c0449bdd4336e0434b1, type: 3}
   - speakerName: Duck
     dialogue: "I wanted to say we didn't need to do this, I\u2019m happy this way.
       But now it's too late."
@@ -29,5 +29,5 @@ MonoBehaviour:
   - speakerName: Wizard
     dialogue: "Couldn\u2019t you have told me that sooner?"
     printDuration: 0.05
-    dialogueVoice: {fileID: 0}
+    dialogueVoice: {fileID: 8300000, guid: daa42135ec0b9d043b3a080c94cc0768, type: 3}
   endScene: 1

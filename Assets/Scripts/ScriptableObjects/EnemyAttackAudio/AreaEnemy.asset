@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76c0f6095674f98438797521b3344376, type: 3}
+  m_Name: AreaEnemy
+  m_EditorClassIdentifier: 
+  randomAudio:
+  - audioClip: {fileID: 8300000, guid: 4e9096f37bedb5a4491d40dd4198a0e6, type: 3}
+    volume: 1
+    weight: 0.2
+  - audioClip: {fileID: 8300000, guid: c233944e71470844181f65d6cd053347, type: 3}
+    volume: 1
+    weight: 0.2
+  - audioClip: {fileID: 8300000, guid: 3b07bcf90f43d2648862d9e6810d649b, type: 3}
+    volume: 1
+    weight: 0.2
+  - audioClip: {fileID: 8300000, guid: 027f617f82c8c1443a551f6eba432b24, type: 3}
+    volume: 1
+    weight: 0.2
+  - audioClip: {fileID: 8300000, guid: 027f617f82c8c1443a551f6eba432b24, type: 3}
+    volume: 1
+    weight: 0.2
+  - audioClip: {fileID: 8300000, guid: c876a3ec3ea91394f9aece465e9d9b4e, type: 3}
+    volume: 1
+    weight: 0.2
+  - audioClip: {fileID: 8300000, guid: c876a3ec3ea91394f9aece465e9d9b4e, type: 3}
+    volume: 1
+    weight: 0.2
+  - audioClip: {fileID: 8300000, guid: 24179d578e504d44c9c11df871fa3683, type: 3}
+    volume: 1
+    weight: 2
+  - audioClip: {fileID: 8300000, guid: 04b22d44181f733448e7b5c40141edc6, type: 3}
+    volume: 1
+    weight: 2
+  - audioClip: {fileID: 8300000, guid: f9bbf046d5cbf374b8b181b326dc0cc5, type: 3}
+    volume: 1
+    weight: 2
+  - audioClip: {fileID: 8300000, guid: c78b89fa170ca934bb97e84549936488, type: 3}
+    volume: 1
+    weight: 1
+  - audioClip: {fileID: 8300000, guid: 4ac01b1bd9595ed4398fb68c177c5e4a, type: 3}
+    volume: 1
+    weight: 1
+  - audioClip: {fileID: 8300000, guid: f9bbf046d5cbf374b8b181b326dc0cc5, type: 3}
+    volume: 1
+    weight: 2

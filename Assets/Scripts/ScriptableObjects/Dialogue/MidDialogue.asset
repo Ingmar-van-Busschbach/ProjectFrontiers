@@ -16,7 +16,10 @@ MonoBehaviour:
   - speakerName: Duck
     dialogue: SIR PLEASE-
     printDuration: 0.05
+    dialogueVoice: {fileID: 0}
   - speakerName: Wizard
     dialogue: As I said, whatever it is you want can wait until we have made it to
       the well.
     printDuration: 0.05
+    dialogueVoice: {fileID: 8300000, guid: 32de48cdeba7a7f4baad8cf82c4b8ab8, type: 3}
+  endScene: 0
