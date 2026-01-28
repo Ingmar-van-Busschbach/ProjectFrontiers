@@ -133,16 +133,23 @@ public class EnemyMove : MonoBehaviour, IAlert
     {
         if (ConePhysics.ConeCast(out RaycastHit hit, eyeTransform.position, eyeTransform.forward, fieldOfView, 3, 0.5f, viewDistance, PlayerLayer, false, 0.1f, QueryTriggerInteraction.Ignore, drawDebug, Color.cyan))
         {
-            if (!isFollowing)
+            if (Physics.Raycast(eyeTransform.position, hit.point - eyeTransform.position, out RaycastHit obstructionCheck))
             {
-                GameManager.instance.UpdateFollowing(1);
-                isFollowing = true;
-                target = hit.collider.transform;
-                currentTimeBeforeReturnPatrol = timeBeforeReturnPatrol;
+                if(obstructionCheck.collider.gameObject == PlayerIdentifier.Instance.gameObject)
+                {
+                    if (!isFollowing)
+                    {
+                        GameManager.instance.UpdateFollowing(1);
+                        isFollowing = true;
+                        target = hit.collider.transform;
+                        currentTimeBeforeReturnPatrol = timeBeforeReturnPatrol;
+                    }
+                }
             }
+
         }
 
-        else 
+        else
         {
             FailedLineOfSight();
         }

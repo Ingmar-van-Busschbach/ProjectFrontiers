@@ -235,18 +235,18 @@ MonoBehaviour:
     m_Bits: 8
   enemyLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   eyeTransform: {fileID: 5433533397875916073}
   animator: {fileID: 194892698940956350}
   timeBeforeReturnPatrol: 15
-  speed: 0
-  drawDebug: 1
+  speed: 10
+  drawDebug: 0
   Locations: []
   fieldOfView: 15
   viewDistance: 80
   minDistanceToPlayer: 5
-  alarmRadius: 500
-  gravityStrength: 2
+  alarmRadius: 30
+  gravityStrength: 5
   maxFallSpeed: 10
   currentTimeBeforeReturnPatrol: 0
   currentTimeBeforeLOSCheck: 0
