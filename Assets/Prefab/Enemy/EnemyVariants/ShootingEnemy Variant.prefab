@@ -221,7 +221,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 10
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -257,7 +257,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -338,6 +338,7 @@ MonoBehaviour:
   - {fileID: 3463180581601986463}
   - {fileID: 5317676265657318928}
   debugEnabled: 0
+  ammoCounter: {fileID: 0}
 --- !u!95 &7900523329334232927 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 194892698940956350, guid: e8434424552a8704494c428834fa4800, type: 3}
