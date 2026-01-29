@@ -53,7 +53,7 @@ MonoBehaviour:
   recoilSnappiness: 20
   recoilRecoverySpeed: 3
   minRange: 0.5
-  optimalRange: 50
+  optimalRange: 30
   maxRange: 100
   roundDamage: 0
   aimAssist: 0.2
