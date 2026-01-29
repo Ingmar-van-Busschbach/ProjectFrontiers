@@ -68,14 +68,11 @@ public class EnemyTank : MonoBehaviour
         Quaternion intendedRotation = Quaternion.identity;
         if (target != null)
         {
-            Vector3 intendedDirection = target.position - transform.position;
-            //Move vector to local space
-            intendedDirection = parentTransform.InverseTransformDirection(intendedDirection);
-
             intendedRotation = Quaternion.LookRotation(target.position - transform.position);
-
+            
             //Apply parent rotation
             intendedRotation = intendedRotation * Quaternion.Inverse(parentTransform.rotation);
+            intendedRotation = Quaternion.Euler(-intendedRotation.eulerAngles.x, intendedRotation.eulerAngles.y, intendedRotation.eulerAngles.z);
         }
         else
         {
@@ -127,8 +124,7 @@ public class EnemyTank : MonoBehaviour
 
         moveAngles = new Vector3(Mathf.Clamp(moveAngles.x, -rotationSpeedX, rotationSpeedX), Mathf.Clamp(moveAngles.y, -rotationSpeedY, rotationSpeedY), 0);
 
-        
-        if(verticalRotationTarget != null)
+        if (verticalRotationTarget != null)
         {
             Quaternion horiztonalRotation = Quaternion.Euler(new Vector3(0, currentAngles.y, 0) + new Vector3(0, moveAngles.y, 0));
             transform.localRotation = horiztonalRotation;
