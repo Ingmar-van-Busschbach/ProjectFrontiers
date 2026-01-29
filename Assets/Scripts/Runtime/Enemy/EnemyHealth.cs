@@ -3,10 +3,20 @@ using UnityEngine;
 public class EnemyHealth : Health
 {
     [SerializeField] private DamageNumber damageNumber;
+    [SerializeField] private Animator animator;
     protected override void OnDeath()
     {
-        Destroy(gameObject);
-        if(GameManager.instance != null)
+        animator.SetTrigger("Death");
+        if(gameObject.TryGetComponent<EnemyMove>(out EnemyMove enemyMove))
+        {
+            enemyMove.enabled = false;
+        }
+        if (gameObject.TryGetComponent<EnemyAttack>(out EnemyAttack enemyAttack))
+        {
+            enemyAttack.enabled = false;
+        }
+        Destroy(gameObject, 2.5f);
+        if (GameManager.instance != null)
         {
             GameManager.instance.UpdateFollowing(-1);
         }
