@@ -1709,6 +1709,8 @@ MonoBehaviour:
   menuObject: {fileID: 7652714048663064179}
   hideObjects:
   - {fileID: 2875841895103002547}
+  - {fileID: 0}
+  - {fileID: 0}
   lookSensitivity: 10
   lookAngle: {x: -50, y: 70}
 --- !u!114 &3942344222385171422
@@ -1775,7 +1777,7 @@ MonoBehaviour:
   teleportNormalOffset: 1
   teleportCooldown: 2
   manaUsage: 4
-  teleportAudio: {fileID: 8300000, guid: 790d8545a5cdfaf4e978cb7f40aa3c98, type: 3}
+  teleportAudio: {fileID: 8300000, guid: a5c679b77fa8a5d4e8874adfb47c6a09, type: 3}
   audioVolume: 1
   teleportSlider: {fileID: 705040920558981032}
   teleportAudioSource: {fileID: 3667687949624330434}
@@ -1832,8 +1834,8 @@ MonoBehaviour:
   amountHealed: 25
   healCooldown: 4
   manaUsage: 2
-  healAudio: {fileID: 0}
-  audioVolume: 0
+  healAudio: {fileID: 8300000, guid: bb0e45ae2f19e8c45adce38e79713125, type: 3}
+  audioVolume: 1
   healSlider: {fileID: 125239981523162247}
   healAudioSource: {fileID: 3667687949624330434}
 --- !u!114 &8643275286375582402
