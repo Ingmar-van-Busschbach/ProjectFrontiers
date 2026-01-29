@@ -84925,6 +84925,18 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7785707335607502895, guid: f41222e90b835d74ca65dbce80056a9b, type: 3}
+      propertyPath: hideObjects.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785707335607502895, guid: f41222e90b835d74ca65dbce80056a9b, type: 3}
+      propertyPath: 'hideObjects.Array.data[1]'
+      value: 
+      objectReference: {fileID: 924514908}
+    - target: {fileID: 7785707335607502895, guid: f41222e90b835d74ca65dbce80056a9b, type: 3}
+      propertyPath: 'hideObjects.Array.data[2]'
+      value: 
+      objectReference: {fileID: 916026057}
+    - target: {fileID: 7785707335607502895, guid: f41222e90b835d74ca65dbce80056a9b, type: 3}
       propertyPath: 'hideObjects.Array.data[5]'
       value: 
       objectReference: {fileID: 924514908}
