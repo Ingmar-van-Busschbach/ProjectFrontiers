@@ -120,7 +120,7 @@ public class PlayerController : MonoBehaviour
             aimHandler.enabled = true;
             Time.timeScale = 1;
             CursorManager.Instance.ChangeMouseLock(false, true, false);
-            foreach(GameObject obj in hideObjects)
+            foreach (GameObject obj in hideObjects)
             {
                 obj.SetActive(true);
             }
@@ -138,5 +138,10 @@ public class PlayerController : MonoBehaviour
                 obj.SetActive(false);
             }
         }
+    }
+
+    public void ExitToMainMenu()
+    {
+        Time.timeScale = 1;
     }
 }
