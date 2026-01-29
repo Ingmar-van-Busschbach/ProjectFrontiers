@@ -19,6 +19,6 @@ MonoBehaviour:
     dialogueVoice: {fileID: 8300000, guid: ab5ad5bddb831174eb56f10981a336a3, type: 3}
   - speakerName: Wizard
     dialogue: Oh, whomp whomp shitling
-    printDuration: 0.05
+    printDuration: 0.065
     dialogueVoice: {fileID: 8300000, guid: b14c9f4dadb1076498de876d79d31e3b, type: 3}
   endScene: 0
