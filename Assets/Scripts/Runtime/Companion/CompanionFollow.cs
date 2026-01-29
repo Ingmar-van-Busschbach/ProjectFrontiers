@@ -1,5 +1,3 @@
-using Unity.Jobs;
-using Unity.VisualScripting;
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
@@ -14,6 +12,7 @@ public class CompanionFollow : MonoBehaviour
     private float verticalVelocity;
 
     [SerializeField] private Transform followPoint;
+    [SerializeField] private Animator animator;
 
 
     private CharacterController controller;
@@ -37,7 +36,13 @@ public class CompanionFollow : MonoBehaviour
             {
                 Vector3 direction = (followPoint.position - transform.position);
                 direction.y = 0;
+                animator.SetFloat("Velocity", direction.magnitude);
                 controller.Move(direction.normalized * Time.deltaTime * speed);
+
+            }
+            else
+            {
+                animator.SetFloat("Velocity", 0);
             }
         }
     }
