@@ -8,6 +8,14 @@ public class PlayerHealth : Health
     [Tooltip("sphere that disables enemy aggro, in meters")]
     [SerializeField] private float disableRadius;
     [SerializeField] private LayerMask enemyLayer;
+    [SerializeField] private AudioClip damagedAudio;
+    [SerializeField] private float audioVolume;
+    [SerializeField] private AudioSource damagedAudioSource;
+
+    private void Awake()
+    {
+       
+    }
     protected override void BeginPlay()
     {
         if (respawnPoint == null)
@@ -32,7 +40,10 @@ public class PlayerHealth : Health
     }
     protected override void OnDamaged(float damage, RaycastHit hitData)
     {
-        
+        if (damage > 0)
+        {
+            damagedAudioSource.PlayOneShot(damagedAudio, audioVolume);
+        }
     }
 
     private void DisableTrigger()
