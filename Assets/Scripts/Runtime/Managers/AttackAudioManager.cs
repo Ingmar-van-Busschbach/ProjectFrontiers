@@ -27,7 +27,7 @@ public class AttackAudioManager : MonoBehaviour
 
     private void Update()
     {
-        if(transform != null)
+        if(targetTransform != null)
         {
             transform.position = targetTransform.position;
         }
