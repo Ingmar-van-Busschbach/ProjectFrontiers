@@ -6,16 +6,23 @@ public class EnemyHealth : Health
     [SerializeField] private Animator animator;
     protected override void OnDeath()
     {
-        animator.SetTrigger("Death");
-        if(gameObject.TryGetComponent<EnemyMove>(out EnemyMove enemyMove))
+        if(animator != null)
         {
-            enemyMove.enabled = false;
+            animator.SetTrigger("Death");
+            if (gameObject.TryGetComponent<EnemyMove>(out EnemyMove enemyMove))
+            {
+                enemyMove.enabled = false;
+            }
+            if (gameObject.TryGetComponent<EnemyAttack>(out EnemyAttack enemyAttack))
+            {
+                enemyAttack.enabled = false;
+            }
+            Destroy(gameObject, 2.5f);
         }
-        if (gameObject.TryGetComponent<EnemyAttack>(out EnemyAttack enemyAttack))
+        else
         {
-            enemyAttack.enabled = false;
+            Destroy(gameObject);
         }
-        Destroy(gameObject, 2.5f);
         if (GameManager.instance != null)
         {
             GameManager.instance.UpdateFollowing(-1);
