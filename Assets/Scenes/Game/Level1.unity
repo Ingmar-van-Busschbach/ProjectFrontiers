@@ -23054,6 +23054,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6776449551485903810, guid: e3376593f9c313f4e8338054169d908c, type: 3}
+      propertyPath: followPoint
+      value: 
+      objectReference: {fileID: 2071057100}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -57048,14 +57052,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 493957435}
     m_Modifications:
-    - target: {fileID: 5967694932751813236, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
-      propertyPath: Priority
-      value: 182
-      objectReference: {fileID: 0}
-    - target: {fileID: 5967694932751813236, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: -5895598044409804124, guid: 766402131c1038944a161ca7e29dbc90, type: 2}
     - target: {fileID: 1408400164722710107, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -57156,6 +57152,14 @@ PrefabInstance:
       propertyPath: 'Locations.Array.data[7]'
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5967694932751813236, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
+      propertyPath: Priority
+      value: 182
+      objectReference: {fileID: 0}
+    - target: {fileID: 5967694932751813236, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -5895598044409804124, guid: 766402131c1038944a161ca7e29dbc90, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -64802,18 +64806,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 493957435}
     m_Modifications:
-    - target: {fileID: 5967694932751813236, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
-      propertyPath: Priority
-      value: 182
-      objectReference: {fileID: 0}
-    - target: {fileID: 5967694932751813236, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
-      propertyPath: MinDistance
-      value: 1.7167969
-      objectReference: {fileID: 0}
-    - target: {fileID: 5967694932751813236, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: -5895598044409804124, guid: 766402131c1038944a161ca7e29dbc90, type: 2}
     - target: {fileID: 1408400164722710107, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -64914,6 +64906,18 @@ PrefabInstance:
       propertyPath: 'Locations.Array.data[7]'
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5967694932751813236, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
+      propertyPath: Priority
+      value: 182
+      objectReference: {fileID: 0}
+    - target: {fileID: 5967694932751813236, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
+      propertyPath: MinDistance
+      value: 1.7167969
+      objectReference: {fileID: 0}
+    - target: {fileID: 5967694932751813236, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -5895598044409804124, guid: 766402131c1038944a161ca7e29dbc90, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -85777,14 +85781,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 493957435}
     m_Modifications:
-    - target: {fileID: 5967694932751813236, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
-      propertyPath: Priority
-      value: 182
-      objectReference: {fileID: 0}
-    - target: {fileID: 5967694932751813236, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: -5895598044409804124, guid: 766402131c1038944a161ca7e29dbc90, type: 2}
     - target: {fileID: 1408400164722710107, guid: a2696751cc036c641b2c93e36bb1f2b4, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -85885,6 +85881,14 @@ PrefabInstance:
       propertyPath: 'Locations.Array.data[7]'
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5967694932751813236, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
+      propertyPath: Priority
+      value: 182
+      objectReference: {fileID: 0}
+    - target: {fileID: 5967694932751813236, guid: c0632f8705061d44cbcb1eb9f15bbbbd, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -5895598044409804124, guid: 766402131c1038944a161ca7e29dbc90, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -130610,6 +130614,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29c470b7a8be24f4f9e706bc6340386f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &2071057100 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2144932494068264479, guid: f41222e90b835d74ca65dbce80056a9b, type: 3}
+  m_PrefabInstance: {fileID: 1345867733}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2074694620
 PrefabInstance:
   m_ObjectHideFlags: 0
