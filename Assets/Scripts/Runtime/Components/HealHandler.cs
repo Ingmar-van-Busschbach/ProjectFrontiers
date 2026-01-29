@@ -15,15 +15,15 @@ public class HealHandler : MonoBehaviour
     [SerializeField] private AudioClip healAudio;
     [SerializeField] private float audioVolume;
     [SerializeField] private Slider healSlider;
+    [SerializeField] private AudioSource healAudioSource;
     private float timeOfNextHeal;
     private float timeOfLastHeal;
     private PlayerHealth playerHealth;
-    private AudioSource healAudioSource;
+    
 
     private void Start()
     {
         playerHealth = GetComponent<PlayerHealth>();
-        healAudioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
