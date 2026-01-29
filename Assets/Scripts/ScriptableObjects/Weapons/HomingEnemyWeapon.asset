@@ -60,15 +60,13 @@ MonoBehaviour:
   aimAssistFidelity: 2
   penetratesTargets: 1
   bullet: {fileID: 7726416138810722538, guid: 16a4774131df4fc4a910257d57768ec6, type: 3}
-  impactSound: {fileID: 8300000, guid: 0d8bb575856d73745b3d45fa05101c18, type: 3}
-  impactVolume: 1
   velocity: 30
   bulletDrop: 0
   explosionMaxRadius: 0
   explosionOptimalRadius: 0
   isHoming: 1
   targetCenterOfMass: 0
-  homingSpeed: 10
+  homingSpeed: 25
   homingConeAngle: 30
   homingMaxRange: 30
   homingLayerMask:

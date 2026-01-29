@@ -21,7 +21,7 @@ MonoBehaviour:
   weaponType: 0
   damageData:
   - maxDamage: 100
-    minDamage: 80
+    minDamage: 75
     damageType: 1
   rateOfFire: 50
   multishot: 1
@@ -53,8 +53,8 @@ MonoBehaviour:
   recoilSnappiness: 20
   recoilRecoverySpeed: 3
   minRange: 0.5
-  optimalRange: 75
-  maxRange: 150
+  optimalRange: 50
+  maxRange: 100
   roundDamage: 0
   aimAssist: 0.2
   aimAssistFidelity: 3
