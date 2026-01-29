@@ -39424,7 +39424,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 70415363619887899, guid: 3a85ce5ea8efb714b81e4fb07c66a9b6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -30.581
+      value: -31.19
       objectReference: {fileID: 0}
     - target: {fileID: 70415363619887899, guid: 3a85ce5ea8efb714b81e4fb07c66a9b6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -39462,6 +39462,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1008716779411233486, guid: 3a85ce5ea8efb714b81e4fb07c66a9b6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4936002365914938615, guid: 3a85ce5ea8efb714b81e4fb07c66a9b6, type: 3}
       propertyPath: InitialModule.startColor.maxColor.b
       value: 1
@@ -39483,7 +39487,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 6320430763455502189, guid: 3a85ce5ea8efb714b81e4fb07c66a9b6, type: 3}
+    - {fileID: 7766345270736705137, guid: 3a85ce5ea8efb714b81e4fb07c66a9b6, type: 3}
+    - {fileID: 1342396698753077932, guid: 3a85ce5ea8efb714b81e4fb07c66a9b6, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a85ce5ea8efb714b81e4fb07c66a9b6, type: 3}
