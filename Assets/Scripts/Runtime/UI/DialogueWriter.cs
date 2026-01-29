@@ -88,6 +88,7 @@ public class DialogueWriter : MonoBehaviour
             StopCoroutine(routine);
             nameText.text = "";
             dialogueText.text = "";
+            audioSource.Stop();
             if (currentDialogue.endScene)
             {
                 endScene?.Invoke();
