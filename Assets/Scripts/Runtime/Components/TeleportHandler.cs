@@ -22,9 +22,10 @@ public class TeleportHandler : MonoBehaviour
     [SerializeField] private AudioClip teleportAudio;
     [SerializeField] private float audioVolume;
     [SerializeField] private Slider teleportSlider;
+    [SerializeField] private AudioSource teleportAudioSource;
 
     private float timeOfNextTeleport;
-    private AudioSource teleportAudioSource;
+    
     private float timeOfLastTeleport;
 
     private void Start()
