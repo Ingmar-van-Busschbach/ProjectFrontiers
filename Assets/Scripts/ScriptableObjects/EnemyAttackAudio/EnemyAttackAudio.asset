@@ -85,3 +85,6 @@ MonoBehaviour:
   - audioClip: {fileID: 8300000, guid: 79f778eabb6a5a0488f5651c361cd5a2, type: 3}
     volume: 1
     weight: 1
+  - audioClip: {fileID: 8300000, guid: fc57862992c12ef4aa381836a2e51b90, type: 3}
+    volume: 1
+    weight: 1
