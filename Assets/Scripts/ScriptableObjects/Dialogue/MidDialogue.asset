@@ -20,6 +20,6 @@ MonoBehaviour:
   - speakerName: Wizard
     dialogue: As I said, whatever it is you want can wait until we have made it to
       the well.
-    printDuration: 0.07
+    printDuration: 0.06
     dialogueVoice: {fileID: 8300000, guid: 018bed662430918488e74e4dca25af4f, type: 3}
   endScene: 0

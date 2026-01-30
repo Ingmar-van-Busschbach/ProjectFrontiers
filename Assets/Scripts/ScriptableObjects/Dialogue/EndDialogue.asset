@@ -15,12 +15,12 @@ MonoBehaviour:
   dialogue:
   - speakerName: Wizard
     dialogue: So, what was it that you wanted to tell me again?
-    printDuration: 0.07
+    printDuration: 0.06
     dialogueVoice: {fileID: 8300000, guid: 38ff56fe9ec62e847a148b1935fe44ff, type: 3}
   - speakerName: Duck
     dialogue: "I wanted to say we didn't need to do this, I\u2019m happy this way.
       But now it's too fucking late."
-    printDuration: 0.1
+    printDuration: 0.08
     dialogueVoice: {fileID: 8300000, guid: f4ba228697582aa47b6fd33a363aef82, type: 3}
   - speakerName: Wizard
     dialogue: ...
@@ -28,6 +28,6 @@ MonoBehaviour:
     dialogueVoice: {fileID: 8300000, guid: c5ade7fd87ae6e94498f7e967acab656, type: 3}
   - speakerName: Wizard
     dialogue: "Couldn\u2019t you have told me that sooner?"
-    printDuration: 0.1
+    printDuration: 0.07
     dialogueVoice: {fileID: 8300000, guid: d3fe461608535c94780796ea67259fce, type: 3}
   endScene: 1

@@ -25,7 +25,7 @@ MonoBehaviour:
   - speakerName: Wizard
     dialogue: "Silence we don\u2019t have time for your babbling, we need to find
       the well of mana. "
-    printDuration: 0.05
+    printDuration: 0.06
     dialogueVoice: {fileID: 8300000, guid: 026cb20b10bf12548b9cb3be56b962b6, type: 3}
   - speakerName: Duck
     dialogue: But sir-
@@ -34,6 +34,6 @@ MonoBehaviour:
   - speakerName: Wizard
     dialogue: We must move onwards for now. Whatever it is you want to tell me can
       wait.
-    printDuration: 0.05
+    printDuration: 0.07
     dialogueVoice: {fileID: 8300000, guid: cac7634797e5b224380ac764311dc153, type: 3}
   endScene: 0
