@@ -1,5 +1,5 @@
 # ProjectFrontiers
-Team Assignment for Saxion first semester. We worked on this with a team of 7. Release page: https://ingmar-van-busschbach.itch.io/spells-and-shells
+Team Assignment for Saxion first semester of the first year. We worked on this with a team of 7, over the span of 3 weeks. Release page: https://ingmar-van-busschbach.itch.io/spells-and-shells
 
 To run this project:
 1. Download the project
